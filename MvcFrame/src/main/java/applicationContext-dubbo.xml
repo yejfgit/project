@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd        
+            http://code.alibabatech.com/schema/dubbo        
+            http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	<!-- 应用名称 -->
+	<dubbo:application name="TESTSERVICE" />
+	<dubbo:monitor protocol="registry" />
+	<dubbo:consumer check="false"/>
+	<!-- registry address, used for service to register itself -->
+	<!-- 注册测试中心地址 -->
+	<!--
+	<dubbo:registry protocol="zookeeper" timeout="10000" address="10.18.3.11:2181, 10.18.3.11:2182, 10.18.3.11:2183" /> -->
+		
+	<!-- 注册开发中心地址-->
+	<dubbo:registry protocol="zookeeper" timeout="10000" address="192.168.1.11:2181" /> 
+	
+	
+	<!-- 注册生产中心地址 -->
+	<!--
+	<dubbo:registry protocol="zookeeper" timeout="10000" address="10.17.2.41:2181,10.17.2.41:2182,10.17.2.41:2183" />-->
+	
+	<!-- expose this service through dubbo protocol, through port 20880 -->
+	<!-- 服务端端口 -->
+	<dubbo:protocol name="dubbo" port="30880" />
+	<!-- which service interface do we expose? -->
+	<!-- 服务端开启
+	<dubbo:service interface="com.ulic.ulcif.ws.service.CustomerCI" ref="customerCIService" />-->
+	<dubbo:service interface="com.mvc.service.IStudentService" ref="studentService" />
+	 
+	<!-- 客户端调用时开启 ,同时需要注释相应的bean和jms引用bean
+	<dubbo:reference id="policySummaryCIIService" interface="com.ulic.ulcif.ws.service.PolicySummaryCI" check="false"/>
+	<dubbo:reference id="weixinCpService"  interface="com.ulic.moa.service.agentservice.WeixinCpService"  timeout="10000"  retries="0"/>-->
+	
+</beans>
