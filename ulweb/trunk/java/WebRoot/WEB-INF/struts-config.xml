@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="budongchanForm" type="org.apache.struts.action.DynaActionForm">
+	    	<form-property name="list" type="java.util.List" />
+	    </form-bean>
+	</form-beans>
+	<action-mappings>
+		
+		<action
+			parameter="method"
+			path="/nologin"
+			type="com.ulic.ulweb.ulweb.web.action.NologinAction"
+			validate="false">
+			<forward name="pass" path="/index.do"></forward>
+			<forward name="fail" path="/error/errorpage.jsp"></forward>
+		</action>
+		<action
+			parameter="method"
+			path="/show"
+			type="com.ulic.ulweb.ulweb2.web.action.ShowAction"
+			validate="false">
+			<forward name="showAttachment" path="/frame/showattachment.jsp"></forward>
+			<forward name="showContent" path="/frame/showcontent.jsp"></forward>
+			<forward name="showDocument" path="/showDocument.do"></forward>
+			<forward name="adPage" path="/frame/adpage.jsp"></forward>
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/showDocument"
+			type="com.ulic.ulweb.ulweb.web.action.ShowDocument"
+			validate="false">
+			<forward name="ok" path="/frame/showdocument.jsp"></forward>
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/index"
+			type="com.ulic.ulweb.ulweb2.web.action.IndexAction"
+			validate="false">
+			<forward name="ok" path="/index.jsp"></forward>
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/list"
+			type="com.ulic.ulweb.ulweb.web.action.ListAction"
+			validate="false">
+			<forward name="ok" path="/subpage/list.jsp"></forward>
+			<forward name="c1t1" path="/subpage/c1t1.jsp"></forward>
+			<forward name="c1t2" path="/subpage/c1t2.jsp"></forward>
+			<forward name="c1t3" path="/subpage/c1t3.jsp"></forward>
+			<forward name="c1t4" path="/subpage/c1t4.jsp"></forward>
+			<forward name="c1t5" path="/subpage/c1t5.jsp"></forward>
+			<forward name="c1t6" path="/subpage/c1t6.jsp"></forward>
+			<forward name="c1t7" path="/subpage/c1t7.jsp"></forward>
+			<forward name="c1t8" path="/subpage/c1t8.jsp"></forward>
+			<forward name="c1t9" path="/subpage/c1t9.jsp"></forward>
+			<forward name="c2t1" path="/subpage/c2t1.jsp"></forward>
+			<forward name="c2t2" path="/subpage/c2t2.jsp"></forward>
+			<forward name="c2t3" path="/subpage/c2t3.jsp"></forward>
+			<forward name="c2t4" path="/subpage/c2t4.jsp"></forward>
+			<forward name="c2t5" path="/subpage/c2t5.jsp"></forward>
+			<forward name="c2t6" path="/subpage/c2t6.jsp"></forward>
+			<forward name="c2t7" path="/subpage/c2t7.jsp"></forward>
+			<forward name="c2t8" path="/subpage/c2t8.jsp"></forward>
+			<forward name="c2t9" path="/subpage/c2t9.jsp"></forward>
+			<forward name="c3t1" path="/subpage/c3t1.jsp"></forward>
+			<forward name="c3t2" path="/subpage/c3t2.jsp"></forward>
+			<forward name="c3t3" path="/subpage/c3t3.jsp"></forward>
+			<forward name="c3t4" path="/subpage/c3t4.jsp"></forward>
+			<forward name="c3t5" path="/subpage/c3t5.jsp"></forward>
+			<forward name="c4t1" path="/subpage/c4t1.jsp"></forward>
+			<forward name="c4t2" path="/subpage/c4t2.jsp"></forward>
+			<forward name="c5t1" path="/subpage/c5t1.jsp"></forward>
+			<forward name="c5t2" path="/subpage/c5t2.jsp"></forward>
+			
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/chat"
+			type="com.ulic.ulweb.ulweb.web.action.ChatAction"
+			validate="false">
+			<forward name="ok" path="/frame/report.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/check"
+			type="com.ulic.ulweb.ulweb.web.action.CheckAction"
+			validate="false">
+			<forward name="listPage" path="/frame/checkshowsub.jsp"></forward>
+			</action>
+			
+		<!--  会计中心 -->	
+			<action
+			parameter="method"
+			path="/cacCheck"
+			type="com.ulic.ulweb.ulweb.web.action.dept.CacCheckAction"
+			validate="false">
+			<forward name="checkShow" path="/dept/cac/checkshow.jsp"></forward>
+			</action>
+			
+			
+			<action
+			parameter="method"
+			path="/zongTuo"
+			type="com.ulic.ulweb.ulweb.web.action.dept.ZongTuoAction"
+			validate="false">
+			<forward name="checkShow" path="/dept/cac/checkshow.jsp"></forward>
+			</action>
+			
+		<action
+			parameter="method"
+			path="/countFileLine"
+			type="com.ulic.ulweb.ulweb.web.action.CountFileLineAction"
+			validate="false">
+			<forward name="showPage" path="/other/showcount.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/oldFile"
+			type="com.ulic.ulweb.ulweb.web.action.FilesAction"
+			validate="false">
+			<forward name="showPage" path="/frame/showoldfiles.jsp"></forward>
+			<forward name="showDeptPage" path="/frame/showoldlinkfiles.jsp"></forward>
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/showOld"
+			type="com.ulic.ulweb.ulweb.web.action.ShowOldAction"
+			validate="false">
+			<forward name="showContent" path="/frame/showoldcontent.jsp"></forward>
+			<forward name="showAttachment" path="/frame/showoldattachment.jsp"></forward>
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/showAd"
+			type="com.ulic.ulweb.ulweb.web.action.ShowAdAction"
+			validate="false">
+			<forward name="listPage" path="/frame/listadpage.jsp"></forward>
+			<forward name="showPage" path="/frame/adpage.jsp"></forward>
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/dept2l"
+			type="com.ulic.ulweb.ulweb.web.action.dept.DeptColumn2Action"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/vDept2l"
+			type="com.ulic.ulweb.ulweb.web.action.dept.ViewDeptColumn2Action"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/finacial"
+			type="com.ulic.ulweb.ulweb.web.action.dept.Finacial"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/util"
+			type="com.ulic.ulweb.ulweb.web.action.addPackage.UtilAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/mail"
+			type="com.ulic.ulweb.ulweb.web.action.SendmailAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/hr"
+			type="com.ulic.ulweb.ulweb.web.action.dept.HrAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/ed"
+			type="com.ulic.ulweb.ulweb.web.action.dept.EdAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>	
+		<action
+			parameter="method"
+			path="/zhixing"
+			type="com.ulic.ulweb.ulweb.web.action.dept.ZhixingAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>	
+		<action
+			parameter="method"
+			path="/cdd"
+			type="com.ulic.ulweb.ulweb.web.action.dept.CddAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+			
+		<action
+			parameter="method"
+			path="/showone"
+			type="com.ulic.ulweb.ulweb.web.action.ShowLastContentAction"
+			validate="false">			
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/peixun"
+			type="com.ulic.ulweb.ulweb.web.action.dept.PeixunAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/yunying"
+			type="com.ulic.ulweb.ulweb.web.action.dept.YunyingAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/shichang"
+			type="com.ulic.ulweb.ulweb.web.action.dept.ShichangAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/baofei"
+			type="com.ulic.ulweb.ulweb.web.action.dept.BaofeiAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/pinxuan"
+			type="com.ulic.ulweb.ulweb.web.action.dept.PinxuanAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/test"
+			type="com.ulic.ulweb.ulweb.web.action.test.TestAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/peixun2"
+			type="com.ulic.ulweb.ulweb.web.action.dept.Peixun2Action"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/yingxiao"
+			type="com.ulic.ulweb.ulweb.web.action.dept.YingxiaoAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/wukong"
+			type="com.ulic.ulweb.ulweb.web.action.dept.WukongAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/caiwu"
+			type="com.ulic.ulweb.ulweb.web.action.dept.CaiwuAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+
+		<action
+			parameter="method"
+			path="/topic"
+			type="com.ulic.ulweb.ulweb.web.action.TopicAction"
+			validate="false">
+			<forward name="list" path="/subpage/topiclist.jsp"></forward>
+			</action>		
+		<action
+			parameter="method"
+			path="/zongban"
+			type="com.ulic.ulweb.ulweb.web.action.dept.ZongbanAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>	
+		<action
+			parameter="method"
+			path="/falv"
+			type="com.ulic.ulweb.ulweb.web.action.dept.FalvAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/dangjian"
+			type="com.ulic.ulweb.ulweb.web.action.dept.DangjianAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+
+		<action
+			parameter="method"
+			path="/showfile"
+			type="com.ulic.ulweb.ulweb.web.action.ShowFileAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>			
+			
+		<action
+			parameter="method"
+			path="/budongchan"
+			name="budongchanForm"
+			type="com.ulic.ulweb.ulweb.web.action.dept.BudongchanAction"
+			validate="false">
+			<forward name="budongchan" path="/dept/budongchan/index.jsp"></forward>
+			<forward name="subpage" path="/dept/budongchan/subpage.jsp"></forward>
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			<forward name="showpage" path="/dept/budongchan/showpage.jsp"></forward>
+		</action>
+		
+		<action
+			parameter="method"
+			path="/peixun3"
+			type="com.ulic.ulweb.ulweb.web.action.dept.Peixun3Action"
+			validate="false">
+			<forward name="index" path="/dept/peixun3/index.jsp"></forward>
+
+		</action>
+		<action
+			parameter="method"
+			path="/market"
+			type="com.ulic.ulweb.ulweb.web.action.dept.MarketAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/market2"
+			type="com.ulic.ulweb.ulweb.web.action.dept.Market2Action"
+			validate="false">
+			<forward name="index" path="/dept/market2/index.jsp"></forward>
+
+		</action>
+		<action
+			parameter="method"
+			path="/weihua"
+			type="com.ulic.ulweb.ulweb2.web.action.WeihuaAction"
+			validate="false">
+			<forward name="index" path="/weihua/index.jsp"></forward>
+
+		</action>
+						
+	</action-mappings>
+	
+	
+</struts-config>
+

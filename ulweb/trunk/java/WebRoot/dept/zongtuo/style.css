@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+/* CSS Document */
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;border:0;}
+ul,ol,li{list-style:none;}
+input,button{margin:0;font-size:12px;vertical-align:middle;}
+body{font-size:12px;font-family:Arial, Helvetica, sans-serif;  text-align:center; margin:0 auto; background:url(../images/bg01.gif) repeat-x left top #fdfbef; }
+table{border-collapse:collapse;border-spacing:0;}
+b,em,i{ font-style:normal; font-weight:normal;}
+h1,h2,h3,h4{ font-size:14px;font-style:normal;}
+h5{ font-size:12px;}
+h6{ font-size:12px;font-weight:normal;}
+img{display:block;}
+
+a{color:#333;text-decoration:none;}
+a:hover{ text-decoration:underline; color:#c00;}
+
+.box-cnfen{ border:#cccccc 1px solid; padding:1px; margin:0px auto; WIDTH: 260px;POSITION: relative; HEIGHT: 220px; TEXT-ALIGN: center; overflow:hidden;}
+#foucs1_q{FILTER: progid:DXImageTransform.Microsoft.Fade ( duration=0.5,overlap=1.0 );}
+#foucs1_q img{ width:260px;}
+#foucs1_q li{ float:left;}
+.buttonBg {Z-INDEX: 1; BACKGROUND: #000; FILTER: Alpha(Opacity=50); LEFT: 1px; WIDTH: 260px; BOTTOM: 1px; POSITION: absolute; HEIGHT: 64px; opacity: 0.5; moz-opacity: 0.5}
+#focus1_T {FILTER: progid:DXImageTransform.Microsoft.Fade ( duration=0.5,overlap=1.0 ); width:260px; height:55px; overflow:hidden; position:absolute; left:5px; bottom:10px;; z-index:10; text-align:left;}
+#focus1_T  li.nos{ display:none;}
+#focus1_T  li.dis{ display:block;}
+.txtArea {Z-INDEX: 2; LEFT: 12px; WIDTH: 255px;FILTER: progid:DXImageTransform.Microsoft.Fade ( duration=0.5,overlap=1.0 ); COLOR: #fff; BOTTOM: 12px; LINE-HEIGHT: 21px; }
+.txtArea STRONG {FONT-SIZE: 14px; COLOR: #fff}
+.txtArea A {COLOR: #fff; TEXT-DECORATION: none}
+.txtArea A:hover {TEXT-DECORATION: underline}
+.buttonArea {Z-INDEX:20; RIGHT: 2px; WIDTH: 110px; BOTTOM: 6px; POSITION: absolute; HEIGHT: 13px}
+.buttonArea LI {DISPLAY: inline; FONT-WEIGHT: bold; FONT-SIZE: 11px; FLOAT: left; MARGIN-LEFT: 1px; WIDTH: 21px; CURSOR: pointer; COLOR: #fff; LINE-HEIGHT: 13px; FONT-FAMILY: "Verdana"; HEIGHT: 13px}
+.buttonArea LI.s {BACKGROUND: #b9190d}
+.buttonArea LI.nos {BACKGROUND: #3c434d}
+.dis {DISPLAY: block;}
+.undis {DISPLAY: none}
+

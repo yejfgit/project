@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+
+
+	<form-beans>
+
+		
+		<form-bean name="missionForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="list" type="java.util.List" />
+			<form-property name="ufList" type="java.util.List" />
+			<form-property name="name4" type="java.lang.String" />
+			<form-property name="survey" type="com.survey.vo.Survey" />
+		</form-bean>
+		<form-bean name="surveyForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="list" type="java.util.List" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="name3" type="java.lang.String" />
+			<form-property name="survey" type="com.survey.vo.Survey" />
+			<form-property name="tree" type="java.lang.String"></form-property>
+			
+		</form-bean>
+		
+		<form-bean name="userForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="list" type="java.util.List" />
+			<form-property name="userList" type="java.util.List" />
+			<form-property name="dept" type="com.survey.vo.TUmOrgan"></form-property>
+			<form-property name="TUmOrgan" type="com.survey.vo.TUmOrgan"></form-property>
+			<form-property name="tree" type="java.lang.String"></form-property>
+			<form-property name="parentDept" type="com.survey.vo.Dept" />
+			<form-property name="name1" type="java.lang.String" />
+			<form-property name="survey" type="com.survey.vo.Survey" />
+			<form-property name="treeHtml" type="java.lang.String" />
+			
+		</form-bean>	
+		<form-bean name="loginForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="list" type="java.util.List" />
+			
+			
+		</form-bean>
+		
+		<form-bean name="reportForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="list" type="java.util.List" />
+			<form-property name="name2" type="java.lang.String" />
+			<form-property name="surveyId" type="java.lang.String" />
+			<form-property name="surveyStatus" type="java.lang.String" />
+			<form-property name="survey" type="com.survey.vo.Survey" />
+				
+		</form-bean>
+	    <form-bean name="mailForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="list" type="java.util.List" />
+			<form-property name="userName" type="java.lang.String"></form-property>
+		    <form-property name="userId" type="java.lang.Integer"></form-property>
+		    <form-property name="surveyId" type="java.lang.Integer"></form-property>
+		    <form-property name="TUmUser" type="com.survey.vo.TUmUser"></form-property>
+		</form-bean>
+
+	
+	</form-beans>
+	
+	
+	
+	<action-mappings>
+
+
+		<action
+			parameter="method"
+			path="/survey"
+			name="surveyForm"
+			type="com.survey.web.action.SurveyAction"
+			validate="false">
+			<forward name="add" path="/jsp/survey/addSurvey.jsp"></forward>
+			<forward name="copy" path="/jsp/survey/copySurvey.jsp"></forward>
+			<forward name="view" path="/jsp/survey/viewSurvey.jsp" ></forward>
+            <forward name="list" path="/jsp/survey/selectSurvey.jsp"></forward>
+            <forward name="adminList" path="/jsp/survey/selectEditSurvey.jsp"></forward>
+			<forward name="edit" path="/jsp/survey/editSurvey.jsp"></forward>
+			<forward name="left" path="/left.jsp"></forward>
+			<forward name="tree" path="/tree.jsp"></forward>
+			
+			<forward name="info" path="/jsp/info.jsp"></forward>
+			
+		</action>
+		
+		
+		<action
+			parameter="method"
+			path="/user"
+			name="userForm"
+			type="com.survey.web.action.UserAction"
+			validate="false">
+			<forward name="index1" path="/jsp/survey/index1.jsp" ></forward>
+			<forward name="left" path="/jsp/survey/left.jsp"></forward>
+            <forward name="tree" path="/jsp/survey/tree.jsp"></forward>
+            <forward name="deptList" path="/jsp/survey/deptTree.jsp"></forward>
+            <forward name="ulist" path="/jsp/survey/selectUser.jsp"></forward>
+            <forward name="userList" path="/jsp/survey/select.jsp"></forward>
+			<forward name="info" path="/jsp/info.jsp"></forward>
+			<forward name="deptTreeQuery" path="/jsp/report/deptTreeQuery.jsp"></forward>
+		</action>
+		
+		
+		<action
+			parameter="method"
+			path="/mission"
+			name="surveyForm"
+			type="com.survey.web.action.MissionAction"
+			validate="false">
+			<forward name="answer" path="/jsp/survey/answerSurvey.jsp" ></forward>
+			<forward name="submit" path="/jsp/survey/viewResult.jsp"></forward>
+			<forward name="monitor" path="/jsp/survey/monitor.jsp"></forward>
+			<forward name="closeMission" path="/jsp/survey/monitor.jsp"></forward>
+			<forward name="info" path="/jsp/info.jsp"></forward>
+			
+		</action>
+		
+		<action
+			parameter="method"
+			path="/login"
+			name="loginForm"
+			type="com.survey.web.action.LoginAction"
+			validate="false">
+            <forward name="pass" path="/index.jsp"></forward>
+			<forward name="fail" path="/login.jsp"></forward>
+            <forward name="answer" path="/jsp/survey/selectSurvey.jsp"></forward>
+			
+		</action>
+		<action
+			parameter="method"
+			path="/report"
+			name="reportForm"
+			type="com.survey.web.action.ReportAction"
+			validate="false"
+			scope="request">
+            <forward name="times" path="/jsp/report/report1.jsp"></forward>
+            <forward name="report2" path="/jsp/report/report2.jsp"></forward>
+            <forward name="requestDetail" path="/jsp/report/requestDetail.jsp"></forward>
+			
+		</action>
+		
+		<action
+			parameter="method"
+			path="/report111"
+			name="surveyForm"
+			type="com.survey.web.action.ReportAction"
+			validate="false">
+			<forward name="report1" path="/jsp/report/report1.jsp"></forward>
+			<forward name="report2" path="/jsp/report/report2.jsp"></forward>
+
+			<forward name="info" path="/jsp/info.jsp"></forward>
+			
+		</action>
+		
+		
+		
+		<action
+			parameter="method"
+			path="/test"
+			name="surveyForm"
+			type="com.survey.web.action.TestAction"
+			validate="false">
+			
+			<forward name="info" path="/jsp/info.jsp"></forward>
+			
+		</action>
+		
+		<action
+			parameter="method"
+			path="/mail"
+			name="mailForm"
+			type="com.survey.web.action.MailAction"
+			validate="false">
+			
+			<forward name="info" path="/jsp/info.jsp"></forward>
+			<forward name="outside" path="/jsp/survey/outside.jsp"></forward>
+		</action>
+		
+		<action
+			parameter="method"
+			path="/attachment"
+			name="surveyForm"
+			type="com.survey.web.action.AttachmentAction"
+			validate="false"
+			scope="request">
+			
+			<forward name="info" path="/jsp/info.jsp"></forward>
+			<forward name="list" path="/jsp/attachment/list.jsp"></forward>
+			<forward name="newAtt" path="/jsp/attachment/newAtt.jsp"></forward>
+			<forward name="newAttDone" path="/jsp/attachment/newAttDone.jsp"></forward>
+			
+			
+		</action>
+		
+						
+	</action-mappings>
+	
+	<message-resources parameter="MessageResources" />
+	
+</struts-config>
+

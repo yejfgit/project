@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>jquery竖直手风琴菜单收缩展示下拉菜单</title>
+<meta name="description" content="用jquery框架制作两种非常简单的jquery手风琴菜单特效，鼠标滑过手风琴与鼠标点击触发手风琴。jquery下载。" />
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	//幻灯片元素与类“menu_body”段与类“menu_head”时点击
+	$("#firstpane .menu_body:eq(0)").show();
+	$("#firstpane p.menu_head").click(function(){
+		$(this).addClass("current").next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
+		$(this).siblings().removeClass("current");
+	});
+	
+	//滑动与类“menu_body”的元素，当鼠标悬停段
+	$("#secondpane .menu_body:eq(0)").show();
+	$("#secondpane p.menu_head").mouseover(function(){
+		$(this).addClass("current").next("div.menu_body").slideDown(500).siblings("div.menu_body").slideUp("slow");
+		$(this).siblings().removeClass("current");
+	});
+	
+});
+</script>
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+body{margin:10px auto;font:75%/120% Verdana,Arial, Helvetica, sans-serif;}
+.demo{width:400px;margin:0 auto;}
+.demo h2{font-size:14px;height:24px;line-height:24px;margin:30px 0 10px 0;padding:0 10px;}
+.menu_head{padding:5px 10px;cursor:pointer;position:relative;margin:1px;font-weight:bold;background:#eef4d3 url(images/left.png) center right no-repeat;}
+.menu_list .current{background:#eef4d3 url(images/down.png) center right no-repeat;}
+.menu_body{display:none;}
+.menu_body a{display:block;color:#006699;background-color:#EFEFEF;padding-left:10px;font-weight:bold;text-decoration:none;height:24px;line-height:24px;}
+.menu_body a:hover{color:#000000;text-decoration:underline;}
+</style>
+</head>
+<body>
+
+	<div class="demo">
+	
+		<h2>点击触发事件</h2>
+		<div id="firstpane" class="menu_list">
+			<p class="menu_head current">jquery图片特效</p>
+			<div class="menu_body">
+				<a href="http://www.17sucai.com/" target="_blank" title="jquery图片切换">jquery图片切换</a>
+				<a href="http://www.17sucai.com/" target="_blank" title="jquery幻灯片">jquery幻灯片</a>
+				<a href="http://www.17sucai.com/" target="_blank" title="jquery图片放大镜">jquery图片放大镜</a>
+			</div>
+			
+			<p class="menu_head">jquery导航菜单</p>
+			<div class="menu_body">
+				<a href="http://www.17sucai.com/" target="_blank" title="jquery动画菜单">jquery动画菜单</a>
+				<a href="http://www.17sucai.com/" target="_blank" title="jquery树形菜单">jquery树形菜单</a>
+				<a href="http://www.17sucai.com/" target="_blank" title="jquery下拉菜单">jquery下拉菜单</a>
+			</div>
+			
+			<p class="menu_head">jquery选项卡特效</p>
+			<div class="menu_body">
+				<a href="http://www.17sucai.com/" target="_blank" title="jquery选项卡切换">jquery选项卡切换</a>
+				<a href="http://www.17sucai.com/" target="_blank" title="jquery滑动选项卡">jquery滑动选项卡</a>
+				<a href="http://www.17sucai.com/" target="_blank" title="jquery更多特效">jquery更多特效</a>		
+			</div>
+		</div><!--firstpane end-->
+		
+		
+		<h2>滑过触发事件</h2>
+		<div id="secondpane" class="menu_list">
+			<p class="menu_head current">js图片特效</p>
+			<div class="menu_body">
+				<a href="http://www.17sucai.com/" target="_blank" title="js图片切换">js图片切换</a>
+				<a href="http://www.17sucai.com/" target="_blank" title="js幻灯片">js幻灯片</a>
+				<a href="http://www.17sucai.com/" target="_blank" title="js图片放大镜">js图片放大镜</a>
+			</div>
+			
+			<p class="menu_head">js导航菜单</p>
+			<div class="menu_body">
+				<a href="http://www.17sucai.com/" target="_blank" title="js动画菜单">js动画菜单</a>
+				<a href="http://www.17sucai.com/" target="_blank" title="js树形菜单">js树形菜单</a>
+				<a href="http://www.17sucai.com/" target="_blank" title="js下拉菜单">js下拉菜单</a>
+			</div>
+			
+			<p class="menu_head">js选项卡特效</p>
+			<div class="menu_body">
+				<a href="http://www.17sucai.com/" target="_blank" title="js选项卡切换">js选项卡切换</a>
+				<a href="http://www.17sucai.com/" target="_blank" title="js滑动选项卡">js滑动选项卡</a>
+				<a href="http://www.17sucai.com/" target="_blank" title="js更多特效">js更多特效</a>		
+			</div>
+		</div><!--secondpane end-->
+	
+	</div><!--demo end-->
+
+</body>
+</html>

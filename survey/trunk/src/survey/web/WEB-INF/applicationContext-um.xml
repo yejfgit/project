@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:sec="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+                        http://www.springframework.org/schema/security 
+                        http://www.springframework.org/schema/security/spring-security-2.0.xsd  
+                        http://cxf.apache.org/jaxws 
+                        http://cxf.apache.org/schema/jaxws.xsd">
+	<!--该配置使配置文件可以使用外部的properties文件 -->
+
+
+
+
+	<!-- filter链，权限控制的总入口　 -->
+	<bean id="springSecurityFilterChain" class="org.springframework.security.util.FilterChainProxy">
+		<sec:filter-chain-map path-type="ant">
+			<sec:filter-chain pattern="/**/login/*"
+				filters="none" />
+			<sec:filter-chain pattern="/**/servlet/download*"
+				filters="none" />				
+			<sec:filter-chain pattern="/**/*.jpg"
+				filters="none" />
+			<sec:filter-chain pattern="/**/*.gif"
+				filters="none" />				
+			<sec:filter-chain pattern="/**/*.js"
+				filters="none" />
+			<sec:filter-chain pattern="/**/*.css"
+				filters="none" />
+			<sec:filter-chain pattern="/**/*.png"
+				filters="none" />
+			<sec:filter-chain pattern="/**/*.htm*"
+				filters="none" />
+			<sec:filter-chain pattern="/**/mission.do*"
+				filters="none" />		
+			<sec:filter-chain pattern="/**/attachment.do*"
+				filters="none" />				
+			<sec:filter-chain pattern="/**"
+				filters="beforeUmFilter,httpSessionContextIntegrationFilter,logoutFilter,casProcessingFilter,exceptionTranslationFilter,filterSecurityInterceptor,afterUmFilter" />
+
+		</sec:filter-chain-map>
+	</bean>
+
+	<!--
+	 ### httpSessionContextIntegrationFilter,实现安全上下文（SecurityContextHolder）与HttpSession的关联
+	-->
+	<bean id="httpSessionContextIntegrationFilter"
+		class="org.springframework.security.context.HttpSessionContextIntegrationFilter" />
+
+	<!-- logoutFilter, 处理退出事件 -->
+	<bean id="logoutFilter" class="org.springframework.security.ui.logout.LogoutFilter">
+		<constructor-arg value="${ulic.cas.server}/logout?url=${app.url}"/>
+		<constructor-arg>
+			<list>
+				<bean
+					class="org.springframework.security.ui.logout.SecurityContextLogoutHandler">
+					<property name="invalidateHttpSession" value="true" />
+				</bean>
+			</list>
+		</constructor-arg>
+		<property name="filterProcessesUrl"
+			value="/um_logout" />
+	</bean>
+
+
+
+	<!-- 认证管理器 -->
+	<sec:authentication-manager alias="authenticationManager" />
+
+	<!-- 本应用的相关信息 -->
+	<bean id="serviceProperties"
+		class="com.ulic.ucia.framework.accesscontrol.cas.ui.ServiceProperties">
+		<property name="service" value="${app.url}/j_spring_cas_security_check.jsp" />
+		<property name="sendRenew" value="${login.renew}" />
+	</bean>
+
+	<!-- 
+	  ### casProcessingFilter, CAS认证过滤器 
+	 -->
+	<bean id="casProcessingFilter"
+		class="com.ulic.ucia.framework.accesscontrol.cas.ui.CasProcessingFilter">
+		<property name="authenticationManager" ref="authenticationManager" />
+
+		<!-- 验证失败转向地址,为了统一管理暂存放于管理平台Server上,而非Web Service平台 -->
+		<property name="authenticationFailureUrl"
+			value="${ulic.um.manager}/exception/casAuthFailed.action" />
+		<property name="defaultTargetUrl" value="/" />
+	</bean>
+
+
+	<!-- CAS认证入口 -->
+	<bean id="casProcessingFilterEntryPoint"
+		class="com.ulic.ucia.framework.accesscontrol.cas.ui.CasProcessingFilterEntryPoint">
+		<property name="loginUrl" value="${ulic.cas.server}/login" />
+		<property name="serviceProperties" ref="serviceProperties" />
+		<property name="encodeServiceUrlWithSessionId" value="false" />
+		<!-- 额外添加的两个属性,以提供参数供CAS展示登陆系统用 -->
+		<property name="visitAppName" value="${app.um.id}" />
+		<property name="visitAppDesc" value="${app.fullname}" />
+	</bean>
+	
+	<!--
+     ### exceptionTranslationFilter,实现各种Exception与Http Response间的转换
+	-->
+	<bean id="exceptionTranslationFilter"
+		class="org.springframework.security.ui.ExceptionTranslationFilter">
+		<property name="authenticationEntryPoint" ref="casProcessingFilterEntryPoint" />
+	</bean>
+
+
+	<!-- 用户信息处理 -->
+	<bean id="casAuthenticationProvider"
+		class="com.ulic.ucia.framework.accesscontrol.cas.provider.CasAuthenticationProvider">
+		<sec:custom-authentication-provider />
+		<property name="userDetailsService" ref="userService" />
+		<property name="serviceProperties" ref="serviceProperties" />
+		<property name="ticketValidator">
+			<bean class="org.jasig.cas.client.validation.Cas20ServiceTicketValidator">
+				<constructor-arg index="0" value="${ulic.cas.server}" />
+			</bean>
+		</property>
+		<property name="key" value="casProvider" />
+	</bean>
+
+	<!--访问决策管理器-->
+	<bean id="accessDecisionManager" class="org.springframework.security.vote.AffirmativeBased">
+		<property name="allowIfAllAbstainDecisions" value="false" />
+		<property name="decisionVoters">
+			<list>
+				<bean class="org.springframework.security.vote.AuthenticatedVoter" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="definitionSource"
+		class="com.ulic.ucia.framework.accesscontrol.springsecurity.AnonymousDefinitionSource" />
+
+
+	<!-- 
+	  ### filterSecurityInterceptor, 自定义的权限控制拦截器 
+	  -->
+	<bean id="filterSecurityInterceptor"
+		class="org.springframework.security.intercept.web.FilterSecurityInterceptor">
+		<property name="authenticationManager" ref="authenticationManager" />
+		<property name="accessDecisionManager" ref="accessDecisionManager" />
+		<property name="objectDefinitionSource" ref="definitionSource" />
+		<property name="observeOncePerRequest" value="false" />
+	</bean>
+	
+	<!--
+	  ### accessLogFilter, 审计信息记录 
+	 
+	<bean id="accessLogFilter"
+		class="com.ulic.ucia.framework.accesscontrol.traceinfo.AccessLogFilter">
+	</bean>
+	 -->
+
+	<!--
+	    ### 同步用户及机构到本地 
+	 
+	<bean class="com.ulic.um.client.LoginSuccessfulListener">
+		<property name="organDao" ref="syncOrganDao" />
+		<property name="userDao" ref="syncUserDao" />
+	</bean>
+	<bean id="syncUserDao" class="com.ulic.um.client.SyncUserDAO" />
+	<bean id="syncOrganDao" class="com.ulic.um.client.SyncOrganDAO">
+		<property name="organService" ref="organInfoService" />
+	</bean>
+	 -->
+	 
+	 
+	<bean id="userService" class="com.ulic.um.client.UMUserDetailService">
+		<property name="applicationName" value="${app.um.id}" />
+		<property name="userDetailLevel" value="${userdetail.level}" />
+		<property name="cacheUsing" value="${cache.using}" />
+		<property name="userScope" value="${user.scope}" />
+		<property name="remoteService" ref="userInfoService" />
+		<!-- 若不使用缓存,该部分可不设置 -->
+		<property name="userCache" ref="userCache" />
+	</bean>
+
+
+	<!-- 缓存配置,用来缓存用户信息,防止重复远程查询 -->
+	<!-- um 实现的缓存 -->
+	<bean id="userCache" class="com.ulic.um.client.cache.EhCacheBasedUserCache">
+		<!--<property name="cache" ref="userCacheBackend"></property>-->
+	</bean>
+
+	<bean id="appResourceService" class="com.ulic.um.client.APPResourceService">
+		<property name="serviceName" value="${app.um.id}" />
+		<property name="resourceInfoService" ref="resourceInfoService" />
+	</bean>
+
+	<!-- 通过web service查询用户信息 -->
+	<bean id="userInfoService" class="com.ulic.um.service.UserInfoService"
+		factory-bean="cxfUserInfoFactory" factory-method="create" lazy-init="true" />
+
+
+	<bean id="resourceInfoService" class="com.ulic.um.service.ResourceInfoService"
+		factory-bean="cxfResourceInfoFactory" factory-method="create"
+		lazy-init="true" />
+
+	<bean id="organInfoService" class="com.ulic.um.service.OrganInfoService"
+		factory-bean="cxfOrganInfoFactory" factory-method="create" lazy-init="true" />
+
+	<bean id="cxfUserInfoFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean"
+		lazy-init="true">
+		<property name="serviceClass" value="com.ulic.um.service.UserInfoService" />
+		<property name="address" value="${ulic.um.server}/services/userManageService" />
+	</bean>
+
+	<bean id="cxfResourceInfoFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean"
+		lazy-init="true">
+		<property name="serviceClass" value="com.ulic.um.service.ResourceInfoService" />
+		<property name="address"
+			value="${ulic.um.server}/services/resourceManageService" />
+	</bean>
+
+	<bean id="cxfOrganInfoFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean"
+		lazy-init="true">
+		<property name="serviceClass" value="com.ulic.um.service.OrganInfoService" />
+		<property name="address"
+			value="${ulic.um.server}/services/organManageService" />
+	</bean>
+	
+	<!-- 安全模块，前期过滤 -->
+	<bean id="beforeUmFilter"
+		class="com.survey.web.filter.BeforeUmFilter">
+		
+	</bean>
+	
+	<!-- 安全模块，UM过滤后处理 -->
+	<bean id="afterUmFilter"
+		class="com.survey.web.filter.AfterUmFilter">
+		
+	</bean>
+
+	
+		
+</beans>

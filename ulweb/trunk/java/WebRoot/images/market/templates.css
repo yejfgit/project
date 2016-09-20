@@ -1,0 +1,303 @@
+BODY {
+	FONT-SIZE: 9pt; BACKGROUND-IMAGE: url(http://www.cmbchina.com/Cmb2005web/images/body_bg.gif); MARGIN: 0px; FONT-FAMILY: 宋体
+}
+.newsdate {
+	FONT-SIZE: 12px; COLOR: #adacac; LINE-HEIGHT: 22px; TEXT-DECORATION: none
+}
+A:link {
+	COLOR: blue; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: blue
+}
+A:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.title {
+	FONT-WEIGHT: bold; FONT-SIZE: 11pt; COLOR: #cc0000; LINE-HEIGHT: 25px
+}
+.personaltitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 11pt; COLOR: #cc0000; LINE-HEIGHT: 25px
+}
+.corporatetitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 11pt; COLOR: #cc0000; LINE-HEIGHT: 25px
+}
+.cmbinfotitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 11pt; COLOR: #cc0000; LINE-HEIGHT: 25px
+}
+.branchtitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 11pt; COLOR: #cc0000; LINE-HEIGHT: 25px
+}
+.date {
+	FONT-SIZE: 9pt
+}
+.content {
+	FONT: 9pt/20px "宋体"; COLOR: #333333
+}
+A.content:link {
+	COLOR: blue; TEXT-DECORATION: none
+}
+A.content:visited {
+	COLOR: blue; TEXT-DECORATION: none
+}
+A.content:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.header {
+	FONT: 9pt/14pt "宋体"; COLOR: #944100
+}
+A.header:link {
+	COLOR: white; TEXT-DECORATION: none
+}
+A.header:visited {
+	COLOR: white; TEXT-DECORATION: none
+}
+A.header:hover {
+	COLOR: #ffff00; TEXT-DECORATION: none
+}
+.personalbusiness {
+	FONT: 9pt/14pt "宋体"; COLOR: #333333
+}
+A.personalbusiness:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.personalbusiness:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+.gray {
+	FONT-SIZE: 9pt; COLOR: #333333; LINE-HEIGHT: 18px; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.gray:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.gray:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.gray:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.gray1 {
+	FONT-SIZE: 9pt; COLOR: #333333; LINE-HEIGHT: 17px; TEXT-DECORATION: none
+}
+A.gray1:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.gray1:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.gray1:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.white {
+	FONT-SIZE: 9pt; COLOR: white
+}
+A.white:link {
+	COLOR: white; TEXT-DECORATION: none
+}
+A.white:visited {
+	COLOR: white; TEXT-DECORATION: none
+}
+A.white:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.whiteMenu {
+	FONT-SIZE: 10pt; COLOR: white
+}
+A.whiteMenu:link {
+	COLOR: white; TEXT-DECORATION: none
+}
+A.whiteMenu:visited {
+	COLOR: white; TEXT-DECORATION: none
+}
+A.whiteMenu:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.black {
+	FONT-SIZE: 9pt; COLOR: black; LINE-HEIGHT: 23px; FONT-FAMILY: 宋体
+}
+A.black:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.black:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.black:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.black17px {
+	FONT-SIZE: 9pt; COLOR: black; LINE-HEIGHT: 17px; FONT-FAMILY: 宋体
+}
+A.black17px:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.black17px:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.black17px:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.menublack {
+	FONT-SIZE: 9pt; COLOR: black; LINE-HEIGHT: 14px; FONT-FAMILY: 宋体
+}
+A.menublack:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.menublack:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.menublack:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.netbankblack {
+	FONT-SIZE: 9pt; COLOR: black; LINE-HEIGHT: 20px; FONT-FAMILY: 宋体
+}
+A.netbankblack:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.netbankblack:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.netbankblack:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.red {
+	FONT-SIZE: 9pt; COLOR: red; LINE-HEIGHT: 20px
+}
+A.red:link {
+	COLOR: red; TEXT-DECORATION: none
+}
+A.red:visited {
+	COLOR: red; TEXT-DECORATION: none
+}
+A.red:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.blue {
+	FONT-SIZE: 9pt; COLOR: blue
+}
+A.blue:link {
+	COLOR: blue; TEXT-DECORATION: none
+}
+A.blue:visited {
+	COLOR: blue; TEXT-DECORATION: none
+}
+A.blue:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.navy {
+	FONT-SIZE: 9pt; COLOR: navy
+}
+.breadcrumb3 {
+	FONT: 9pt/12pt "宋体"; COLOR: black
+}
+A.breadcrumb3:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.breadcrumb3:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.breadcrumb3:active {
+	TEXT-DECORATION: none
+}
+A.breadcrumb3:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.leftnav {
+	FONT: 9pt/14pt "宋体"
+}
+A.leftnav:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.leftnav:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.leftnav:active {
+	COLOR: red; TEXT-DECORATION: none
+}
+A.leftnav:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.newstitle {
+	FONT: 9pt/14pt "宋体"; COLOR: black; TEXT-DECORATION: none
+}
+A.newstitle:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.newstitle:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.newstitle:active {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.newstitle:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.cmbinfogray {
+	FONT-SIZE: 9pt; COLOR: #333333
+}
+A.cmbinfogray:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.cmbinfogray:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.cmbinfogray:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.shenhong {
+	FONT-SIZE: 9pt; COLOR: #cc0000; LINE-HEIGHT: 20px
+}
+A.shenhong:link {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+A.shenhong:visited {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+A.shenhong:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.gray11 {
+	FONT-SIZE: 9pt; COLOR: #707070; LINE-HEIGHT: 18px; TEXT-DECORATION: none
+}
+A.gray11:link {
+	COLOR: #707070; TEXT-DECORATION: none
+}
+A.gray11:visited {
+	COLOR: #707070; TEXT-DECORATION: none
+}
+A.gray11:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.searchbox {
+	BORDER-RIGHT: #b4906e 1px solid; BORDER-TOP: #b4906e 1px solid; FONT-SIZE: 9pt; BORDER-LEFT: #b4906e 1px solid; WIDTH: 80px; BORDER-BOTTOM: #b4906e 1px solid; HEIGHT: 20px
+}
+.caltile {
+	BORDER-TOP-WIDTH: 0px; MARGIN-TOP: 0px; BORDER-LEFT-WIDTH: 0px; BACKGROUND-IMAGE: url(/cmb2005web/images/1_1.gif); BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 34px; BORDER-RIGHT-WIDTH: 0px
+}
+.black14px {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; LINE-HEIGHT: 20px
+}
+.sunftitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #cc0000
+}
+A.sunftitle:link {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+A.sunftitle:visited {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+A.sunftitle:hover {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+.SunfLeftNav {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; CURSOR: hand; COLOR: #666666; TEXT-DECORATION: none
+}
+A.SunfLeftNav:link {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+A.SunfLeftNav:visited {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+A.SunfLeftNav:hover {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}

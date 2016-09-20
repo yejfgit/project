@@ -1,0 +1,329 @@
+/***********************************************/
+/* 3col_rightNav.css                              */
+/* Use with template 3col_rightNav.html           */
+/***********************************************/
+
+/***********************************************/
+/* HTML tag styles                             */
+/***********************************************/ 
+
+body{
+	font-family: Arial,sans-serif;
+	color: #333333;
+	line-height: 1.166;
+	margin:-20px 0px 0px 0px;
+	padding: 0px;
+	background-image:url("../../images/market/body_bg.gif");
+	letter-spacing: normal;
+	word-spacing: normal;	
+}
+
+
+/***********************************************/
+/* Layout Divs                                 */
+/***********************************************/
+
+.menu1 div{
+float:left;
+width:75px;
+
+text-align:center;
+color:#ffffff;
+border-right:1px #ffffff solid;
+}
+.menu1 div a{
+
+color:#ffffff;
+}
+.menu2{
+margin:0px 0px 3px 0px;
+width:100%;
+float:left;
+height:20px;
+background-color:#aaaaaa;
+}
+.menu2 div{
+float:left;
+width:100px;
+height:20px;
+text-align:center;
+color:#ffffff;
+font-weight:bold;
+padding:5px 0px 0px 0px;
+border-right:1px #ffffff solid;
+}
+.menu2 div a{
+text-align:center;
+color:#ffffff;
+font-weight:bold;
+}
+
+.div3{
+width:100%;
+float:left;
+background-color:#ffffff;
+}
+
+.div190{
+width:275px;
+height:100%;
+float:left;
+background-color:#ffffff;
+}
+
+.div398{
+float:left;
+width:398px;
+height:100%;
+background-color:#ffffff;
+}
+
+
+.centerdiv1{
+	padding:0px 0px 0px 7px;
+	width:394px;
+	height:140px;
+	float:left;
+	text-align:left;
+	background-image:url("../../images/market/main_personal_bg5.gif");
+	background-repeat:no-repeat;
+	background-position:7px 0px;
+}
+.centerdiv1 div{
+	float:left;
+	width:128px;
+	height:140px;
+
+}
+.centerdiv1 div div{	
+	width:100%;	
+	height:140px;
+	padding:40px 0px 0px 5px;
+}
+
+.centerdiv1 div div div{	
+	width:100%;	
+	height:20px;
+	float:left;
+	padding:3px 0px 3px 15px;
+	background-image:url("../../images/market/main_personal_button02.gif");
+	background-repeat:no-repeat;
+	background-position:5px 5px;
+}
+.centerdiv1 div div p{
+	margin:0px;
+	height:12px;
+}
+
+.centerdiv1 div div p a{	
+	width:100%;	
+	height:12px;
+	float:inherit;
+	font-family:"Times New Roman", Times, serif;
+	font-size:11px;
+	padding:2px 0px 0px 15px;	
+	background-image:url("../../images/market/main_personal_button02.gif");
+	background-repeat:no-repeat;
+	background-position:5px 7px;
+}
+.centerdiv11{
+	color:#990000;	
+	font-weight:bold;
+	height:0px;
+}
+
+/*************  #title *******************/
+
+.lefttitle1{
+width:100%;
+text-align:left;
+padding:8px 0px 5px 30px;
+color:#990000;
+font-weight:bold;
+background-image:url("../../images/market/main_personal_button01.gif");
+background-position:15px 8px;
+background-repeat:no-repeat;
+}
+
+.lefttitle1 a{
+width:100%;
+color:#990000;
+font-weight:bold;
+background-repeat:no-repeat;
+}
+
+.leftcontent1{
+	padding:5px 5px 2px 20px;
+
+}
+.leftcontent1 div{
+	width:100%;
+	height:auto;
+	text-align:left;
+	padding:5px 0px 0px 10px;
+	background-image:url("../../images/market/main_personal_button02.gif");
+	background-position:0px 8px;
+	background-repeat:no-repeat;
+	
+	
+}
+.leftcontent1 p{
+	width:100%;
+	margin:0px;
+	height:auto;
+	text-align:left;
+	padding:0px 0px 0px 10px;
+	background-image:url("../../images/market/main_personal_button02.gif");
+	background-position:0px 5px;
+	background-repeat:no-repeat;
+	
+	
+}
+.rightContent1{
+	width:100%;
+	height:120px;
+	background-color:#ffffff;
+	padding:0px 5px 0px 15px;
+	
+}
+.rightContent1 marquee p{	
+	margin:0px;
+	text-align:left;
+	letter-spacing: 0px;
+	word-spacing: 0px;	
+}
+.rightContent1 p{	
+	margin:0px;
+	text-align:left;
+	letter-spacing: 0px;
+	word-spacing: 0px;	
+}
+.gonggao{
+	width:100%;
+	height:100%;
+
+}
+.righttitle1{
+width:100%;
+text-align:left;
+padding:8px 0px 5px 30px;
+color:#990000;
+font-weight:bold;
+background-image:url("../../images/market/main_personal_button01.gif");
+background-position:15px 10px;
+background-repeat:no-repeat;
+}
+.righttitle2{
+width:100%;
+height:30px;
+text-align:left;
+padding:8px 0px 5px 30px;
+color:#ee0000;
+font-weight:bold;
+background-image:url("../../images/market/netbank_pay.gif");
+background-repeat:no-repeat;
+}
+.righttitle21 div{
+	height:25px;
+	padding:5px 0px 5px 20px;
+	text-align:left;
+	background-image:url("../../iamges/market/main_personal_bg2.gif");
+}
+
+.righttitle3{
+width:100%;
+height:30px;
+text-align:center;
+padding:8px 8px 5px 8px;
+color:#ee0000;
+font-weight:bold;
+background-image:url("../../images/market/netbank_logon.gif");
+background-repeat:no-repeat;
+}
+.righttitle31{
+width:100%;
+padding:5px 5px 5px 20px;
+}
+.righttitle31 div{
+	width:100%;	
+	text-align:left;
+	margin:5px 0px 0px 0px;
+	background-repeat:no-repeat;
+}
+.title1{
+	width:100%;
+	height:30px;
+	font-size:16px;
+	font-weight:bold;
+	text-align:center;
+	line-height:25px;
+	vertical-align:middle;
+}
+
+.title2{
+	width:65%;
+	height:25px;
+	font-size:14px;
+	font-weight:bold;
+	text-align:left;
+	line-height:20px;
+	vertical-align:middle;
+	float:left;
+	padding:5px 0px 0px 15px;
+}
+
+.titlemore{
+	margin-top:10px;
+	float:right;
+	width:29%;
+	color:#ffffff;
+	font-size:12px;
+}
+
+.titlecenter1{
+	width:100%;
+	height:30px;
+	text-align:center;
+	font-size:16px;
+	font-weight:bold;
+	padding:5px;
+}
+
+.titlemore a{
+	color:#ffffff;
+}
+
+.fengexian{
+	width:100%;
+	height:5px;
+	overflow:hidden;
+}
+.fengexian1{
+	float:left;
+	width:30%;
+	height:100%;
+	border-right:1px #D9D9D9 solid;
+	border-bottom:1px #d9d9d9 solid;
+	overflow:hidden;
+}
+.fengexian2{
+	float:left;
+	width:40%;
+	height:100%;
+	border-right:1px #D9D9D9 solid;
+	border-bottom:1px #d9d9d9 solid;
+	overflow:hidden;
+}
+.fengexian3{
+	float:left;
+	width:30%;
+	height:100%;
+	background-color:#F4EFF8;
+	border-right:1px #D9D9D9 solid;
+	border-bottom:1px #d9d9d9 solid;
+	overflow:hidden;
+}
+
+
+
+

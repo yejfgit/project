@@ -1,0 +1,180 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    	<property name="location">
+			<value>/WEB-INF/init.properties</value>
+		</property>
+	</bean>
+ 
+	<bean id="dataSource"
+		class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>${datasource.jndiName}</value>
+		</property>
+	</bean>
+
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource"><ref local="dataSource"/></property>
+		<property name="mappingResources">
+			<list>
+				<value>com/survey/vo/Answer.hbm.xml</value>
+				<value>com/survey/vo/Dept.hbm.xml</value>
+				<value>com/survey/vo/Mission.hbm.xml</value>
+				<value>com/survey/vo/Option.hbm.xml</value>
+				<value>com/survey/vo/OptionAnswer.hbm.xml</value>
+				<value>com/survey/vo/Question.hbm.xml</value>
+				<value>com/survey/vo/Survey.hbm.xml</value>
+				<value>com/survey/vo/TextAnswer.hbm.xml</value>
+				<value>com/survey/vo/User.hbm.xml</value>
+				<value>com/survey/vo/TUmUser.hbm.xml</value>
+				<value>com/survey/vo/TUmOrgan.hbm.xml</value>
+				<value>com/survey/vo/Attachment.hbm.xml</value>
+
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+	
+	
+	<!-- Transaction -->
+	
+	<!-- 定义事务管理器（声明式的事务） -->  
+    <bean id="transactionManager"
+        class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="mySessionFactory" />
+    </bean>
+   
+    <bean id="transactionInterceptor"  
+        class="org.springframework.transaction.interceptor.TransactionInterceptor">
+        <property name="transactionManager" ref="transactionManager" />
+        <!-- 配置事务属性 -->
+        <property name="transactionAttributes">
+            <props>
+                <prop key="*">PROPAGATION_REQUIRED</prop>
+            </props>
+        </property>
+    </bean>
+      
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+        <property name="beanNames">
+            <list>
+                <value>*Service</value>
+            </list>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>transactionInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+
+	
+	
+
+
+	<!-- Dao -->
+
+  	<bean id="surveyDao" class="com.survey.dao.impl.SurveyDaoImpl">
+    	<property name="sessionFactory">
+      		<ref local="mySessionFactory"/>
+    	</property>
+  	</bean>
+  	 <bean id="missionDao" class="com.survey.dao.impl.MissionDaoImpl">
+    	<property name="sessionFactory">
+      		<ref local="mySessionFactory"/>
+    	</property>
+  	</bean>
+  	
+  	<bean id="testDao" class="com.survey.dao.impl.TestDaoImpl">
+    	<property name="sessionFactory">
+      		<ref local="mySessionFactory"/>
+    	</property>
+  	</bean>
+
+  	 <bean id="deptDao" class="com.survey.dao.impl.DeptDaoImpl">
+         <property name="sessionFactory">
+      		<ref local="mySessionFactory"/>
+    	</property>
+  	</bean>
+  	 <bean id="reportDao" class="com.survey.dao.impl.ReportDaoImpl">
+         <property name="sessionFactory">
+      		<ref local="mySessionFactory"/>
+    	</property>
+  	</bean>
+  	
+  	<bean id="userDao" class="com.survey.dao.impl.UserDaoImpl">
+    	<property name="sessionFactory">
+      		<ref local="mySessionFactory"/>
+    	</property>
+  	</bean>
+  	  	
+  	<bean id="baseDao" class="com.survey.dao.impl.BaseDao">
+    	<property name="sessionFactory">
+      		<ref local="mySessionFactory"/>
+    	</property>
+  	</bean>
+  	
+  	
+  	<!-- Service -->
+
+  	<bean id="surveyService" class="com.survey.service.impl.SurveyServiceImpl">
+    	<property name="surveyDao">
+      		<ref local="surveyDao"/>
+    	</property>
+    	<property name="userDao">
+      		<ref local="userDao"/>
+    	</property>
+  	</bean>
+  	<bean id="deptService" class="com.survey.service.impl.DeptServiceImpl">
+    	<property name="deptDao">
+      		<ref local="deptDao"/>
+    	</property>
+  	</bean>
+  	
+  	<bean id="missionService" class="com.survey.service.impl.MissionServiceImpl">
+    	<property name="surveyDao">
+      		<ref local="surveyDao"/>
+    	</property>
+    	<property name="surveyService">
+      		<ref local="surveyService"/>
+    	</property>
+    	    <property name="missionDao">
+      		<ref local="missionDao"/>
+    	</property>
+  	</bean>
+
+  	  <bean id="reportService" class="com.survey.service.impl.ReportServiceImpl">
+    	<property name="reportDao">
+      		<ref local="reportDao"/>
+    	</property>
+    	<property name="baseDao">
+      		<ref local="baseDao"/>
+    	</property>
+  	</bean>
+
+
+    <bean id="userService" class="com.survey.service.impl.UserServiceImpl">
+    	<property name="userDao">
+      		<ref local="userDao"/>
+    	</property>
+    	<property name="baseDao">
+      		<ref local="baseDao"/>
+    	</property>
+  	</bean>
+  	
+  	<bean id="attachmentService" class="com.survey.service.impl.AttachmentServiceImpl">
+    	<property name="baseDao">
+      		<ref local="baseDao"/>
+    	</property>
+  	</bean>
+
+</beans>

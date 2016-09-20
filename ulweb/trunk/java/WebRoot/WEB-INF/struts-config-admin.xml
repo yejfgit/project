@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="roleClass" type="com.ulic.ulweb.ulweb.web.form.RoleClassForm"></form-bean>
+		
+	</form-beans>
+	<action-mappings>
+	<action
+			parameter="method"			
+			path="/admin/content"
+			type="com.ulic.ulweb.ulweb.web.action.admin.ContentAction"
+			validate="false">
+			<forward name="listPage" path="/admin/add/listcontent.jsp"></forward>
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			<forward name="addPage" path="/admin/add/addcontent.jsp"></forward>
+			<forward name="list" path="/admin/content.do?method=list"></forward>
+			<forward name="ajax" path="/frame/ajaxshow.jsp"></forward>
+			<forward name="bAdd" path="/admin/content.do?method=bAdd"></forward>
+			<forward name="editPage" path="/admin/add/editcontent.jsp"></forward>
+			<forward name="ajaxAdminContent" path="/frame/ajax2content.jsp"></forward>
+			<forward name="choseDept" path="/admin/content.do?method=choseDept"></forward>
+			<forward name="choseDeptPage" path="/admin/add/chosedept.jsp"></forward>
+			<forward name="addAPage" path="/admin/add/addAttachment.jsp"></forward>
+			</action>
+			
+		<action
+			parameter="method"
+			name="roleClass"
+			path="/admin/addRoleClass"
+			type="com.ulic.ulweb.ulweb.web.action.admin.AddRoleClassAction"
+			validate="false">
+			<forward name="listPage" path="/admin/add/listrole.jsp"></forward>
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			<forward name="editPage" path="/admin/add/editrole.jsp"></forward>
+			<forward name="list" path="/admin/addRoleClass.do?method=list"></forward>
+			<forward name="ajax" path="/frame/ajaxshow.jsp"></forward>
+			<forward name="choseColumns" path="/admin/add/chosecolumns.jsp"></forward>
+			<forward name="addPage" path="/admin/add/addrole.jsp"></forward>
+			<forward name="getUserPage" path="/frame/showadminuser.jsp"></forward>
+			<forward name="showUserPage" path="/admin/frame/adminuser.jsp"></forward>
+			</action>			
+		<action
+			parameter="method"	
+			path="/admin/column"
+			type="com.ulic.ulweb.ulweb.web.action.admin.ColumnAction"
+			validate="false">			
+			<forward name="ajax" path="/frame/ajaxshow.jsp"></forward>
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			<forward name="list" path="/admin/column.do?method=list"></forward>
+			<forward name="listPage" path="/admin/add/listcolumn.jsp"></forward>
+			<forward name="editPage" path="/admin/add/editcolumn.jsp"></forward>
+			<forward name="showPage" path="/admin/frame/column.jsp"></forward>
+			</action>		
+		<action
+			parameter="method"
+			path="/admin/dept"
+			type="com.ulic.ulweb.ulweb.web.action.admin.DeptAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			<forward name="list" path="/admin/dept.do?method=list"></forward>
+			<forward name="listPage" path="/admin/add/listdept.jsp"></forward>
+			<forward name="editPage" path="/admin/add/editdept.jsp"></forward>			
+			</action>
+		<action
+			parameter="method"
+			path="/admin/login"
+			type="com.ulic.ulweb.ulweb.web.action.LoginAction"
+			validate="false">
+			<forward name="pass" path="/admin/index.jsp"></forward>
+			<forward name="fail" path="/admin/login.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/admin/document"
+			type="com.ulic.ulweb.ulweb.web.action.admin.DocumentAction"
+			validate="false">
+			<forward name="documentList" path="/admin/add/listdocument.jsp"></forward>
+			<forward name="addAPage" path="/admin/add/adddattpage.jsp"></forward>
+			<forward name="addPage" path="/admin/add/adddocument.jsp"></forward>
+			<forward name="editAPage" path="/admin/add/adddattpage.jsp"></forward>
+			<forward name="list" path="/admin/document.do?method=list"></forward>
+			<forward name="editModelPage" path="/admin/add/editdocumentmodel.jsp"></forward>
+			<forward name="listModel" path="/admin/document.do?method=listModel"></forward>
+			<forward name="listModelPage" path="/admin/add/listdocumentmodel.jsp"></forward>
+			<forward name="viewModelPage" path="/admin/add/viewdocumentmodel.jsp"></forward>
+			<forward name="viewDocumentPage" path="/frame/showdocument.jsp"></forward>
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			<forward name="editPage" path="/admin/add/editdocument.jsp"></forward>
+			</action>
+			
+		<action
+			parameter="method"
+			path="/admin/report"
+			type="com.ulic.ulweb.ulweb.web.action.admin.ReportAction"
+			validate="false">
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			<forward name="editPage" path="/admin/add/editreport.jsp"></forward>
+			</action>
+		<action
+			parameter="method"
+			path="/editor/fckeditor/editor/dialog/admin/fckUpload"
+			type="com.ulic.ulweb.ulweb.web.action.admin.FckUploadAction"
+			validate="false">
+			<forward name="imageupload" path="/editor/fckeditor/editor/dialog/fck_image.jsp" redirect="true" />
+			</action>
+		<action
+			parameter="method"
+			path="/editor/fckeditor/editor/dialog/admin/fckUploadFlash"
+			type="com.ulic.ulweb.ulweb.web.action.admin.FckUploadFlashAction"
+			validate="false"></action>
+		<action
+			parameter="method"
+			path="/admin/config"
+			type="com.ulic.ulweb.ulweb.web.action.admin.ConfigAction"
+			validate="false">
+			<forward name="listPage" path="/admin/config/configlist.jsp"></forward>
+			<forward name="editPage" path="/admin/config/edit.jsp"></forward>
+			<forward name="infoPage" path="/frame/infopage.jsp"></forward>
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+		</action>
+		<action
+			parameter="method"
+			path="/admin/ad"
+			type="com.ulic.ulweb.ulweb.web.action.admin.AdAction"
+			validate="false">
+			<forward name="addPage" path="/admin/add/chosemainpagepic.jsp"></forward>
+			<forward name="confirmPage" path="/admin/add/confirmmainpagepic.jsp"></forward>
+			<forward name="listPage" path="/admin/add/listmainpagepic.jsp"></forward>
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+		</action>
+		<action
+			parameter="method"
+			path="/admin/template"
+			type="com.ulic.ulweb.ulweb.web.action.admin.DeptPageConfigAction"
+			validate="false">
+			<forward name="addPage" path="/admin/template/addtemplate.jsp"></forward>
+			<forward name="editPage" path="/admin/template/edittemplate.jsp"></forward>
+			<forward name="listPage" path="/admin/template/listtemplate.jsp"></forward>
+			<forward name="list" path="/admin/template.do?method=list"></forward>
+			<forward name="uploadPicOk" path="/admin/template/uploadok.jsp"></forward>
+			
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+		</action>
+		<action
+			parameter="method"
+			path="/admin/domain"
+			type="com.ulic.ulweb.ulweb.web.action.admin.DomainAction"
+			validate="false"></action>
+		<action
+			parameter="method"
+			path="/admin/first"
+			type="com.ulic.ulweb.ulweb.web.action.admin.FirstAction"
+			validate="false"></action>
+	</action-mappings>
+	
+	
+</struts-config>

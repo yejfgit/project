@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE web-app PUBLIC 
+          "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" 
+          "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/classes/com/ulic/ulweb/config/app-bean.xml,/WEB-INF/classes/com/ulic/ulweb/config/app-bean-ulweb2.xml</param-value>
+	</context-param>
+	
+ 
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<!-- Audit -->
+	<filter>
+		<filter-name>auditFilter</filter-name>
+		<filter-class>com.ulic.ulweb.ulweb2.web.filter.AuditFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>auditFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>auditFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>	
+	
+	<!-- Audit -->
+	
+	<!-- 页面缓存配置 ehcache 
+	<filter>
+		<filter-name>SimplePageFragmentCachingFilter</filter-name>
+		<filter-class>net.sf.ehcache.constructs.web.filter.SimplePageFragmentCachingFilter</filter-class>
+		<init-param>
+			<param-name>suppressStackTrace</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<init-param>
+			<param-name>cacheName</param-name>
+			<param-value>SimplePageFragmentCachingFilter</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>SimplePageFragmentCachingFilter</filter-name>
+		<url-pattern>/show.do</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>SimplePageFragmentCachingFilter</filter-name>
+		<url-pattern>/list.jsp</url-pattern>
+	</filter-mapping>
+	-->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+       <param-name>encoding</param-name>
+       <param-value>UTF-8</param-value>
+       </init-param>
+
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	
+	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<servlet>
+		<servlet-name>initData</servlet-name>
+		<servlet-class>com.ulic.ulweb.frame.servlet.InitServlet</servlet-class>
+		<init-param>
+			<param-name>listings</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<init-param>
+			<param-name>pageImg</param-name>
+			<param-value>/unionlife</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>	
+	
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/struts-config.xml,/WEB-INF/struts-config-admin.xml,/WEB-INF/struts-config-ulweb2.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>fileServlet</servlet-name>
+		<servlet-class>com.ulic.ulweb.ulweb2.web.servlet.FileServlet</servlet-class>
+	</servlet>		
+	<servlet-mapping>
+		<servlet-name>fileServlet</servlet-name>
+		<url-pattern>/files/*</url-pattern>
+	</servlet-mapping>	
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<taglib>
+    	<taglib-uri>/WEB-INF/tags/c.tld</taglib-uri>
+    	<taglib-location>/WEB-INF/tags/c.tld</taglib-location>
+  	</taglib>
+  	<taglib>
+    	<taglib-uri>struts-bean.tld</taglib-uri>
+    	<taglib-location>/WEB-INF/tags/struts-bean.tld</taglib-location>
+  	</taglib>
+  	<taglib>
+    	<taglib-uri>struts-html.tld</taglib-uri>
+    	<taglib-location>/WEB-INF/tags/struts-html.tld</taglib-location>
+  	</taglib>
+  	<taglib>
+    	<taglib-uri>struts-logic.tld</taglib-uri>
+    	<taglib-location>/WEB-INF/tags/struts-logic.tld</taglib-location>
+  	</taglib>  	 	  	
+  	<taglib>
+    	<taglib-uri>ulweb-list.tld</taglib-uri>
+    	<taglib-location>/WEB-INF/tags/ulweb-list.tld</taglib-location>
+  	</taglib>  	 	  	
+  	<taglib>
+		<taglib-uri>http://java.sun.com/jsp/jstl/core</taglib-uri>
+		<taglib-location>/WEB-INF/tags/jstl-c.tld</taglib-location>
+	</taglib>	
+  		
+	<resource-ref>
+		<description>DB Connection</description>
+		<res-ref-name>oracle</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+	
+<!-- 
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/error/errorpage.jsp</location>
+	</error-page>
+	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error/pagenotfound.jsp</location>
+	</error-page>
+ -->
+ 
+</web-app>

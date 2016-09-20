@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { margin: 0px; font-size: 14px}
+img { border: none}
+ul { margin: 0px}
+li { list-style: none; padding: 3px}
+h1 { font-size: 20px; margin: 10px}
+h2 { font-size: 16px; margin: 5px}
+a { text-decoration: none; color: #000000}
+a:hover { text-decoration: underline}
+
+#main { margin: auto; width: 1000px}
+#head { width: 100%}
+#nav { width: 100%}
+#box1 { width: 978px; height: 385px; background-color: #FFEE9C; border: solid 1px #F8C62B;
+	margin: 10px 10px 0px 10px}
+#box2 { width: 978px; height: 191px; background-color: #FFFED8; border: solid 1px #F8C62B;
+	margin: 10px 10px 0px 10px}
+#foot {background-image: url(images/foot.jpg);
+	width: 1000px; text-align: center; height: 100px; padding: 40px 0px 0px 0px; margin: auto;}
+
+#navbar1, #navbar2 { height: 24px; border-bottom: solid 1px #CCCCCC; text-align: center;
+	 padding: 3px 0px 0px 0px}
+#navbar1 { background-color: #FFEE9C }
+#navbar2 { background-color: #FFFED8 }
+
+#cola, #colb, #colc, #cold, #cole, #colf { float: left}
+#cola, #colc, #cold, #colf { width: 245px}
+#colb, #cole { width: 450px}
+
+
+#cola1 { background-color: #FFFFFF; margin: 5px 5px 5px 5px }
+#cola1_head { width: 215px; height: 16px; background-image: url(images/cola1_head.jpg)}
+#cola1_list ul { height: 107px; padding: 10px}
+#cola1_list li { border-bottom: dotted 1px #CCCCCC}
+#cola1_img { padding: 7px}
+#cola2 { height: 90px; margin: 5px 5px 5px 5px; background-color: #FFFFFF}
+
+
+#colb { background-color: #FFFFFF; margin: 5px 3px 5px 3px }
+#colb_head { width: 415px; height: 16px; background-image: url(images/colb_head.jpg) }
+#colb_body { height: 335px; padding: 5px}
+
+
+#colc1 { background-color: #FFFFFF; margin: 5px 5px 5px 5px }
+#colc1_head { width: 215px; height: 16px; background-image: url(images/colc_head.jpg)}
+#colc1_body { height: 240px; padding: 5px}
+#colc2 { height: 100px; background-color: #FFFFFF;  margin: 5px 5px 5px 5px;}
+
+#cold { margin: 5px 3px 5px 3px}
+#cold_head { height: 16px; background-image: url(images/cold_head.jpg) }
+#cold_body { background-color: #FFFFFF; padding: 3px}
+#box_vote_btn { text-align: center; padding: 3px}
+#btn_vote1, #btn_vote2 { width: 71px; height: 23px; border: none}
+#btn_vote1 { background-image: url(images/vote1.jpg)}
+#btn_vote2 { background-image: url(images/vote2.jpg)}
+#box_jiceng { background-color: #FFFFFF; margin: 5px 0px; padding: 5px }
+
+
+#cole { background-color: #FFFFFF; margin: 5px 3px 5px 3px}
+#cole_head { height: 16px; background-image: url(images/colb_head.jpg)}
+#cole_body { width: 445px; padding: 5px}
+#cole_body li { border-bottom: dotted 1px #CCCCCC}
+
+
+#colf { background-color: #FFFFFF; margin: 5px 3px 5px 3px}
+#colf_head { width: 215px; height: 16px; background-image: url(images/colc_head.jpg)}
+#colf_body { padding: 5px; height: 130px}
+#colf_body li { border-bottom: dotted 1px #CCCCCC}
+
+
+.red, .red a, .col_title a {  color: #CF070A  }
+.padding5 { padding: 5px}
+.col_title { color: #CF070A; font-size: 16px; font-weight: bold; padding: 7px 0px 5px 30px}
+
+
+#collist, #condetail { float: left; width: 710px; background-color: #FFFFFF; margin: 5px 3px 5px 3px}
+#collist_head, #condetail_head { height: 16px;
+	background-image: url(images/colb_head.jpg); background-repeat: no-repeat}
+#collist_body, #condetail_body { padding: 5px;}
+#collist_body li { border-bottom: dotted 1px #CCCCCC}
+#condetail_body h2 { text-align: right}
+#condetail_body p { padding: 10px}
+
+
+#col_page { padding: 5px; text-align: right; color: #CF070A; font-weight: bold}
+#col_page a {color: #CF070A}
+
+
+

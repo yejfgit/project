@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+div {
+font-family:"宋体";
+font-size:12px;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.fax {font-family: Arial}
+.email a{
+	color:#FFFFFF;
+	font-family: "黑体";
+	text-decoration: none;
+}
+.email a:hover{
+	font-family: "黑体";
+	text-decoration: underline;
+}
+.colTitle1{
+	font-family: "宋体";
+	font-size: 14px;
+	color: #000000;
+	font-weight: bold;
+}
+.colTitle2{
+	font-family: Arial;
+	font-size: 14px;
+	color: #999999;
+	font-weight: bold;
+}
+.colTitle3{
+	font-family: "黑体";
+	font-size: 14px;
+	font-weight: bold;
+}
+.colTitleRed{
+	color:#E6213D;
+	text-decoration:none;
+}
+.colTitleRed a:hover{
+	color:#E6213D;
+	text-decoration:underline;
+}
+.colMore{
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	color:#333333;
+	text-decoration:none;
+}
+.colMore a:hover{
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	color:#333333;
+	text-decoration:underline;
+}
+.colMore2{
+	color:#006600; 
+	text-decoration:underline;
+}
+.colMore2 a:hover{
+	color:#006600; 
+	text-decoration:none;
+}
+.colText{
+	color:#333333;
+	text-decoration:none;
+}
+.colText a:hover{
+	color:#E6213D;
+	text-decoration:underline;
+}
+.colTextGreen{
+	color:#0B7227; 
+	line-height:20px;
+	text-decoration:none;
+}
+.colTextGreen a:hover{
+	color:#0B7227; 
+	line-height:20px;
+	text-decoration:underline;
+}
+.search{
+	font-family: "宋体";
+	color: #666666;
+	font-size: 12px;
+}
+.topNav{
+	font-size: 14px;
+	color: #FFFFFF;
+	font-weight: bold;
+	padding: 3px 0px 0px 0px;
+}
+.topnav-text{
+	color: #FFFFFF;
+	font-family: "宋体";
+	font-size: 13px;
+	font-weight:bold;
+	text-decoration: none;
+}
+.topnav-text a:hover{
+	color:#FFFFFF;
+	font-family: "宋体";
+	font-size: 14px;
+	font-weight:bold;
+	text-decoration: none;
+}
+
+.bottomnav_text{
+	color: #CCCCCC;
+	text-decoration: underline;
+}
+.bottomnav_text a:hover{
+	color: #CCCCCC;
+	text-decoration: none;
+}
+.listText{
+	color:#666666;
+	text-decoration:none;
+}
+.listText a{
+	color:#666666;
+	text-decoration:none;
+}
+.listText a:hover{
+	color:#666666;
+	text-decoration:underline;
+}
+.leftLink{
+	color:#993300; 
+	text-decoration:underline;
+}
+.leftLink a:hover{
+	color:#993300; 
+	text-decoration:none;
+}
+.colNpText {
+	color:#000000;
+	font-weight:bold;
+	font-size:14px;
+	text-decoration:none;
+}
+.colNpText a:hover {
+	color:#000000;
+	font-weight:bold;
+	font-size:14px;
+	text-decoration:underline;
+}
+.subcolNpText {
+	color:#000000;
+	font-size:13px;
+	text-decoration:none;
+}
+.subcolNpText a:hover {
+	color:#006633;
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:none;
+}
+.subcolNpText2 {
+	color:#006633;
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:none;
+	background-color:#CAE68D;
+}
+.pageLink a{
+	color:#006600;
+	text-decoration:underline;
+}
+.pageLink a:hover{
+	color:#006600;
+	text-decoration:none;
+}
+

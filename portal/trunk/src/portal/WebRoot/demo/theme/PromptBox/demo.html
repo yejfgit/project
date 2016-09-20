@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>自定义弹出框</title>
+    <link href='skin/skin.css' rel='stylesheet' type='text/css' />
+<script src="jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="Cxc-Dialog.js" type="text/javascript"></script>
+</head>
+<body>
+<div style=" width:1003px; height:2000px;  margin:0 auto;">
+    <p><input id="Button1" type="button" value="确认提示框" style=" width:200px; height:25px; line-break:25px;" onclick="CxcDialog('提示框','拉动滚动条和改变窗口大小试试','OK')" /></p>
+    <p><input id="Button3" type="button" value="错误提示框" style=" width:200px; height:25px; line-break:25px;" onclick="CxcDialog('提示框','我是错误提示框，我再浏览器中间弹出','Error')" /><p>
+    <p><input id="Button2" type="button" value="警告提示框" style=" width:200px; height:25px; line-break:25px;" onclick="CxcDialog('提示框','我是警告提示框，鼠标按住拉动','Warning')" /></p>
+    <p><input id="Button4" type="button" value="其他提示框" style=" width:200px; height:25px; line-break:25px;" onclick="CxcDialog('提示框','我是其他提示框','Question')" /></p>
+</div>   
+</body>
+</html>
+<!--调用方法 什么时候弹出取决于什么事件执行
+单击onclick="CxcDialog('标题','内容','样式')" 
+OK 确认框
+Error 错误提示框
+Warning 警告提示框
+Question 其他提示框
+单击onclick="CxcDialog('标题','内容','样式')"--> 
+
+

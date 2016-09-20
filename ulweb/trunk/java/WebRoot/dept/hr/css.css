@@ -1,0 +1,47 @@
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 10pt; PADDING-BOTTOM: 0px; MARGIN: 0px 3px; PADDING-TOP: 0px; FONT-FAMILY: verdana, tahoma, arial, sans-serif
+}
+P {
+	MARGIN: 0px;
+	PADDING-TOP: 0px;
+	font-family: "¿¬Ìå_GB2312";
+	font-size: 16px;
+	text-decoration: none;
+
+}
+H1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 12pt; MARGIN: 0px; PADDING-TOP: 0px
+}
+TABLE.navbar {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 8pt; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: 0px; PADDING-TOP: 0px; BORDER-BOTTOM: 0px
+}
+TABLE.menu {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 12pt; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+TD.menuNormal {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; PADDING-BOTTOM: 0px; COLOR: black; PADDING-TOP: 0px
+}
+TD.menuNormal2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; PADDING-BOTTOM: 0px; MARGIN: 0px; CURSOR: hand; COLOR: #003399; PADDING-TOP: 0px
+}
+TD.menuHover {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; PADDING-BOTTOM: 0px; COLOR: black; PADDING-TOP: 0px; BACKGROUND-COLOR: #cdd9ed
+}
+DIV.menuNormal {
+	DISPLAY: none; POSITION: static
+}
+DIV.menuHover {
+	BORDER-RIGHT: #cdd9ed 1px solid; BORDER-TOP: #cdd9ed 1px solid; DISPLAY: inline; BORDER-LEFT: #cdd9ed 1px solid; BORDER-BOTTOM: #cdd9ed 1px solid; POSITION: absolute; BACKGROUND-COLOR: white
+}
+A.menuitem:link {
+	DISPLAY: block; COLOR: black; BACKGROUND-COLOR: white; TEXT-DECORATION: none
+}
+A.menuitem:visited {
+	DISPLAY: block; COLOR: black; BACKGROUND-COLOR: white; TEXT-DECORATION: none
+}
+A.menuitem:hover {
+	DISPLAY: block; COLOR: black; BACKGROUND-COLOR: #cdd9ed; TEXT-DECORATION: none
+}
+A.menuitem:active {
+	DISPLAY: block; COLOR: black; BACKGROUND-COLOR: #cdd9ed; TEXT-DECORATION: none
+}

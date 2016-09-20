@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mission>
+	<answer>
+		<question>14</question>
+		<option>31</option>
+		<option>29</option>
+	</answer>
+	<answer>
+		<question>15</question>
+		<option>32</option>
+	</answer>
+	<answer>
+		<question>16</question>
+		<option>35</option>
+	</answer>
+</mission>

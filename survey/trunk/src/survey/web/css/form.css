@@ -1,0 +1,26 @@
+@charset "utf-8";
+.STYLE2 {font-family: Arial, Helvetica, sans-serif}
+.STYLE3 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.STYLE4 {color: #FF0000}
+.STYLE5 {
+	font-size: 24px;
+	font-weight: bold;
+}
+.STYLE6 {color: #000000; font-size: 12px; text-decoration: none; font-family: Arial, Helvetica, sans-serif; }
+
+.form_table tr td { border-left: solid 1px #FF0000; border-top: solid 1px #FF0000}
+
+.form_table { border-right: solid 1px #FF0000; border-bottom: solid 1px #FF0000}
+
+.table tr td { border-left: solid 1px #333333; border-top: solid 1px #333333}
+
+.table { border-right: solid 1px #333333; border-bottom: solid 1px #333333}
+
+
+
+
+.tableWhite  tr td { border-left: none 0px #FFFFFF; border-top: none 0px #FFFFFF}
+
+.tableWhite  { border-right: none 0px #FFFFFF; border-bottom: none 0px #FFFFFF}

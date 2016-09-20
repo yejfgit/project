@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style>
+.content_login{
+margin:20px 20px 20px 20px;
+width:650px;
+border:2px solid #DADADA;
+}
+.login_top{
+background:#F5FDEC;
+border-bottom:2px solid #DADADA;
+height:33px;
+}
+.login_top img{
+float:left;
+height:33px;
+width:27px;
+}
+.login_top h5{
+float:left;
+margin:10px 5px 10px 5px;
+}
+.login_top span{
+float:left;
+margin:10px 10px 10px 0px;
+font-size:10px;
+}
+.login_con{
+margin:10px 10px 10px 20px;
+width:620px;
+}
+.login_table1 tr{
+height:40px;
+}
+.login_table1 .line{
+margin:0px 20px 0px 20px;
+height:1px;
+border-top:thin dotted #DADADA;
+line-height:1px;
+clear:both;
+display:block;
+overflow:hidden
+}
+.login_table1 .first{
+font-weight:700;
+}
+.STYLE1 {color: #FF0000}
+.button{
+background-color:#61A807;
+color:#FFFFFF;
+width:50px;
+height:25px;
+border:1px solid #61A807;
+}
+.input_text{
+border:1px solid #DADADA;
+width:175px;
+height:15px;
+}
+.input_text2{
+border:1px solid #DADADA;
+width:175px;
+height:15px;
+}
+.input_textarea{
+border:1px solid #DADADA;
+width:175px;
+height:80px;
+overflow:hidden;
+}
+.selected{
+border:1px solid #FF0000;
+}
+.input_hidden{
+display:none;
+color:#FF0000;
+width:100px;
+float:left;
+margin:5px 0px 0px 5px;
+}
+.checkbox{
+}
+</style>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script>
+$(document).ready(function() {
+			 $(".input_text").blur(function() {
+			 if($(this).val()==""){
+			 $(this).addClass("selected");
+			 var id=$(this).attr("id");
+			 $("#div"+id).css({"display":"block"});
+			 			 }
+						 else{
+						 var id=$(this).attr("id");
+						 $("#div"+id).css({"display":"none"});
+						 }
+					});
+			 $(".input_text").focus(function() {
+			 $(this).val("");
+			 $(this).removeClass("selected");
+					});
+			
+			$(".checkbox").click(function() {		
+			 var id=$(this).attr("id");
+			 //$("#div"+id).css({"display":"block"});
+			 var id=$(this).attr("id");
+			 $("#div"+id).animate({
+									height : 'toggle',
+									opacity : 'toggle'
+								}, "slow")
+			
+			});
+
+		})
+</script>
+</head>
+
+<body>
+<div class="content_login">
+   <div class="login_top">
+     <img src="图片2.jpg" /><h5>请填写申请资料</h5><span>您的相关信息只供认证使用</span>
+	</div>
+   <div class="login_con">
+    
+	<div class="login_table1">
+	<table width="617" border="0">
+	   <tr>
+       <td width="194" align="right" class="first">请填写基本资料</td>
+       <td width="413"></td>
+      </tr>
+      <tr>
+       <td align="right">ID:</td>
+       <td>KJOJO12457</td>
+      </tr>
+      <tr>
+       <td align="right"><span class="STYLE1">*</span>真实姓名:</td>
+       <td><div style="float:left;width:180px"><input type="text" id="inp1" class="input_text"/></div><div id="divinp1" class="input_hidden" >请输入姓名</div></td>
+      </tr>
+      <tr>
+       <td align="right"><span class="STYLE1">*</span>真实姓名:</td>
+       <td>123...4789 <span style="color:#DDDDDD;font-size:10px">已绑定</span><span>&nbsp;<a href="#" style="text-decoration:none;font-size:10px;color:#2D64B3">修改</a></span></td>
+      </tr>
+	  <tr>
+       <td colspan="2" align="right"><div class="line"></div></td>
+       </tr>
+	  </table>
+	 </div>
+	 
+	<div class="login_table1">
+	<table width="617" border="0">
+	   <tr>
+       <td width="194" align="right" class="first">请填写认证资料</td>
+       <td width="413"></td>
+      </tr>
+      <tr>
+       <td align="right" valign="top">我要认证:<br/>
+       <span style="font-size:10px;color:#D55111">(请至少选择一项)</span></td>
+       <td valign="top"><input name="checkbox1" id="checkbox1" type="checkbox" class="checkbox" value=""/>
+         学校信息
+	   <div style="display:none" id="divcheckbox1">
+	   <table>
+	   <tr><td><span class="STYLE1">*</span>学校类型</td><td><select>
+	     <option value="1">大学</option>
+	     <option value="2">大专</option>
+	   </select></td></tr>
+	   <tr><td><span class="STYLE1">*</span>学校名称:</td><td><div style="float:left;width:180px">
+	   <input type="text" id="inp2" class="input_text"/></div><div id="divinp2" class="input_hidden" >请输入名称</div></td></tr>
+	   <tr><td>专业名称:</td><td><input type="text" class="input_text2"/></td></tr>
+	   <tr><td><span class="STYLE1">*</span>证明材料:</td><td><input type="button" id="test" value="上传" class="button"/></td></tr>
+	   </table>
+	   </div>
+	   </td>
+      </tr>
+      <tr>
+       <td align="right"></td>
+       <td valign="top"><input name="checkbox2" type="checkbox" value="" class="checkbox" id="checkbox2"/>职业信息
+	   <div style="display:none" id="divcheckbox2">
+	   <table>
+	   <tr><td><span class="STYLE1">*</span>学校类型</td><td><select>
+	     <option value="1">大学</option>
+	     <option value="2">大专</option>
+	   </select></td></tr>
+	   <tr><td><span class="STYLE1">*</span>学校名称:</td><td><div style="float:left;width:180px">
+	   <input type="text" id="inp3" class="input_text"/></div><div id="divinp3" class="input_hidden" >请输入名称</div></td></tr>
+	   <tr><td>专业名称:</td><td><input type="text" class="input_text2"/></td></tr>
+	   <tr><td><span class="STYLE1">*</span>证明材料:</td><td><input type="button" id="test" value="上传" class="button"/></td></tr>
+	   </table>
+	   </div>
+	   </td>
+      </tr>
+      <tr>
+       <td align="right"></td>
+       <td valign="top"><input name="checkbox3" type="checkbox" value="" class="checkbox" id="checkbox3"/>其他信息
+	   <div style="display:none" id="divcheckbox3">
+	   <table>
+	   <tr><td><span class="STYLE1">*</span>学校类型</td><td><select>
+	     <option value="1">大学</option>
+	     <option value="2">大专</option>
+	   </select></td></tr>
+	   <tr><td><span class="STYLE1">*</span>学校名称:</td><td><div style="float:left;width:180px">
+	   <input type="text" id="inp4" class="input_text"/></div><div id="divinp4" class="input_hidden" >请输入名称</div></td></tr>
+	   <tr><td>专业名称:</td><td><input type="text" class="input_text2"/></td></tr>
+	   <tr><td><span class="STYLE1">*</span>证明材料:</td><td><input type="button" id="test" value="上传" class="button"/></td></tr>
+	   </table>
+	   </div>
+	   </td>
+      </tr>
+	  <tr>
+       <td align="right" valign="top"><span class="STYLE1">*</span>认证身份描述:</td>
+       <td><textarea name="" cols="" rows="" class="input_textarea"></textarea></td>
+      </tr>
+	  <tr>
+       <td align="right"></td>
+       <td><input type="button" id="test" value="提交" class="button"/></td>
+       </tr>
+	  </table>
+	 </div> 
+	 
+   </div>
+   
+    <div style="background-color:#F5FDEC;height:40px;"></div>
+</div>
+</body>
+</html>

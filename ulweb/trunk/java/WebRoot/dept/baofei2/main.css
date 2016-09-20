@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size: 13px;
+	background: url("images/body_bg.gif");
+}
+
+.logo_text {
+	color: #FFFFFF;
+	font-size: 24px;
+	padding: 40px 0px 0px 380px;
+}
+
+.index_col_title {
+	color: #000080;
+	font-weight: bold;
+	padding: 0px 0px 0px 10px;
+}
+
+a { text-decoration: none; color: #000000;}
+
+a:hover { text-decoration: underline;}
+
+li { padding: 2px}
+
+a.nav {}
+
+a:hover.nav { color: #FFFFFF; background-color: #CC0026 }

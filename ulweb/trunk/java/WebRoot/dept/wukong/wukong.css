@@ -1,0 +1,121 @@
+@charset "utf-8";
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color:#CCCCCC;
+}
+p {
+	margin: 5px;
+}
+
+ul,li{
+margin:0px;
+padding:0px;
+}
+li{
+display:inline;
+list-style:none;
+list-style-position:outside;
+text-align:center;
+font-weight:bold;
+float:left;
+}
+#nav a:link{
+color:#336601;
+text-decoration:none;
+float:left;
+width:80px;
+padding:0px 2px 0px 5px;
+}
+#nav a:visited{
+color:#336601;
+text-decoration:none;
+float:left;
+padding:0px 2px 0px 5px;
+width:80px;
+}
+#nav a:hover{
+color:white;
+float:left;
+padding:0px 2px 0px 5px;
+width:80px;
+text-decoration:none;
+background-color:#539D26;
+}
+#nav a:active{
+color:white;
+float:left;
+padding:0px 2px 0px 5px;
+width:80px;
+text-decoration:none;
+background-color:#BD06B4;
+}
+#nav{
+	border-bottom:0px;
+	padding:0px 5px;
+	position:absolute;
+	z-index:1;
+	overflow: visible;
+	visibility: visible;
+}
+.list{
+line-height:20px;
+text-align:left;
+padding:4px;
+font-weight:normal;
+}
+.menu1{
+width:80px;
+height:auto;
+margin:3px 3px 0px 0px;
+border:1px solid #9CDD75;
+background-color:#F1FBEC;
+color:#336601;
+padding:3px 0px 0px 0px;
+cursor:hand;
+overflow-y:hidden;
+}
+.menu2{
+width:80px;
+height:16px;
+margin:3px 3px 0px 0px;
+background-color:#F5F5F5;
+color:#336601;
+border:1px solid #EEE8DD;
+padding:3px 0px 0px 0px;
+overflow-y:hidden;
+cursor:hand;
+font-weight:normal;
+}
+.listTitle {
+	font-weight:bold;
+	font-size: 16px;
+	font-family: "";
+	color: #EF4A27;
+	text-decoration: none;
+}
+.readmore {
+	font-size: 12px;
+	font-family: "宋体";
+	color: #767676;
+	font-weight: normal;
+}
+.listContent {
+	font-family: "";
+	font-size: 12px;
+	color: #333333;
+	line-height: 18px;
+}
+.copyright {
+	font-size: 12px;
+	font-family: "";
+	color: #FFFFFF;
+}
+.bottomnav {
+	color: #222942;
+	font-family: "";
+	font-size: 12px;
+	text-decoration: none;
+}

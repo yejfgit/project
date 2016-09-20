@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<survey>
+	<name>abc</name>
+	<question>
+		<name>q1</name>
+		<type>0</type>
+		<option>
+			<name>o1</name>
+			<score>5</score>
+		</option>
+		<option>
+			<name>o2</name>
+			<score>0</score>
+		</option>
+	</question>
+	<question>
+		<name>q2</name>
+		<type>0</type>
+		<option>
+			<name>o1</name>
+			<score>5</score>
+		</option>
+		<option>
+			<name>o2</name>
+			<score>0</score>
+		</option>
+	</question>
+</survey>

@@ -1,0 +1,30 @@
+.bque{
+	font-size:14px;
+}
+.allTips{
+	display:none;
+	
+}
+
+.queDivCol{
+	background-color:#EFF6FB;
+	display:inline;
+	width��1100px;
+	
+}
+
+.btn{
+	background-color:#0e9cdf;
+	height: 25px;
+	color: white;
+	border: 1px;
+	border-color: #828282;
+}
+
+html{ 
+　　overflow-y:auto!important; 
+　　*overflow-y:scroll; 
+	overflow-x:auto!important; 
+　　*overflow-x:scroll; 
+　　} 
+

@@ -1,0 +1,14 @@
+/**Ҳѭ**/
+
+#marquee{width:890px;}
+#marquee_bg{background: #ffffff;}
+#marquee_left{float: left;  cursor: pointer;padding-top:85px; padding-right:10px}
+#marquee_right{float: left;cursor: pointer;padding-top:85px;padding-left:0px;}
+#marquee_middle{float: left; width:840px !important;border: 0px solid #B8AF98; height:240px; padding-top:8px; line-height:30px;}
+
+#marquee_run{width:99% !important;  overflow: hidden; cursor: pointer;}
+#marquee_table{width:100%; color:#4f7d33}
+#marquee_table image{margin:0 5px;}
+#marquee_table a{color:#4f7d33}
+#marquee_table a:hover{color:#ff9966}
+#marquee_table td{text-align: center; vertical-align: middle;}

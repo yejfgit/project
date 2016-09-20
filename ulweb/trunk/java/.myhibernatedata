@@ -1,0 +1,22 @@
+#
+#Tue Apr 13 12:12:14 CST 2010
+genBasicCompId=false
+sessionFactoryName=
+profile=
+daoSFId=
+version=3.0
+jndiPath=
+detectM2M=false
+reStrategyClass=
+springDaoFile=
+useJavaTypes=true
+keyGenerator=
+libInstallFolder=/WebRoot/WEB-INF/lib
+addLibs2Project=true
+genVersionTag=false
+sessionFactoryId=mySessionFactory
+basePersistenceClass=
+reSettingsFile=/ulweb/hibernate.reveng.xml
+configFile=/ulweb/src/applicationContext.xml
+createConfigFile=false
+addLibs2Classpath=true

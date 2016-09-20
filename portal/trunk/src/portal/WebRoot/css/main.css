@@ -1,0 +1,39 @@
+
+*{font-size: 14px;}
+body {margin: 0px; }
+img {display:block }
+
+
+/* 标题 */
+h1 {color: #333333;}
+h2 {color: #2D64B3;}
+h3 {margin: 0px; color: #2D64B3;}
+
+
+/* 列表 */
+li {list-style: none; margin: 0px; line-height: 25px; color: #2D64B3;}
+
+
+/* 分页 */
+a.page, a.page-sel {padding: 4px 7px 3px 7px; height: 25px; margin: 2px;}
+a.page {color: #2D64B3; border: solid 1px #DFEaF8; text-decoration: none; }
+a:hover.page {background-color: #DFEaF8; }
+a.page-sel {color: #333333; font-weight: bold; }
+.page-edge {color: #2D64B3; margin: 1px; height: 20px;} 
+
+
+/* 对话框 */
+.dialog-box { border: solid 1px #cccccc;  }
+.dialog-head {height: 20px; background-color: #DFEaF8; font-weight: bold; 
+	padding-top: 6px; padding-left: 6px; }
+.dialog-body {padding: 10px; background-color: #ffffff; }
+.dialog-close {float: right; margin-top: -22px; margin-right: 5px;}
+
+
+/* Tab标签 */
+.tab-box {background-color: #4F86D5; height: 30px;}
+.tab, .tab-sel {padding: 5px 20px; margin: 5px 5px -1px 5px; float: left; height: 14px; }
+a.tab, a.tab-sel {text-decoration: none; color: #000000;}
+.tab {background-color: #DFEaF8; border: solid 1px #2D64B3; border-bottom: none;}
+.tab-sel {background-color: #ffffff; font-weight: bold; border: solid 1px #2D64B3; border-bottom: none;}
+.tab-content-box {padding: 10px;}

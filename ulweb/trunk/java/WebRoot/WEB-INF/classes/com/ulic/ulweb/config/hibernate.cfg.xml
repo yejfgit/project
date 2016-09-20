@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+		<!-- <property name="hibernate.connection.datasource"> 
+		java:comp/env/oracle 
+		</property> 
+		<property name="show_sql">true</property> 
+		<property name="dialect"> 
+		com.huatech.sysframe.webapp.common.dao.hibernate.dialet.BaseInformixDialect 
+		</property> 
+		<property name="hibernate.generate_statistics">true</property> 
+		 -->
+		
+				
+        <!--
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.Oracle9Dialect
+		</property>
+
+
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.cache.use_second_level_cache">
+			false
+		</property>
+		
+			<property name="hibernate.transaction.factory_class">org.hibernate.transaction.JTATransactionFactory</property>
+			<property name="hibernate.transaction.manager_lookup_class">org.hibernate.transaction.JBossTransactionManagerLookup</property>
+		
+		<property
+			name="hibernate.transaction.flush_before_completion">
+			true
+		</property>
+        -->
+
+		<mapping resource="com/ulic/ulweb/ulweb2/entity/DeptEntity.hbm.xml" />
+		<mapping resource="com/ulic/ulweb/ulweb2/entity/AttachmentEntity.hbm.xml" />
+		<mapping resource="com/ulic/ulweb/ulweb2/entity/UlPolicy.hbm.xml" />
+		<mapping resource="com/ulic/ulweb/ulweb2/entity/ContentEntity.hbm.xml" />
+		<mapping resource="com/ulic/ulweb/ulweb2/entity/ColumnEntity.hbm.xml" />
+		<mapping resource="com/ulic/ulweb/ulweb2/entity/MailEntity.hbm.xml" />
+		<mapping resource="com/ulic/ulweb/ulweb2/entity/ContentTmplEntity.hbm.xml" />
+		<mapping resource="com/ulic/ulweb/ulweb2/entity/AuditEntity.hbm.xml" />
+		<mapping resource="com/ulic/ulweb/ulweb2/entity/MonitorEntity.hbm.xml" />
+		<mapping resource="com/ulic/ulweb/ulweb2/entity/MonitorClicksEntity.hbm.xml" />
+		<mapping resource="com/ulic/ulweb/ulweb2/entity/ContentClicksGoodEntity.hbm.xml" /> 
+	</session-factory>
+</hibernate-configuration>

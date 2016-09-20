@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/activation.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/asm.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/axis.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/axis-ant.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/cglib.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-codec-1.2.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-collections.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-digester.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/dom4j-1.6.jar" sourcepath="D:/opensource/src/dom4j-1.6.1.src.zip"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/hibernate3.jar" sourcepath="D:/opensource/src/hibernate-3.2-src.zip"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/javamail.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/jta.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/saaj.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/servlet-api.jar" sourcepath="D:/opensource/src/apache-tomcat-6.0.18-src.zip"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/spring.jar" sourcepath="D:/opensource/src/spring-src.zip"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/standard.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/struts.jar" sourcepath="D:/opensource/src/struts-1.2.9-src.zip"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/uuid-2.1.0.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/wsdl4j-1.5.1.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/xml-apis.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-fileupload.jar"/>
+	<classpathentry kind="src" path="/OA2.0"/>
+	<classpathentry kind="lib" path="/ulweb/WebRoot/WEB-INF/lib/commons-configuration-1.6.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="/ulweb/WebRoot/WEB-INF/lib/commons-pool.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-lang-2.4.jar"/>
+	<classpathentry kind="output" path="web/WEB-INF/classes"/>
+</classpath>

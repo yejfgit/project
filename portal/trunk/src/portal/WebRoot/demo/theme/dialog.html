@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Dialog</title>
+		<link href="../../css/main.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="../../script/common.js"></script>
+		<script type="text/javascript" src="../../script/msgbox.js"></script>
+		<script type="text/javascript" src="../../script/ajax.js"></script>
+		
+		<style>
+
+</style>
+	</head>
+
+	<body style="margin: 0px;">
+
+		<div class="tab-content-box">
+			<div id="tabContent1">
+				<a href="javascript:void(0)" 
+					onclick="openDialog(
+					'http://10.53.31.9:6080/portal/demo/theme/dialogBox.html', 
+					400, 300, '选择xx');return false;">打开对话框</a>
+				<div id="result"></div>
+				<select><option>a</option><option>b</option></select>
+			</div>
+
+		</div>
+		
+		
+
+		
+		
+	
+	</body>
+	
+</html>	
+
+
+<script>
+load_func();
+
+function returnDialog(s) {
+	g('result').innerHTML = 'result:' + s;
+	closeDialog();
+}
+
+
+
+</script>

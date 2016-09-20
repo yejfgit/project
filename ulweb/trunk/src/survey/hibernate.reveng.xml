@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<type-mapping>
+		<sql-type jdbc-type="varchar2"
+			hibernate-type="java.lang.String">
+		</sql-type>
+		<sql-type jdbc-type="number" hibernate-type="int"></sql-type>
+	</type-mapping>
+	<table name="T_SV_ANSWER" schema="WEBDEV">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+		<column name="ID" />
+	</table>
+	<table name="T_SV_SURVEY" schema="WEBDEV">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="T_SV_DEPT" schema="WEBDEV">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="T_SV_MISSION" schema="WEBDEV">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="T_SV_OPTION" schema="WEBDEV">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="T_SV_OPTION_ANSWER" schema="WEBDEV">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="T_SV_QUESTION" schema="WEBDEV">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="T_SV_TEXT_ANSWER" schema="WEBDEV">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+<table name="T_SV_USER" schema="WEBDEV">
+	<primary-key>
+		<generator class="sequence"></generator>
+	</primary-key>
+</table>
+</hibernate-reverse-engineering>

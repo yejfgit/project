@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+
+	<table name="UL_ORGAN" schema="WEBTEST" class="DeptEntity">
+		<primary-key>
+			<column name="ORGAN_ID" property="deptId" type="String" />
+		</primary-key>
+		<column name="ORGAN_NAME" property="deptName" type="String" />
+		<column name="ORGAN_MODEL" property="deptModel" type="int" />
+		<column name="CONTENT_TMPL_ID" property="contentTmplId"
+			type="int" />
+	</table>
+	<table name="UL_CONTENT_TMPL" schema="WEBTEST"
+		class="ContentTmplEntity">
+		<primary-key>
+			<generator class="sequence"></generator>
+			<column name="TMPL_ID" type="int" />
+		</primary-key>
+		<column name="TMPL_NAME" type="java.lang.String" />
+	</table>
+	<table name="UL_ATTACHMENT" schema="WEBTEST"
+		class="AttachmentEntity">
+		<primary-key>
+			<generator class="sequence"></generator>
+			<column name="ATTACHMENT_ID" type="int" />
+		</primary-key>
+		<column name="ATTACHMENT_PATH" />
+		<column name="IS_DELETE" type="int" />
+		<column name="CONTENT_ID" type="int" />
+		<column name="ATTACHMENT_ORDER" type="int" />
+		<column name="ATTACHMENT_TYPE" type="int" />
+		<column name="POLICY_ENTITY_ID" type="int" />
+		<column name="UPLOAD_USER" type="int" />
+		<column name="STATUS" type="int" />
+		<column name="NEED_GENERATE" type="int" />
+		<column name="NEED_SECURE" type="int" />
+	</table>
+	<table name="UL_COLUMN" schema="WEBTEST" class="ColumnEntity">
+		<primary-key>
+			<generator class="sequence"></generator>
+			<column name="COLUMN_ID" type="int" />
+		</primary-key>
+		<column name="ORGAN_ID" />
+		<column name="COLUMN_LEVEL" type="int" />
+		<column name="PARENT_ID" type="int" />
+		<column name="IS_DELETE" type="int" />
+		<column name="INCLUDE_COLUMN" type="int" />
+		<column name="SHOW_TO_USER" type="int" />
+		<column name="INCLUDE_CONTENT" type="int" />
+		<column name="COLUMN_ORDER" type="int" />
+		<column name="SHOW_OTHERS_CLASS" type="int" />
+		<column name="SHOW_ORGAN_CLASS" type="int" />
+		<column name="CONTENT_TMPL_ID" type="int" />
+		<column name="ORDER_NUM" type="int" />
+		<column name="OPEN_COLUMN" type="int" />
+	</table>
+	<table name="UL_CONTENT" schema="WEBTEST" class="ContentEntity">
+		<primary-key>
+			<generator class="sequence"></generator>
+			<column name="CONTENT_ID" type="int" />
+		</primary-key>
+		<column name="COLUMN_ID" type="int" />
+		<column name="IS_DELETE" type="int" />
+		<column name="ATTACHMENT_SUM" type="int" />
+		<column name="SHOW_OTHERS_CLASS" type="int" />
+		<column name="SHOW_ORGAN_CLASS" type="int" />
+		<column name="IS_QUICK_LINK" type="int" />
+		<column name="HAVE_CONTENT" type="int" />
+		<column name="ON_INDEX" type="int" />
+		<column name="DISPLAY_TYPE" type="int" />
+		<column name="QUICK_TIME_INT" type="int" />
+		<column name="UPLOAD_DEPT_INT" type="int" />
+		<column name="ORDER_NUM" type="int" />
+	</table>
+<table name="UL_MAIL" schema="WEBTEST" class="MailEntity">
+	<primary-key>
+		<generator class="sequence"></generator>
+		<column name="MAIL_ID" type="int"/>
+	</primary-key>
+	<column name="MAIL_ID" type="int" />
+	<column name="IS_SUCCESS" type="int" />
+	<column name="CONTENT_ID" type="int" />
+	<column name="ATTACHMENT_ID" type="int" />
+</table>
+</hibernate-reverse-engineering>

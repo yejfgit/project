@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	
+	<bean id="attachmentDAO" class="com.ulic.ulweb.ulweb.dao.UlAttachmentDAO" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default"></bean>
+	<bean id="columnDAO" class="com.ulic.ulweb.ulweb.dao.UlColumnDAO" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default"></bean>
+	<bean id="contentDAO" class="com.ulic.ulweb.ulweb.dao.UlContentDAO" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default"></bean>
+	<bean id="roleClassDAO" class="com.ulic.ulweb.ulweb.dao.UlRoleClassDAO" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default"></bean>
+	<bean id="voteAdminDAO" class="com.ulic.ulweb.ulweb.dao.UlVoteAdminDAO" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default"></bean>
+	<bean id="voteDAO" class="com.ulic.ulweb.ulweb.dao.UlVoteDAO" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default"></bean>
+	<bean id="voteLogDAO" class="com.ulic.ulweb.ulweb.dao.UlVoteLogDAO" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default"></bean>
+	<bean id="voteOptionDAO" class="com.ulic.ulweb.ulweb.dao.UlVoteOptionDAO" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default"></bean>
+	
+	<bean id="deptDAO" class="com.ulic.ulweb.ulweb.dao.UlDeptDAO" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default"></bean>
+	<bean id="reportDAO" class="com.ulic.ulweb.ulweb.dao.UlReportDAO" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default"></bean>
+	<bean id="chatDAO" class="com.ulic.ulweb.ulweb.dao.UlChatDAO" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default"></bean>
+	<bean id="fileDAO" class="com.ulic.ulweb.ulweb.dao.FilesDAO" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default"></bean>
+	<bean id="utilDAO" class="com.ulic.ulweb.ulweb.dao.UtilDAO" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default"></bean>
+	
+	<bean id="utilService" class="com.ulic.ulweb.ulweb.service.impl.UtilServiceImpl" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="utilDAO">
+			<ref bean="utilDAO" />
+		</property>
+	</bean>
+	<bean id="filesService" class="com.ulic.ulweb.ulweb.service.impl.FilesServiceImpl" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="fileDAO">
+			<ref bean="fileDAO" />
+		</property>
+	</bean>
+	<bean id="reportService" class="com.ulic.ulweb.ulweb.service.impl.UlReportServiceImpl" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="reportDAO">
+			<ref bean="reportDAO" />
+		</property>
+	</bean>
+	<bean id="chatService" class="com.ulic.ulweb.ulweb.service.impl.UlChatServiceImpl" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="chatDAO">
+			<ref bean="chatDAO" />
+		</property>
+	</bean>
+	<bean id="attachmentService" class="com.ulic.ulweb.ulweb.service.impl.UlAttachmentServiceImpl" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="attachmentDAO">
+			<ref bean="attachmentDAO" />
+		</property>
+		<property name="contentDAO">
+			<ref bean="contentDAO" />
+		</property>
+	</bean>
+	<bean id="deptService" class="com.ulic.ulweb.ulweb.service.impl.UlDeptServiceImpl" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="deptDAO">
+			<ref bean="deptDAO" />
+		</property>
+	</bean>
+	<bean id="columnService" class="com.ulic.ulweb.ulweb.service.impl.UlColumnServiceImpl" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="columnDAO">
+			<ref bean="columnDAO" />
+		</property>
+	</bean>
+	<bean id="contentService" class="com.ulic.ulweb.ulweb.service.impl.UlContentServiceImpl" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="contentDAO">
+			<ref bean="contentDAO" />
+		</property>
+		<property name="columnDAO">
+			<ref bean="columnDAO" />
+		</property>
+		<property name="roleClassDAO">
+			<ref bean="roleClassDAO" />
+		</property>
+	</bean>
+	<bean id="roleClassService" class="com.ulic.ulweb.ulweb.service.impl.UlRoleClassServiceImpl" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="roleClassDAO">
+			<ref bean="roleClassDAO" />
+		</property>
+	</bean>
+	<bean id="voteAdminService" class="com.ulic.ulweb.ulweb.service.impl.UlVoteAdminServiceImpl" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="voteAdminDAO">
+			<ref bean="voteAdminDAO" />
+		</property>
+	</bean>
+	<bean id="voteService" class="com.ulic.ulweb.ulweb.service.impl.UlVoteServiceImpl" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="voteDAO">
+			<ref bean="voteDAO" />
+		</property>
+	</bean>
+	<bean id="voteLogService" class="com.ulic.ulweb.ulweb.service.impl.UlVoteLogServiceImpl" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="voteLogDAO">
+			<ref bean="voteLogDAO" />
+		</property>
+	</bean>
+	<bean id="voteOptionService" class="com.ulic.ulweb.ulweb.service.impl.UlVoteOptionServiceImpl" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="voteOptionDAO">
+			<ref bean="voteOptionDAO" />
+		</property>
+	</bean>
+	
+	<!-- 070831 add for domain use  
+	<bean id="ldapSource" class="org.springframework.ldap.core.support.LdapContextSource">
+	    <property name="url" value="ldap://ulicdom.ulic.com.cn:389" />
+	    <property name="base" value="ou='合众人寿',dc=ulic,dc=com,dc=cn" ></property>
+	    <property name="userDn" value="cn=administrator,cn=users,dc=ulic,dc=com,dc=cn" />
+	    <property name="password" value="ulic1234" />
+	</bean>
+	  
+	<bean id="ldapTemplate" class="org.springframework.ldap.core.LdapTemplate">
+	   <constructor-arg ref="ldapSource" />
+	</bean>
+	   
+	
+	   <property name="ldapTemplate"><ref bean="ldapTemplate"/></property>
+	   -->
+
+	<bean id="domainDAO" class="com.ulic.ulweb.ulweb.dao.DomainDAO" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default"></bean>
+	
+	<bean id="domainService" class="com.ulic.ulweb.ulweb.service.impl.UlDomainServiceImpl" abstract="false" singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="domainDAO">
+			<ref bean="domainDAO" />
+		</property>
+	</bean>
+	<!--  end here -->
+	
+	
+</beans>

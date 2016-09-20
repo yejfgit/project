@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	
+	<bean id="myDataSource"
+		class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:/comp/env/oracle" />
+
+	</bean>
+	
+	<bean id="mySessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="myDataSource" />
+		</property>
+		
+		<property name="configLocations">       
+		  <list>       
+		    <value>classpath:com/ulic/ulweb/config/hibernate.cfg.xml</value>       
+		  </list>       
+		</property>
+		
+		<property name="hibernateProperties">
+		   <value>
+			hibernate.dialect=org.hibernate.dialect.Oracle9Dialect
+			hibernate.show_sql=false
+		  </value>
+	   </property>
+	</bean>
+	
+	<!-- edc datesource -->
+	
+	<bean id="dataSource"
+		class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:/comp/env/adobe" />
+		
+		<!-- 
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:oracle:thin:@10.18.1.115:1527:hruat">
+		</property>
+		<property name="username" value="esms"></property>
+		<property name="password" value="esmstest"></property>
+ -->
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.Oracle9Dialect
+				</prop>
+				<prop key="hibernate.show_sql">false</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>
+					com/ulic/ulweb/ulweb2/entity/Edcprincipalgroupentity.hbm.xml
+				</value>
+				<value>
+					com/ulic/ulweb/ulweb2/entity/Edcprincipalentity.hbm.xml
+				</value>
+				<value>
+					com/ulic/ulweb/ulweb2/entity/Edcprincipaluserentity.hbm.xml
+				</value>
+				<value>
+					com/ulic/ulweb/ulweb2/entity/CusEdcprincipalentitytype.hbm.xml
+				</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- edc datesource end  -->
+	
+	<bean id="deptAdminDao" class="com.ulic.ulweb.ulweb2.dao.impl.DeptDao" abstract="false"
+	 singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+	 	<property name="sessionFactory">
+	      <ref bean="mySessionFactory"/>
+	    </property>	
+	 </bean>
+	 
+	 <bean id="columnAdminDao" class="com.ulic.ulweb.ulweb2.dao.impl.ColumnDao" abstract="false"
+	 singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+	 	<property name="sessionFactory">
+	      <ref bean="mySessionFactory"/>
+	    </property>	
+	 </bean>
+	 
+	 <bean id="contentAdminDao" class="com.ulic.ulweb.ulweb2.dao.impl.ContentDao" abstract="false"
+	 singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+	 	<property name="sessionFactory">
+	      <ref bean="mySessionFactory"/>
+	    </property>	
+	 </bean>	 
+	 
+	<bean id="contentTmplAdminDao" class="com.ulic.ulweb.ulweb2.dao.impl.ContentTmplDao" abstract="false"
+	 singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+	 	<property name="sessionFactory">
+	      <ref bean="mySessionFactory"/>
+	    </property>	
+	 </bean>	 
+	 
+	<bean id="mailDao" class="com.ulic.ulweb.ulweb2.dao.impl.MailDao" abstract="false"
+	 singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+	 	<property name="sessionFactory">
+	      <ref bean="mySessionFactory"/>
+	    </property>	
+	 </bean>		 
+	
+	<!-- add by linda -->
+	<bean id="attachmentAdminDao"
+		class="com.ulic.ulweb.ulweb2.dao.impl.AttachmentDao" abstract="false"
+		singleton="true" lazy-init="default" autowire="default"
+		dependency-check="default">
+		<property name="sessionFactory">
+			<ref bean="mySessionFactory" />
+		</property>
+	</bean>
+	<bean id="groupDao" class="com.ulic.ulweb.ulweb2.dao.impl.GroupDao"
+		abstract="false" singleton="true" lazy-init="default"
+		autowire="default" dependency-check="default">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- add by linda end -->
+	
+	<bean id="auditDao" class="com.ulic.ulweb.ulweb2.dao.impl.AuditDao" abstract="false"
+	 singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+	 	<property name="sessionFactory">
+	      <ref bean="mySessionFactory"/>
+	    </property>	
+	 </bean>
+	 
+	<bean id="monitorDao" class="com.ulic.ulweb.ulweb2.dao.impl.MonitorDao" abstract="false"
+	 singleton="true" lazy-init="default" autowire="default" dependency-check="default">
+	 	<property name="sessionFactory">
+	      <ref bean="mySessionFactory"/>
+	    </property>	
+	 </bean>
+	
+	
+	
+	<bean id="deptAdminService" class="com.ulic.ulweb.ulweb2.service.impl.DeptService"
+	 abstract="false" singleton="true" lazy-init="default" autowire="default"
+	  dependency-check="default">
+		<property name="deptDao">
+			<ref bean="deptAdminDao" />
+		</property>
+		<property name="contentTmplService">
+			<ref bean="contentTmplAdminService" />
+		</property>		
+	</bean>
+	
+	<bean id="columnAdminService" class="com.ulic.ulweb.ulweb2.service.impl.ColumnService"
+	 abstract="false" singleton="true" lazy-init="default" autowire="default"
+	  dependency-check="default">
+		<property name="columnDao">
+			<ref bean="columnAdminDao" />
+		</property>
+		<property name="contentTmplService">
+			<ref bean="contentTmplAdminService" />
+		</property>	
+		<property name="deptService">
+			<ref bean="deptAdminService" />
+		</property>					
+	</bean>
+	
+	<bean id="contentAdminService" class="com.ulic.ulweb.ulweb2.service.impl.ContentService"
+	 abstract="false" singleton="true" lazy-init="default" autowire="default"
+	  dependency-check="default">
+		<property name="contentDao">
+			<ref bean="contentAdminDao" />
+		</property>
+		<property name="monitorDao">
+			<ref bean="monitorDao" />
+		</property>
+		<property name="attachmentService">
+			<ref bean="attachmentAdminService" />
+		</property>
+		<property name="contentTmplService">
+			<ref bean="contentTmplAdminService" />
+		</property>	
+		<property name="columnService">
+			<ref bean="columnAdminService" />
+		</property>					
+
+	</bean>	
+	
+	
+	<bean id="contentTmplAdminService" class="com.ulic.ulweb.ulweb2.service.impl.ContentTmplService"
+	 abstract="false" singleton="true" lazy-init="default" autowire="default"
+	  dependency-check="default">
+		<property name="contentTmplDao">
+			<ref bean="contentTmplAdminDao" />
+		</property>
+	</bean>		
+
+	<!-- add by linda -->
+	<bean id="attachmentAdminService"
+		class="com.ulic.ulweb.ulweb2.service.impl.AttachmentService"
+		abstract="false" singleton="true" lazy-init="default"
+		autowire="default" dependency-check="default">
+		<property name="attachmentDao">
+			<ref bean="attachmentAdminDao" />
+		</property>
+	</bean>
+
+	<bean id="groupAdminService"
+		class="com.ulic.ulweb.ulweb2.service.impl.GroupService"
+		abstract="false" singleton="true" lazy-init="default"
+		autowire="default" dependency-check="default">
+		<property name="groupDao">
+			<ref bean="groupDao" />
+		</property>
+	</bean>
+	<!-- add by linda end -->
+	
+	
+</beans>

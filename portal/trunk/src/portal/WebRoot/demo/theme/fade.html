@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<div id="dd" style="width: 100px; height: 100px; opacity:1.0; filter:alpha(opacity=100); background-color: #2D64B3;">&nbsp;</div>
+
+<input type="button" value="fade in" onclick="fadeIn()">
+<input type="button" value="fade out" onclick="fadeOut()">
+
+<script>
+
+var SPEED = 50;
+var STEP = 10;
+
+var t = null;
+var i = 0;
+var limit = 100;
+var type = '';
+
+/* µ­Èë */
+function fadeIn() {
+	type = 'in';
+	i = 0;
+	_f();
+}
+/* µ­³ö */
+function fadeOut() {
+	type = 'out';
+	i = 100;
+	_f();
+}
+
+
+function _f() {
+	var dd = document.getElementById('dd');
+	
+	if (type == 'in') {
+		
+		if (i <= limit) {
+			i += STEP;
+		} else {
+			clearTimeout(t);
+		}
+	
+	} else if (type == 'out') {
+		
+		if (i >= 0) {
+			i -= STEP;
+		} else {
+			clearTimeout(t);
+		}
+
+	}
+
+	dd.style.filter='alpha(opacity=' + i + ')';
+	dd.style.opacity=i/100.0;
+	
+	t = setTimeout(_f, SPEED);
+}
+
+
+</script>

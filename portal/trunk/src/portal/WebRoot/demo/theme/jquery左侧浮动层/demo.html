@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>侧栏与工具提示</title>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function(){
+	
+	$("ul.sidenav li").hover(function() {
+		$(this).find("div").stop().animate({left: "210", opacity:1}, "fast").css("display","block");
+		$(this).find(">a").addClass("current");
+	},function(){
+		$(this).find("div").stop().animate({left: "0", opacity: 0}, "fast");
+		$(this).find(">a").removeClass("current");
+	});
+	
+});
+</script>
+<style type="text/css">
+*{margin:0;padding:0;}
+body{background:#005094;font:12px Verdana, Arial, Helvetica, sans-serif;}
+a:focus{outline:none;}
+.demopage{margin:0 auto;width:900px;background:#005094;overflow:hidden;padding:20px;}
+/* sidenav */
+ul.sidenav{float:left;margin:130px 0 0;padding:0;width:200px;list-style:none;border-bottom:1px solid #3373a9;border-top:1px solid #003867;font-size:1.2em;}
+ul.sidenav li{position:relative;float:left;margin:0;padding:0;}
+ul.sidenav li a{border-top:1px solid #3373a9;border-bottom:1px solid #003867;padding:10px 10px 10px 25px;display:block;color:#fff;text-decoration:none;width:165px;background:#005094 url(images/sidenav_li_a.gif) no-repeat 5px 10px;position:relative;z-index:2;}
+ul.sidenav li a:hover,ul.sidenav li a.current{background-color:#004c8d;border-top:1px solid #1a4c76;}
+ul.sidenav li div{display:none;position:absolute;top:2px;left:0;width:225px;font-size:12px;background:url(images/bubble_top.gif) no-repeat right top;}
+ul.sidenav li div p{margin:7px 0;line-height:1.6em;padding:0 5px 10px 30px;background:url(images/bubble_btm.gif) no-repeat right bottom;}
+</style>
+
+</head>
+
+<body>
+
+	<div class="demopage">
+	
+		<ul class="sidenav">
+			<li>
+				<a href="http://www.17sucai.com/">首页</a>
+				<div><p>Go home!</p></div>
+			</li>
+			<li>
+				<a href="http://www.17sucai.com/">关于我们</a>
+				<div><p>知道我们的团队！</p></div>
+			</li>
+			<li>
+				<a href="http://www.17sucai.com/">投资组合</a>
+				<div><p>要看到我们在实验室工作吗？快来看看我们的特色工作！</p></div>
+			</li>
+			<li>
+				<a href="http://www.17sucai.com/">博客</a>
+				<div><p>每周更新，教程和资源。</p></div>
+			</li>
+			<li>
+				<a href="http://www.17sucai.com/">见证</a>
+				<div><p>看看其他客户对我们说。</p></div>
+			</li>
+			<li>
+				<a href="http://www.17sucai.com/">联系</a>
+				<div><p>打我们电话吧！</p></div>
+			</li>
+		</ul>
+		
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/* global */
+body { font-size: 12px; margin: 0px; padding: 0px}
+
+a { color: #000000; text-decoration: none}
+
+a:hover { text-decoration: underline}
+
+h1 { font-size: 14px; font-weight: bold}
+
+h2 { font-size: 12px; font-weight: bold; margin: 4px}
+
+p { margin: 0px; padding: 0px}
+
+img { border: none}
+
+
+#main { width: 980px; margin: auto; padding: 0px}
+
+/* head */
+#head {}
+
+#head_pic { width: 100%; padding: 5px; margin: 0px}
+
+#head_nav { width: 98%; height: 50px; background:url(images/nav.jpg) no-repeat; padding: 0px 10px; margin: 0px 5px}
+
+#head_nav ul { margin: 0px; padding: 0px}
+
+#head_nav li { list-style: none; float:left; width: 150px; height: 30px; background: url(images/nav_btn.jpg) no-repeat;
+	 text-align: center; padding: 7px 0px; margin: 10px 0px}
+	 
+#head_nav li a {font-family:"黑体"; font-size: 16px; color: #FFFFEF;}
+
+#counter { font-size: 14px; font-weight: bold; line-height: 50px; text-align: center}
+
+
+/* body */
+#body { width: 100%; padding: 5px}
+
+/* column title */
+.col_title {overflow: hidden; text-overflow:ellipsis}
+
+.col_title h1 { margin: 8px 32px; color: #FD711F}
+
+.col_title h1 a {color: #FD711F}
+
+/* column layout */
+.col_small, .col_big, .container { float: left; margin: 5px}
+
+.col_small { width: 247px}
+
+.col_big { width: 448px}
+
+.col_small ul, .col_big ul, .container ul { margin: 0px; padding: 5px}
+
+.col_small li, .col_big li, .container li { list-style: url(images/list_square.jpg) inside;
+	 padding: 5px; margin: 0px; line-height: 10px; border-bottom: dotted 1px #CFCFCD}
+
+div.col_small div.col_title, div.col_big div.col_title, div.container div.col_title { height: 32px}
+
+div.col_small div.col_title { background: url(images/col_head_small.jpg) no-repeat}
+
+div.col_big div.col_title { background: url(images/col_head_big.jpg) no-repeat }
+
+.col_content { border: solid 1px #D3D3D3; border-top: none; height: 150px; padding: 0px 3px}
+
+/* sub column multi-sheet effect */
+.col_sub_content { border: solid 1px #D3D3D3; border-top: none; height: 150px; width: 443px}
+
+.col_sub_btn_on, .col_sub_btn_off { float: left; width: 74px; height: 23px;  cursor: hand;
+	 margin: 5px 5px 0px 5px; text-align: center}
+
+.col_sub_btn_on {background: url(images/sheet_btn_on.jpg) no-repeat}
+
+.col_sub_btn_off {background: url(images/sheet_btn_off.jpg) no-repeat}
+
+.col_sub_btn_on h2 a {color: #FEFEFA}
+
+.col_sub_btn_off h2 a { color: #FD7322}
+
+.col_sub_content_on, .col_sub_content_off { width: 446px}
+
+.col_sub_content_on { display: block}
+
+.col_sub_content_off { display: none}
+
+
+/* system link */
+#link1 { width: 238px; height: 110px; margin: 5px; border: solid 5px #F4F4F4}
+
+#link1 ul { padding: 0px; margin: 0px}
+
+#link1 li { list-style: none; height: 40px; padding: 10px}
+
+#link1 li a { font-family: "黑体"; font-size: 16px; color: #FD7322}
+
+.bg_orange { background-color: #FCEEDF}
+
+.bg_white { background-color: #FEFEFA}
+
+
+/* search box */
+#search { width: 216px; height: 25px; background: url(images/search_box.jpg) no-repeat; margin: 0px; padding: 16px}
+
+#btn_search { width: 48px; height: 23px; border: none; cursor: hand; background: url(images/btn_search.jpg) no-repeat}
+
+#input_search { width: 150px}
+
+
+/*  */
+#body_pic { float: left; margin: 5px }
+
+
+#grp_content { width: 720px; float: left}
+
+
+/* right bottom link */
+#grp_link { float: left}
+
+.link_combo { width: 235px; height: 85px; border: solid 5px #F4F4F4; margin: 5px 0px}
+
+.link_pic { width: 85px; height: 80px; float: left; text-align: center}
+
+.link_title { width: 140px; height: 10px; float: left; padding: 5px 0px; margin: 0px}
+
+.link_title h1, .link_title h1 a {color: #FD711F; font-size: 14px; line-height: 10px; margin: 0px; padding: 3px}
+
+.link_desc{ width: 140px; height: 30px; float: left; line-height: 15px; padding: 2px 2px}
+
+
+
+#foot { width: 960px; height: 30px; margin: 10px 0px; padding: 10px; border-top: solid 1px #FD7322; text-align: center}
+
+
+/* list & detail page */
+.container { width: 700px}
+
+.col_content p { line-height: 20px; padding: 10px}
+
+.col_content h1 { font-size: 16px; text-align: center; line-height: 30px; color: #000000}
+
+.col_content h2 { text-align: right}
+
+div.container div.col_title { background: url(images/col_head_list.jpg) no-repeat}
+
+div.container div.col_title h1 a { font-size: 14px; color: #FD711F}
+
+#col_page { padding: 5px; text-align: right; color: #FD7322; font-weight: bold}
+
+#col_page a {color: #FD7322}
+
+#grp_right { float: right; width: 240px}
+
+
+

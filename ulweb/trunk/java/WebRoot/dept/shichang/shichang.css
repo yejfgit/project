@@ -1,0 +1,124 @@
+@charset "utf-8";
+p {
+margin:5px;}
+.navtop_text {
+	font-size: 14px;
+	color: #333333;
+	text-decoration:none;
+}
+.navtop_text a:hover {
+	font-size: 14px;
+	color: #333333;
+	text-decoration:underline;
+}
+.navtop_text2 {
+	color: #FFFFFF;
+	font-size: 14px;
+}
+.withyou {
+	font-family: "华文行楷";
+	font-size: 24px;
+	color: #1661F6;
+}
+.navleft_text {
+	font-family: "宋体";
+	font-size: 16px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.navleft_text a:hover {
+	font-family: "宋体";
+	font-size: 16px;
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.navleft_find {font-family: "宋体"; font-size: 14px; }
+.navleft_col {
+	padding:5px 5px 0px 5px;
+	line-height:25px;
+	margin: 5px;
+	text-align: left;
+}
+
+.body_nav {
+	padding:5px 5px 5px 5px;
+
+}
+.body_nav_text{
+	font-family: "宋体";
+	font-size: 14px;
+	color: #1061F7;
+	text-decoration:none;
+}
+.body_nav_text a:hover {
+	font-family: "宋体";
+	font-size: 14px;
+	color: #1061F7;
+	text-decoration:underline;
+}
+.bodycenter {
+padding:10px 10px 10px 10px;
+}
+.bodycenter_div {
+	padding:5px 5px 5px 5px;
+	height: 30px;
+}
+.divtitle_box {
+	height:20px;
+}
+.divtitle {
+	color: #1661F6;
+	text-decoration: underline;
+	font-family: "宋体";
+	font-size: 12pt;
+	width: 380px;
+	float: left;
+}
+.divtitle_more {
+	color: #000000;
+	text-decoration: none;
+	font-family: "宋体";
+	font-size: 10pt;
+	width: 50px;
+	float: left;
+}
+.divtitle_more a:hover {
+	color: #000000;
+	text-decoration: underline;
+	font-family: "宋体";
+	font-size: 10pt;
+	width: 50px;
+	float: left;
+}
+
+.divcontent{
+	padding:5px 5px 5px 5px;
+	margin: 5px 10px 0px 10px;
+	border:solid #6699FF 1px;
+	background-color: #FFFFFF;
+}
+.prd_link div {
+	padding:5px 5px 5px 5px;
+	width: 90px;
+	float: left;
+	text-align: center;
+	font-family: "宋体";
+	font-size: 14px;
+	color: #FFFFFF;
+}
+.prd_link_a {
+	color:#FFFFFF;
+	text-decoration:none;
+}
+.prd_link_a a:hover {
+	color:#FFFFFF;
+	text-decoration:underline;
+}
+
+.bodycontent_list {
+	padding:20px 10px 10px 20px;
+	height: 330px;
+}
+.bodycontent_page {
+	padding:10px 10px 10px 20px;
+}

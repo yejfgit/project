@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery下拉菜单导航仿京东商城商品分类导航样式</title>
+<meta name="description" content="jquery hover事件下拉菜单导航仿京东商城商品分类导航样式布局，通过鼠标滑过商品分类导航展示商品分类子菜单内容的效果。" />
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+(function($){
+	$.fn.hoverForIE6=function(option){
+		var s=$.extend({current:"hover",delay:10},option||{});
+		$.each(this,function(){
+			var timer1=null,timer2=null,flag=false;
+			$(this).bind("mouseover",function(){
+				if (flag){
+					clearTimeout(timer2);
+				}else{
+					var _this=$(this);
+					timer1=setTimeout(function(){
+						_this.addClass(s.current);
+						flag=true;
+					},s.delay);
+				}
+			}).bind("mouseout",function(){
+				if (flag){
+					var _this=$(this);timer2=setTimeout(function(){
+						_this.removeClass(s.current);
+						flag=false;
+					},s.delay);
+				}else{
+					clearTimeout(timer1);
+				}
+			})
+		})
+	}
+})(jQuery);
+</script>
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font-family:"宋体",Arial,Lucida,Verdana,Helvetica,sans-serif;font-size:12px;color:#333;line-height:150%;background:#fff;}
+a:link,a:visited{color:#333;text-decoration:none;}
+a:hover{color:#c00;text-decoration:underline;}
+a:active{color:#900;}
+/* navsort */
+.navsort,.carbox,.allsort,.allsort .mt .extra,.allsort h3,.allsort s,.allsort .close{background:url(images/nav-sort.gif) no-repeat;}
+.navsort{width:960px;height:50px;background-position:0 1px;background-repeat:repeat-x;margin:40px auto 0 auto;}
+.carbox{width:226px;height:50px;float:right;background-position:0 -152px;}
+.searcbox{width:334px;height:31px;overflow:hidden;float:left;margin:10px 0 0 15px;display:inline;background:url(images/searchbox.gif) no-repeat;}
+/*allsort*/
+.allsort{float:left;width:211px;height:50px;background-position:0px -101px;position:relative;z-index:11;}
+.allsort .mt{height:24px;padding:14px 12px 12px 16px;line-height:24px;cursor:pointer;overflow:hidden;}
+.allsort .mt strong{float:left;font-size:14px;color:#630;}
+.allsort .mt .extra{float:right;overflow:hidden;width:22px;height:22px;background-position:-214px -52px;}
+.allsort .mc{display:none;position:absolute;top:45px;overflow:visible;width:203px;padding:0 3px 0;border:solid #C40000;border-width:0 1px 1px;background:#FEF8EF;-moz-border-radius:0 0 5px 5px;-webkit-border-radius:0 0 5px 5px;}
+.allsort .item{width:203px;height:32px;border-top:1px solid #FDE6D2;}
+.allsort .fore{border-top:none;}
+.allsort span{display:block;width:203px;position:relative;z-index:1;}
+.allsort h3{font-size:14px;width:140px;height:30px;padding-left:20px;border:solid #FEF8EF;border-width:1px 0 1px 1px;background-position:-241px -57px;font-weight:normal;}
+.allsort h3 a:link,.allsort h3 a:visited{display:block;height:30px;line-height:30px;color:#333;}
+.allsort h3 a:hover,.allsort h3 a:active{color:#1B578A;}
+.allsort s{display:block;position:absolute;top:10px;left:182px;width:13px;height:13px;background-position:-218px -106px;}
+.allsort .item .i-mc{display:none;position:absolute;left:163px;top:0;width:700px;border:1px solid #c30;background:#FFF9EF;overflow:hidden;}
+.allsort .item dt{padding:3px 6px 0 0;font-weight:bold;}
+.allsort .item dd{padding:3px 0 0;overflow:hidden;zoom:1;}
+.allsort .subitem{float:left;width:464px;min-height:400px;padding:0 4px 0 8px;}
+.allsort .subitem dl{border-top:1px solid #FFEFD7;padding:6px 0;overflow:hidden;zoom:1;}
+.allsort .subitem .fore{border-top:none;}
+.allsort .subitem dt{float:left;width:54px;line-height:22px;text-align:right;color:#c00;}
+.allsort .subitem dd{float:left;width:402px;}
+.allsort .subitem em{float:left;height:14px;margin:4px 0;line-height:14px;padding:0 8px;border-left:1px solid #ccc;font-style:normal;white-space:nowrap;}
+.allsort .fr{background:#fff;width:194px;padding:0 15px 2010px 15px;margin-bottom:-2000px;float:right;}
+.allsort .fr dl{padding-bottom:0;}
+.allsort .mc .extra{padding:7px 8px;background:#FDF1DE;border-top:1px solid #FDE6D2;}
+.allsorthover{background-position:0 -50px;}
+.allsorthover .mt .extra{background-position:-214px -75px;}
+.allsorthover .mc{display:block;}
+.allsort .hover span{z-index:13;width:160px;}
+.allsort .hover h3{font-size:14px;border:solid #c30;border-width:1px 0 1px 1px;overflow:hidden;background:url(images/nav-sort.gif) #FFF9EF no-repeat -241px -57px;font-weight:bold;}
+.allsort .hover s{display:none;}
+.allsort .hover .i-mc{display:block;z-index:12;}
+*html .allsort .item dd{padding-bottom:6px;}
+*html .allsort .subitem{height:400px;}
+.allsort .close{position:absolute;top:6px;left:674px;z-index:14;width:19px;height:19px;background-position:-216px -125px;cursor:pointer;}
+</style>
+</head>
+
+<body>
+
+<div class="navsort">
+
+	<div class='allsort'>
+		
+		<div class='mt'><strong><a href="http://www.17sucai.com/">全部商品分类</a></strong><div class='extra'>&nbsp;</div></div>
+		
+		<div class='mc'>
+			<div class='item fore'>
+				<span><h3><a href="http://www.17sucai.com/">图书</a></h3><s></s></span>
+				<div class='i-mc'>
+					<div class='close' onclick="$(this).parent().parent().removeClass('hover')"></div>
+					<div class='subitem'>
+						<dl class='fore'>
+							<dt>文艺</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>小说</a></em>
+								<em><a href='http://www.17sucai.com/'>文学</a></em>
+								<em><a href='http://www.17sucai.com/'>青春文学</a></em>
+								<em><a href='http://www.17sucai.com/'>传记</a></em>
+								<em><a href='http://www.17sucai.com/'>艺术</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>少儿</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>少儿</a></em>
+								<em><a href='http://www.17sucai.com/'>0-2岁</a></em>
+								<em><a href='http://www.17sucai.com/'>3-6岁</a></em>
+								<em><a href='http://www.17sucai.com/'>7-10岁</a></em>
+								<em><a href='http://www.17sucai.com/'>11-14岁</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>人文社科</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>历史</a></em>
+								<em><a href='http://www.17sucai.com/'>哲学</a></em>
+								<em><a href='http://www.17sucai.com/'>国学</a></em>
+								<em><a href='http://www.17sucai.com/'>政治/军事</a></em>
+								<em><a href='http://www.17sucai.com/'>法律</a></em>
+								<em><a href='http://www.17sucai.com/'>宗教</a></em>
+								<em><a href='http://www.17sucai.com/'>心理学</a></em>
+								<em><a href='http://www.17sucai.com/'>文化</a></em>
+								<em><a href='http://www.17sucai.com/'>社会科学</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>经管励志</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>经济</a></em>
+								<em><a href='http://www.17sucai.com/'>金融与投资</a></em>
+								<em><a href='http://www.17sucai.com/'>管理</a></em>
+								<em><a href='http://www.17sucai.com/'>励志与成功</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>生活</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>生活</a></em>
+								<em><a href='http://www.17sucai.com/'>健身与保健</a></em>
+								<em><a href='http://www.17sucai.com/'>家庭与育儿</a></em>
+								<em><a href='http://www.17sucai.com/'>旅游</a></em>
+								<em><a href='http://www.17sucai.com/'>动漫/幽默</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>科技</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>科技</a></em>
+								<em><a href='http://www.17sucai.com/'>工程</a></em>
+								<em><a href='http://www.17sucai.com/'>建筑</a></em>
+								<em><a href='http://www.17sucai.com/'>医学</a></em>
+								<em><a href='http://www.17sucai.com/'>科学与自然</a></em>
+								<em><a href='http://www.17sucai.com/'>计算机与互联网</a></em>
+								<em><a href='http://www.17sucai.com/'>体育/运动</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>教育</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>教材教辅</a></em>
+								<em><a href='http://www.17sucai.com/'>教育与考试</a></em>
+								<em><a href='http://www.17sucai.com/'>外语学习</a></em>
+								<em><a href='http://www.17sucai.com/'>新闻出版</a></em>
+								<em><a href='http://www.17sucai.com/'>语言文字</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>其它</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>工具书</a></em>
+								<em><a href='http://www.17sucai.com/'>影印版</a></em>
+								<em><a href='http://www.17sucai.com/'>套装书</a></em>
+							</dd>
+						</dl>
+					</div>
+					<div id="JD_sort_k" class='fr'>
+						<img src="images/1593.jpg" width="194" height="70" alt="" style="margin-top:30px;" />
+					</div>
+				</div>
+			</div>
+			
+			<div class='item'>
+				<span><h3><a href="http://www.17sucai.com/">家用电器、汽车用品</a></h3><s></s></span>
+				<div class='i-mc'>
+					<div class='close' onclick="$(this).parent().parent().removeClass('hover')"></div>
+					<div class='subitem'>
+						<dl>
+							<dt>少儿</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>少儿</a></em>
+								<em><a href='http://www.17sucai.com/'>0-2岁</a></em>
+								<em><a href='http://www.17sucai.com/'>3-6岁</a></em>
+								<em><a href='http://www.17sucai.com/'>7-10岁</a></em>
+								<em><a href='http://www.17sucai.com/'>11-14岁</a></em>
+							</dd>
+						</dl>
+						<dl class='fore'>
+							<dt>文艺</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>小说</a></em>
+								<em><a href='http://www.17sucai.com/'>文学</a></em>
+								<em><a href='http://www.17sucai.com/'>青春文学</a></em>
+								<em><a href='http://www.17sucai.com/'>传记</a></em>
+								<em><a href='http://www.17sucai.com/'>艺术</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>人文社科</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>历史</a></em>
+								<em><a href='http://www.17sucai.com/'>哲学</a></em>
+								<em><a href='http://www.17sucai.com/'>国学</a></em>
+								<em><a href='http://www.17sucai.com/'>政治/军事</a></em>
+								<em><a href='http://www.17sucai.com/'>法律</a></em>
+								<em><a href='http://www.17sucai.com/'>宗教</a></em>
+								<em><a href='http://www.17sucai.com/'>心理学</a></em>
+								<em><a href='http://www.17sucai.com/'>文化</a></em>
+								<em><a href='http://www.17sucai.com/'>社会科学</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>经管励志</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>经济</a></em>
+								<em><a href='http://www.17sucai.com/'>金融与投资</a></em>
+								<em><a href='http://www.17sucai.com/'>管理</a></em>
+								<em><a href='http://www.17sucai.com/'>励志与成功</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>生活</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>生活</a></em>
+								<em><a href='http://www.17sucai.com/'>健身与保健</a></em>
+								<em><a href='http://www.17sucai.com/'>家庭与育儿</a></em>
+								<em><a href='http://www.17sucai.com/'>旅游</a></em>
+								<em><a href='http://www.17sucai.com/'>动漫/幽默</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>科技</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>科技</a></em>
+								<em><a href='http://www.17sucai.com/'>工程</a></em>
+								<em><a href='http://www.17sucai.com/'>建筑</a></em>
+								<em><a href='http://www.17sucai.com/'>医学</a></em>
+								<em><a href='http://www.17sucai.com/'>科学与自然</a></em>
+								<em><a href='http://www.17sucai.com/'>计算机与互联网</a></em>
+								<em><a href='http://www.17sucai.com/'>体育/运动</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>教育</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>教材教辅</a></em>
+								<em><a href='http://www.17sucai.com/'>教育与考试</a></em>
+								<em><a href='http://www.17sucai.com/'>外语学习</a></em>
+								<em><a href='http://www.17sucai.com/'>新闻出版</a></em>
+								<em><a href='http://www.17sucai.com/'>语言文字</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>其它</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>工具书</a></em>
+								<em><a href='http://www.17sucai.com/'>影印版</a></em>
+								<em><a href='http://www.17sucai.com/'>套装书</a></em>
+							</dd>
+						</dl>
+					</div>
+					<div id="JD_sort_k" class='fr'>
+						<img src="images/1593.jpg" width="194" height="70" alt="" style="margin-top:30px;" />
+					</div>
+				</div>
+			</div>
+			
+			<div class='item'>
+				<span><h3><a href="http://www.17sucai.com/">手机数码</a></h3><s></s></span>
+				<div class='i-mc'>
+					<div class='close' onclick="$(this).parent().parent().removeClass('hover')"></div>
+					<div class='subitem'>
+						<dl class='fore'>
+							<dt>文艺</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>小说</a></em>
+								<em><a href='http://www.17sucai.com/'>文学</a></em>
+								<em><a href='http://www.17sucai.com/'>青春文学</a></em>
+								<em><a href='http://www.17sucai.com/'>传记</a></em>
+								<em><a href='http://www.17sucai.com/'>艺术</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>少儿</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>少儿</a></em>
+								<em><a href='http://www.17sucai.com/'>0-2岁</a></em>
+								<em><a href='http://www.17sucai.com/'>3-6岁</a></em>
+								<em><a href='http://www.17sucai.com/'>7-10岁</a></em>
+								<em><a href='http://www.17sucai.com/'>11-14岁</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>人文社科</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>历史</a></em>
+								<em><a href='http://www.17sucai.com/'>哲学</a></em>
+								<em><a href='http://www.17sucai.com/'>国学</a></em>
+								<em><a href='http://www.17sucai.com/'>政治/军事</a></em>
+								<em><a href='http://www.17sucai.com/'>法律</a></em>
+								<em><a href='http://www.17sucai.com/'>宗教</a></em>
+								<em><a href='http://www.17sucai.com/'>心理学</a></em>
+								<em><a href='http://www.17sucai.com/'>文化</a></em>
+								<em><a href='http://www.17sucai.com/'>社会科学</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>经管励志</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>经济</a></em>
+								<em><a href='http://www.17sucai.com/'>金融与投资</a></em>
+								<em><a href='http://www.17sucai.com/'>管理</a></em>
+								<em><a href='http://www.17sucai.com/'>励志与成功</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>生活</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>生活</a></em>
+								<em><a href='http://www.17sucai.com/'>健身与保健</a></em>
+								<em><a href='http://www.17sucai.com/'>家庭与育儿</a></em>
+								<em><a href='http://www.17sucai.com/'>旅游</a></em>
+								<em><a href='http://www.17sucai.com/'>动漫/幽默</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>教育</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>教材教辅</a></em>
+								<em><a href='http://www.17sucai.com/'>教育与考试</a></em>
+								<em><a href='http://www.17sucai.com/'>外语学习</a></em>
+								<em><a href='http://www.17sucai.com/'>新闻出版</a></em>
+								<em><a href='http://www.17sucai.com/'>语言文字</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>科技</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>科技</a></em>
+								<em><a href='http://www.17sucai.com/'>工程</a></em>
+								<em><a href='http://www.17sucai.com/'>建筑</a></em>
+								<em><a href='http://www.17sucai.com/'>医学</a></em>
+								<em><a href='http://www.17sucai.com/'>科学与自然</a></em>
+								<em><a href='http://www.17sucai.com/'>计算机与互联网</a></em>
+								<em><a href='http://www.17sucai.com/'>体育/运动</a></em>
+							</dd>
+						</dl>
+						<dl>
+							<dt>其它</dt>
+							<dd>
+								<em><a href='http://www.17sucai.com/'>工具书</a></em>
+								<em><a href='http://www.17sucai.com/'>影印版</a></em>
+								<em><a href='http://www.17sucai.com/'>套装书</a></em>
+							</dd>
+						</dl>
+					</div>
+					<div id="JD_sort_k" class='fr'>
+						<img src="images/1593.jpg" width="194" height="70" alt="" style="margin-top:30px;" />
+					</div>
+				</div>
+			</div>
+			
+			<div class='extra'><a href='http://www.17sucai.com/'>全部商品分类</a></div>
+		
+		</div>
+		
+	</div><!--allsort end-->
+	
+	<div class="searcbox"></div>
+	
+	<div class="carbox"></div>
+	
+</div>	
+	
+<script type="text/javascript"> 
+$(".allsort").hoverForIE6({current:"allsorthover",delay:200});
+$(".allsort .item").hoverForIE6({delay:150});
+</script>
+
+</body>
+</html>

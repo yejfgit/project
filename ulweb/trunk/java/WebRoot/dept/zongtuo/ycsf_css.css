@@ -1,0 +1,27 @@
+BODY {
+	FONT-SIZE: 9pt; LINE-HEIGHT: 150%
+}
+TD {
+	FONT-SIZE: 9pt; LINE-HEIGHT: 150%
+}
+TH {
+	FONT-SIZE: 9pt; LINE-HEIGHT: 150%
+}
+A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #0080ff; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+INPUT {
+	FONT-SIZE: 9pt
+}
+SELECT {
+	FONT-SIZE: 9pt
+}

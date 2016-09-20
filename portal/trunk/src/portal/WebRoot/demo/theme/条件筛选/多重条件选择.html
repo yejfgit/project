@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style>
+.param-filter{
+border:2px solid #FFC44C;
+margin:50px 0px 0px 50px;
+width:800px;
+height:300px;
+background-color:#FFFFFF;
+font-size:14px;
+}
+.first_item{
+border:1px solid #FF0000;
+width:750px;
+}
+
+.param-filter dl{
+margin-top:10px;
+margin-bottom:10px;
+height:20px;
+border-bottom:1px solid #D0D0CF;
+padding-bottom:5px;
+}
+
+.param-filter dt{
+margin:2px 10px 2px 0px;
+width:80px;
+float:left;
+text-align:right;
+}
+
+.param-filter dd{
+margin-top:2px;
+}
+.param-filter dd a{
+text-decoration:none;
+}
+
+.select-list{
+}
+
+a{
+width:50px;
+height:50px;
+color:#0368A8;
+}
+.select-list a:hover{
+background:#FF6600;
+color:#FFFFFF;
+}
+.all-sel{
+background:#FF6600;
+padding-top:2px;
+padding-bottom:1px;
+
+
+}
+.all-sel a{
+color:#FFFFFF;
+}
+.select-a{
+background:#FF6600;
+color:#FFFFFF;
+}
+.append{
+border:1px solid #FF0000;
+margin-right:10px;
+width:50px;
+
+}
+</style>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script>
+$(document).ready(function(){
+     $("#pamItem1 a").click(function(){
+	       $("#pamItem1 span").removeClass("all-sel");
+	       $("#pamItem1 a").removeClass("select-a");
+	       $(this).addClass("select-a");
+		   var text=$(this).text();
+		   if(text=="不限"){
+		   if($(".selected-list").children("span").length ==1&&$(".selected-list").find("span").attr("id")=="pamItem1-spn"){
+		   $("#pamItem8").css({"display":"none"});
+		   }
+		   $("#pamItem1-spn").remove();
+		   }else{
+		   if($(".selected-list").html()==""){
+		     $("#pamItem8").css({"display":"block"});
+		     $(".selected-list").append("<span class='append' id='pamItem1-spn'><a href='#' style='width:20px' id='pamItem1-a'>"+text+"</a></span>").html;
+		   }
+		   else{
+		      if(text==$("#pamItem1-a").text()){
+			  //$(".selected-list").append("<span class='append' id='pamItem1-spn''><a href='#' style='width:20px' id='pamItem1-a'>"+text+"</a></span>");
+		      }
+			  if($("#pamItem1-spn").length==0){
+			  $("#pamItem8").css({"display":"block"});
+			  $(".selected-list").append("<span class='append' id='pamItem1-spn''><a href='#' style='width:20px' id='pamItem1-a'>"+text+"</a></span>").html;
+			  }
+			  else{
+		      $("#pamItem1-a").text(text);
+		      }
+			}
+		   }
+     });
+	 $("#pamItem2 a").click(function(){
+	       $("#pamItem2 span").removeClass("all-sel");
+	       $("#pamItem2 a").removeClass("select-a");
+	       $(this).addClass("select-a");
+		   var text=$(this).text();
+		   if(text=="不限"){
+		   if($(".selected-list").children("span").length ==1&&$(".selected-list").find("span").attr("id")=="pamItem2-spn"){
+		   $("#pamItem8").css({"display":"none"});
+		   }
+		   $("#pamItem2-spn").remove();
+		   }else{
+		   if($(".selected-list").html()==""){
+		     $("#pamItem8").css({"display":"block"});
+		     $(".selected-list").append("<span class='append' id='pamItem2-spn'><a href='#' style='width:20px' id='pamItem2-a'>"+text+"</a></span>");
+		   }
+		   else{
+		      if(text==$("#pamItem2-a").text()){
+			  //$(".selected-list").append("<span class='append' id='pamItem2-spn''><a href='#' style='width:20px' id='pamItem2-a'>"+text+"</a></span>");
+			  //$("#pamItem2-a").text(text);
+		      }
+			  if($("#pamItem2-spn").length==0){
+			  $("#pamItem8").css({"display":"block"});
+			  $(".selected-list").append("<span class='append' id='pamItem2-spn''><a href='#' style='width:20px' id='pamItem2-a'>"+text+"</a></span>");
+			  }
+			  else{
+		      $("#pamItem2-a").text(text);
+		      }
+			}
+		   }
+     });
+	 
+	 $("#pamItem3 a").click(function(){
+	       $("#pamItem3 span").removeClass("all-sel");
+	       $("#pamItem3 a").removeClass("select-a");
+	       $(this).addClass("select-a");
+     });
+	 
+	 $("#pamItem4 a").click(function(){
+	       $("#pamItem4 span").removeClass("all-sel");
+	       $("#pamItem4 a").removeClass("select-a");
+	       $(this).addClass("select-a");
+     });
+	 
+	 $("#pamItem5 a").click(function(){
+	       $("#pamItem5 span").removeClass("all-sel");
+	       $("#pamItem5 a").removeClass("select-a");
+	       $(this).addClass("select-a");
+     });
+	 
+	 $("#pamItem6 a").click(function(){
+	       $("#pamItem6 span").removeClass("all-sel");
+	       $("#pamItem6 a").removeClass("select-a");
+	       $(this).addClass("select-a");
+     });
+	 
+	 $("#pamItem7 a").click(function(){
+	       $("#pamItem7 span").removeClass("all-sel");
+	       $("#pamItem7 a").removeClass("select-a");
+	       $(this).addClass("select-a");
+     });
+	 
+	 $("#pamItem8 a").live("click",function(){
+	       var id=$(this).attr("id");
+		     var id_sub=id.substr(0, 8);
+		     $("#"+id_sub+"-spn").remove();
+		     $("#"+id_sub+" span").addClass("all-sel");
+	       $("#"+id_sub+" a").removeClass("select-a");
+		     if($(".selected-list").children("span").length ==0){
+		     $("#pamItem8").css({"display":"none"});
+		     }
+     });
+	 
+	 
+});
+</script>
+</head>
+
+<body>
+<div class="param-filter">
+
+
+<dl id="pamItem1">
+<dt>品牌</dt>
+  <dd>
+    <div id="select-list1" class="select-list"><span class="all-sel"><a href="# class="all">不限</a></span>
+	<a href="#">Intel</a>
+    <a href="#">AMD</a>
+	</div>
+  </dd>
+</dl>
+
+<dl id="pamItem2">
+<dt>价格</dt>
+  <dd>
+    <div id="select-list1"  class="select-list"><span class="all-sel"><a href="# class="all">不限</a></span>
+	<a href="#">300元以下</a>
+    <a href="#">300-500元</a>
+    <a href="#">500-800元</a>
+    <a href="#">800-1000元</a>
+    <a href="#">1000元以上</a>
+	</div>
+  </dd>
+</dl>
+
+
+<dl id="pamItem3">
+<dt>CPU系列</dt>
+  <dd>
+    <div class="select-list"><span class="all-sel"><a href="# class="all">不限</a></span>
+	 <a href="#">酷睿i7四代</a>
+                          <a href="#">酷睿i5四代</a>
+                          <a href="#">酷睿i3四代</a>
+                          <a href="#">酷睿i7三代</a>
+                          <a href="#">酷睿i5三代</a>
+                          <a href="#">酷睿i3三代</a>
+                          <a href="#">酷睿i7二代</a>
+                          <a href="#">酷睿i5二代</a>
+                          <span>更多</span>
+        
+                    <div>
+                                        
+                    <div style="display:none">
+                                                <a href="#">酷睿i3二代</a>
+                                                <a href="#">酷睿i7</a>
+                                                <a href="#">酷睿i5</a>
+                                                <a href="#">酷睿i3</a>
+                                                <a href="#">酷睿2至尊</a>
+                                                <a href="#">酷睿2四核</a>
+                                                <a href="#">酷睿2双核</a>
+                                                <a href="#">奔腾双核</a>
+                                                <a href="#">凌动</a>
+                                                <a href="#">推土机系列</a>
+                                                <a href="#">APU A8系列</a>
+                                                <a href="#">APU A10系列</a>
+                                                <a href="#">APU A6系列</a>
+                                                <a href="#">APU A4系列</a>
+                                                <a href="#">APU E系列</a>
+                                                <a href="#">羿龙II</a>
+                                                <a href="#">速龙II</a>
+                                                <a href="#">速龙</a>
+                                                <a href="#">炫龙</a>
+                                                <a href="#">闪龙</a>
+                                      </div>
+                </div>
+	</div>
+  </dd>
+</dl>
+
+
+
+<dl id="pamItem4">
+<dt>核心数量</dt>
+  <dd>
+    <div class="select-list"><span class="all-sel"><a href="# class="all">不限</a></span>
+	<a href="#">六核心</a>
+    <a href="#">四核心</a>
+    <a href="#">三核心</a>
+    <a href="#">双核心</a>
+    <a href="#">单核心</a>
+	</div>
+  </dd>
+</dl>
+
+
+
+<dl id="pamItem5">
+<dt>核心代号</dt>
+  <dd>
+     <div class="select-list">
+	 <span class="all-sel"><a href="# class="all">不限</a></span>
+	 <a href="#">Ivy Bridge</a>
+     <a href="#">Sandy Bridge</a>
+     <a href="#">Lynnfield</a>
+	</div>
+  </dd>
+</dl>
+
+
+
+<dl id="pamItem6">
+<dt>插槽类型</dt>
+  <dd>
+    <div class="select-list">
+	<span class="all-sel"><a href="# class="all">不限</a></span>
+	 <a href="#">LGA 1366</a>
+                          <a href="#">LGA 1156</a>
+                          <a href="#">LGA 1155</a>
+                          <a href="#">LGA 1150</a>
+                          <a href="#">LGA 775</a>
+                          <a href="#">Socket FM1</a>
+                          <a href="#">Socket FM2</a>
+						   <span>更多</span>
+                          
+        
+                                    <div class="all-item" data-rel="pamItem3">
+                                       
+                    <div style="display:none">
+                                                <a href="#">Socket AM3</a>
+                                                <a href="#">Socket AM3+</a>
+                                                <a href="#">Socket AM2</a>
+                                                <a href="#">Socket AM2+</a>
+                                        </div>
+                </div>
+	</div>
+  </dd>
+</dl>
+
+
+
+<dl id="pamItem7">
+<dt>特性</dt>
+  <dd>
+    <div class="select-list">
+	<span class="all-sel"><a href="# class="all">不限</a></span>
+	 <a href="#">32纳米</a>
+     <a href="#">45纳米</a>
+     <a href="#">台式机</a>
+     <a href="#/">笔记本</a>
+     <a href="#">智能手机/平板电脑</a>
+     <a href="#">盒装</a>
+     <a href="#">散装</a>
+	</div>
+  </dd>
+</dl>
+
+<dl id="pamItem8" style="display:none">
+<dt style=" font-size:14px;color:#999999">已选特性</dt>
+  <dd>
+    <div class="selected-list">
+	</div>
+  </dd>
+</dl>
+
+</div>
+</body>
+</html>

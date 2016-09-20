@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+	<form-beans>
+		<form-bean name="deptForm" type="org.apache.struts.action.DynaActionForm">
+	    	<form-property name="list" type="java.util.List" />
+			<form-property name="dept" type="com.ulic.ulweb.ulweb2.entity.DeptEntity" />
+
+	    </form-bean>
+	    
+	    <form-bean name="newspaperForm" type="org.apache.struts.action.DynaActionForm">
+	    	<form-property name="list" type="java.util.List" />
+			<form-property name="historyLabelList" type="java.util.List" />
+			<form-property name="content" type="com.ulic.ulweb.ulweb2.entity.ContentEntity" />
+
+	    </form-bean>
+	    
+		<form-bean name="columnForm" type="org.apache.struts.action.DynaActionForm">
+	    	<form-property name="deptList" type="java.util.List" />
+	    	<form-property name="columnList" type="java.util.List" />
+			<form-property name="column" type="com.ulic.ulweb.ulweb2.entity.ColumnEntity" />
+			<form-property name="parentColumn" type="com.ulic.ulweb.ulweb2.entity.ColumnEntity" />
+			<form-property name="dept" type="com.ulic.ulweb.ulweb2.entity.DeptEntity" />
+
+	    </form-bean>
+	    
+		<form-bean name="contentForm" type="org.apache.struts.action.DynaActionForm">
+	    	<form-property name="deptList" type="java.util.List" />
+	    	<form-property name="columnList" type="java.util.List" />
+	    	<form-property name="contentList" type="java.util.List" />
+			<form-property name="column" type="com.ulic.ulweb.ulweb2.entity.ColumnEntity" />
+			<form-property name="parentColumn" type="com.ulic.ulweb.ulweb2.entity.ColumnEntity" />
+			<form-property name="dept" type="com.ulic.ulweb.ulweb2.entity.DeptEntity" />
+			<form-property name="content" type="com.ulic.ulweb.ulweb2.entity.ContentEntity" />
+			<form-property name="page" type="com.ulic.ulweb.ulweb2.entity.PageEntity" />
+
+	    </form-bean>	    
+	    
+		<form-bean name="contentTmplForm" type="org.apache.struts.action.DynaActionForm">
+	    	<form-property name="list" type="java.util.List" />
+			<form-property name="contentTmpl" type="com.ulic.ulweb.ulweb2.entity.ContentTmplEntity" />
+
+	    </form-bean>	    	    
+	    
+	    
+	    	<!-- add by linda -->
+		<form-bean name="attachmentForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="file"
+				type="org.apache.struts.upload.FormFile">
+			</form-property>
+			<form-property name="size" type="java.lang.String"></form-property>
+			<form-property name="filename" type="java.lang.String"></form-property>
+		</form-bean>
+		<!-- add by lina end. UploadBean-->
+		
+		<form-bean name="uploadForm"
+			type="com.ulic.ulweb.ulweb2.web.action.UploadForm">
+		</form-bean>
+	 </form-beans>   
+	 
+	<action-mappings>
+
+		<action
+			parameter="method"
+			path="/web/admin/dept/deptAdmin"
+			type="com.ulic.ulweb.ulweb2.web.action.DeptAdminAction"
+			name="deptForm"
+			validate="false">
+			<forward name="list" path="/jsp/admin/dept/list.jsp"></forward>
+			<forward name="edit" path="/jsp/admin/dept/edit.jsp"></forward>
+			<forward name="add" path="/jsp/admin/dept/add.jsp"></forward>
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			<forward name="back" path="/web/admin/dept/deptAdmin.do?method=list" redirect="true"></forward>
+		</action>		
+		
+		<action
+			parameter="method"
+			path="/web/admin/column/columnAdmin"
+			type="com.ulic.ulweb.ulweb2.web.action.ColumnAdminAction"
+			name="columnForm"
+			validate="false">
+			<forward name="list" path="/jsp/admin/column/list.jsp"></forward>
+			<forward name="edit" path="/jsp/admin/column/edit.jsp"></forward>
+			<forward name="add" path="/jsp/admin/column/add.jsp"></forward>
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			<forward name="back" path="/web/admin/column/columnAdmin.do?method=list" redirect="true"></forward>
+		</action>	
+		
+		<action
+			parameter="method"
+			path="/web/admin/content/contentAdmin"
+			type="com.ulic.ulweb.ulweb2.web.action.ContentAdminAction"
+			name="contentForm"
+			validate="false">
+			<forward name="list" path="/jsp/admin/content/list.jsp"></forward>
+			<forward name="contentList" path="/jsp/admin/content/contentList.jsp"></forward>
+			<forward name="edit" path="/jsp/admin/content/edit.jsp"></forward>
+			<forward name="add" path="/jsp/admin/content/add.jsp"></forward>
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			<forward name="back" path="/web/admin/content/contentAdmin.do?method=list" redirect="true"></forward>
+		</action>			
+		
+		<action
+			parameter="method"
+			path="/web/admin/contentTmpl/contentTmplAdmin"
+			type="com.ulic.ulweb.ulweb2.web.action.ContentTmplAdminAction"
+			name="contentTmplForm"
+			validate="false">
+			<forward name="list" path="/jsp/admin/contentTmpl/list.jsp"></forward>
+			<forward name="edit" path="/jsp/admin/contentTmpl/edit.jsp"></forward>
+			<forward name="add" path="/jsp/admin/contentTmpl/add.jsp"></forward>
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+			<forward name="selectConTmpl" path="/jsp/admin/contentTmpl/selectConTmpl.jsp"></forward>
+			
+			<forward name="back" path="/web/admin/contentTmpl/contentTmplAdmin.do?method=list" redirect="true"></forward>
+		</action>						
+						
+						
+						<!-- add  by linda -->
+		<action parameter="method"
+			path="/web/admin/attachment/attachmentAdmin"
+			type="com.ulic.ulweb.ulweb2.web.action.AttachmentAdminAction"
+			name="uploadForm" validate="false">
+			<forward name="input"
+				path="/jsp/admin/attachment/attachment.jsp">
+			</forward>
+			<forward name="next"
+				path="/jsp/admin/attachment/attachment.jsp">
+			</forward>
+			<forward name="finished"
+				path="/jsp/admin/attachment/finished.jsp">
+			</forward>
+			<forward name="list"
+				path="/jsp/admin/attachment/list.jsp">
+			</forward>
+			<forward name="detail"
+				path="/jsp/admin/attachment/detail.jsp">
+			</forward>
+			<forward name="group"
+				path="/jsp/admin/attachment/group.jsp">
+			</forward>
+			<forward name="userlist"
+				path="/jsp/admin/attachment/userlist.jsp">
+			</forward>
+			<forward name="error" path="/error/errorpage.jsp"></forward>
+
+		</action>
+		<!-- add  by linda end. -->	
+		<action
+		parameter="method"
+		path="/web/admin/newspaper/newspaperAdmin"
+		type="com.ulic.ulweb.ulweb2.web.action.NewspaperAdmin"
+			name="newspaperForm"
+			validate="false">
+		<forward name="history" path="/jsp/admin/attachment/history.jsp"></forward>
+		<forward name="publish" path="/jsp/admin/attachment/publish.jsp"></forward>
+		</action>
+						
+	</action-mappings>
+	
+	
+
+
+	<message-resources parameter="MessageResources" />
+
+</struts-config>
+

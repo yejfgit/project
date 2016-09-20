@@ -1,0 +1,11 @@
+<img id="img1" src="">
+<script>
+
+var url = location.href;
+//url = url.substring(url.indexOf('pic.htm?url=') + 12, url.length);
+url = url.replace('pic.htm?url=', '');
+//alert(url);
+//document.writeln(url);
+document.getElementById("img1").src = url;
+
+</script>

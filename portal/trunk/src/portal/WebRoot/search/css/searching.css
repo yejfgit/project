@@ -1,0 +1,42 @@
+	li {
+	 	padding: 5px;
+	 }
+	
+	p {
+		padding: 0px;
+		margin: 5px;
+	}
+	
+	p.title a {
+		color: #0000CC;
+		font-size: 16px;
+	}
+	
+	p.content {
+	 font-size: 14px;
+	 padding-left: 20px;
+	 color:black;
+	 }
+	 
+	p.url {
+	color: #008000;
+	 font-size: 12px;
+	 padding-left: 20px;
+	 }
+	
+	/*摘要高亮显示*/
+	.content b {color: #FF0000;font-size: 14px;font-weight: normal;}	
+	
+	/*title高亮显示关键词*/
+	.title b {color: #FF0000;font-size: 16px;font-weight: normal;}
+			
+	.hint-over {
+	width: 398px;
+	cursor: hand;
+	background-color: #eeeeff;
+	}
+	
+	.hint-out {
+	background-color: #ffffff;
+	}
+	

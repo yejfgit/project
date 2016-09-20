@@ -1,0 +1,168 @@
+.9b {
+	FONT-SIZE: 9pt; COLOR: #000000; TEXT-DECORATION: none
+}
+.9red {
+	FONT-SIZE: 9pt; COLOR: #c60b27; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none
+}
+.9white {
+	FONT-SIZE: 9pt; COLOR: #ffffff; LINE-HEIGHT: 15px; TEXT-DECORATION: none
+}
+.9--- {
+	FONT-SIZE: 9pt; LINE-HEIGHT: 20px; TEXT-DECORATION: none
+}
+.11blue {
+	FONT-SIZE: 11pt; COLOR: #0033cc; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none
+}
+.9benglish {
+	FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-WEIGHT: normal; COLOR: #339900; FONT-STYLE: normal; TEXT-DECORATION: none
+}
+.10b {
+	FONT-SIZE: 10pt; COLOR: #0033cc; TEXT-DECORATION: none
+}
+.9blueenglish {
+	FONT-SIZE: 9pt; COLOR: #0033cc; LINE-HEIGHT: 20px; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none
+}
+.9green {
+	FONT-SIZE: 9pt; COLOR: #33cc00; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none
+}
+.9green1 {
+	FONT-SIZE: 9pt; COLOR: #004a1b; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none
+}
+.999999 {
+	FONT-SIZE: 9pt; COLOR: #999999; LINE-HEIGHT: 20px; TEXT-DECORATION: none
+}
+.BG {
+	BACKGROUND-POSITION: center 50%; BACKGROUND-IMAGE: url(bg.gif); BACKGROUND-REPEAT: repeat-y
+}
+.bg2 {
+	BACKGROUND-POSITION: right bottom; BACKGROUND-ATTACHMENT: fixed; BACKGROUND-IMAGE: url(news_05.gif); BACKGROUND-REPEAT: no-repeat
+}
+.10green {
+	FONT-SIZE: 10pt; COLOR: #33cc00; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none
+}
+
+A {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: 宋体; TEXT-DECORATION: none;word-break:break-all;
+}
+A:hover {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: orange; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.blue {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: blue; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.blue:hover {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: #3366ff; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.white {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: white; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.white:hover {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: orange; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.black {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.black:hover {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: white; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.yellow {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: yellow; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.yellow:hover {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: white; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.another {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: red; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.another:hover {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: orange; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.red {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: white; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.red:hover {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: red; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.top {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: #990000; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.top:hover {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: #ff9999; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.text {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: #cc3333; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.text:hover {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: red; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.list {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: navy; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+B.list {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: navy; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.list:hover {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: blue; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.map {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: green; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.map:hover {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: red; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+TD {
+	FONT-SIZE: 12px;	FONT-FAMILY: 宋体;	background-repeat: no-repeat;
+}
+TD.top {
+	FONT-SIZE: 12px; VERTICAL-ALIGN: top; FONT-FAMILY: 宋体
+}
+TD.left {
+	FONT-SIZE: 12px; FILTER: dropshadow(color=#666666,offX=1,offY=1,positive=1); VERTICAL-ALIGN: top; LINE-HEIGHT: 23px; FONT-FAMILY: 宋体; LETTER-SPACING: 2px
+}
+TD.left1 {
+	FONT-SIZE: 12px; VERTICAL-ALIGN: top; LINE-HEIGHT: 18px; FONT-FAMILY: 宋体; LETTER-SPACING: 2px
+}
+P {
+	LINE-HEIGHT: 18px; LETTER-SPACING: 0px
+}
+P.file {
+	TEXT-INDENT: 28px; LINE-HEIGHT: 18px; LETTER-SPACING: 0px
+}
+INPUT {
+	FONT-SIZE: 12px; FONT-FAMILY: "宋体"
+}
+SELECT {
+	FONT-SIZE: 12px; FONT-FAMILY: "宋体"
+}
+.input {
+	BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; FONT-SIZE: 12px; BORDER-LEFT: 1px solid; BORDER-BOTTOM: #666666 1px solid; BACKGROUND-COLOR: white
+}
+.button {
+	BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid; BACKGROUND-COLOR: #cccccc; font-color: #ffffff
+}
+.Redbtn {
+	BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #666666 1px solid; CURSOR: hand; BORDER-BOTTOM: #666666 1px solid; BACKGROUND-COLOR: #ff9999; font-color: #ffffff
+}
+.filter {
+	FILTER: dropshadow(color=#afafaf,offX=1,offY=1,positive=1)
+}
+TD.shadow {
+	FONT-SIZE: 12px; FILTER: dropshadow(color=#888888,offX=1,offY=1,positive=1); VERTICAL-ALIGN: top; FONT-FAMILY: 宋体
+}
+TD.tableshadow {
+	FONT-SIZE: 12px; FILTER: dropshadow(color=#888888,offX=4,offY=4,positive=1); VERTICAL-ALIGN: top; FONT-FAMILY: 宋体
+}
+TD.tableshadow1 {
+	FONT-SIZE: 12px; FILTER: dropshadow(color=#660000,offX=3,offY=3,positive=1); VERTICAL-ALIGN: top; FONT-FAMILY: 宋体
+}
+
+body{
+	margin:-20;	FONT-SIZE: 12px; FONT-FAMILY: 宋体; LETTER-SPACING: 1px;
+}
+
+.9green1 a{
+	FONT-SIZE: 9pt; COLOR: #004A1B; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none
+}

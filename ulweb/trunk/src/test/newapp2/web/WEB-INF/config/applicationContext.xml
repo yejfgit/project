@@ -1,0 +1,68 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    	<property name="location">
+			<value>/WEB-INF/config/init.properties</value>
+		</property>
+	</bean>
+  
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@10.18.1.115:1527:hruat" />
+		<property name="username" value="webtest" />
+		<property name="password" value="test" />
+	</bean>
+  
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mappingResources">
+			<list>
+				<value>com/ulic/ulweb/po/UlAttachment.hbm.xml</value>
+				<value>com/ulic/ulweb/po/UlColumn.hbm.xml</value>
+				<value>com/ulic/ulweb/po/UlContent.hbm.xml</value>
+				<value>com/ulic/ulweb/po/UlOrgan.hbm.xml</value>
+				<value>com/ulic/ulweb/po/UlRoleClass.hbm.xml</value>
+
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+			</props>
+		</property>
+	</bean>
+
+
+<!-- DAO beans -->
+	<bean id="contentDAO" class="com.ulic.ulweb.dao.hibernate.UlContentDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="organDAO" class="com.ulic.ulweb.dao.hibernate.UlOrganDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="columnDAO" class="com.ulic.ulweb.dao.hibernate.UlColumnDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="attachmentDAO" class="com.ulic.ulweb.dao.hibernate.UlAttachmentDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="roleClassDAO" class="com.ulic.ulweb.dao.hibernate.UlRoleClassDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+  
+  
+<!-- Service beans -->
+  	<bean id="columnService" class="com.ulic.ulweb.service.impl.ColumnService">
+    	<property name="columnDAO" ref="columnDAO" />
+  	</bean>
+
+
+<!-- Action beans -->
+  	<bean id="deptAction" class="com.ulic.ulweb.web.action.DeptAction">
+    	<property name="columnService" ref="columnService" />
+  	</bean>
+  	
+  	
+</beans>

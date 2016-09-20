@@ -1,0 +1,46 @@
+﻿*{ margin:0; padding:0; }
+.cxc_Mobile{ position:absolute; top:0; left:0;font: 12px/1.11 'Microsoft Yahei', Tahoma, Arial, Helvetica, STHeiti; z-index:2147483647;}
+.cxc_dialog{ width:315px; border:1px solid #3F3F3F; position:relative; }
+.cxc_dialog .filter01{filter: alpha(opacity=40);opacity: 0.4; background: #000;width:100%; height:10px; overflow:hidden; position:absolute; top:0; left:0;}
+.cxc_dialog .filter02{filter: alpha(opacity=40);opacity: 0.4; background: #000;width:100%; height:10px; position:absolute; bottom:0; left:0;overflow:hidden; }
+
+.cxc_dialog .filter03{filter: alpha(opacity=40);opacity: 0.4; background: #000;width:10px; height:100%; position:absolute; top:0; right:0;overflow:hidden; _right:-1px}
+.cxc_dialog .filter04{filter: alpha(opacity=40);opacity: 0.4; background: #000;width:10px; height:100%; position:absolute; top:0; left:0;overflow:hidden; _left:-10px;}
+
+.cxc_dialog_filt{  position:relative;}
+.cxc_dialog_bd{ background:#fff; border:1px solid #3F3F3F; margin:10px;}
+.cxc_dialog .cxc_top{ font-size:12px; height:30px;  text-indent:10px; position:relative; 
+                      background:url(icons/bg.jpg); color: #4c5a5f; font-weight:bold; 
+                      text-shadow: 0 1px 0 rgba(255, 255, 255, .7);} 
+.cxc_dialog .cxc_top_h{ background:url(icons/bg_h.jpg);} 
+.cxc_dialog .cxc_top p{cursor: move; line-height:30px; width:100%; height:100%;}
+.cxc_dialog .cxc_top span{ position:absolute; right:10px; top:8px;color: #68767b; cursor:pointer;}
+.cxc_dialog .cxc_top span:hover{ color:#ff0000;}
+.cxc_dialog .cxc_bd{ padding:10px 35px; line-height:23px; color:#4c5a5f; text-shadow: 0 1px 0 rgba(255, 255, 255, .7);}
+
+.cxc_dialog .cxc_ft{ border-top:1px solid #DADEE5; background:#F6F6F6; height:40px; position:relative;}
+.cxc_dialog .cxc_ft .img{ display:block; position:absolute; right:10px; top:8px; cursor:pointer; width:46px; height:26px; background:url(icons/Dete.jpg);}
+.cxc_dialog .cxc_ft .img:hover{ background:url(icons/Dete_h.jpg);}
+
+.Masklayer{filter: alpha(opacity=40);opacity: 0.4; background: #fff;width:100%; height:100%; position:absolute; top:0; left:0; z-index:2147483646; display:none;}
+
+.cxc_Mobile .Warning{ background:url(icons/warning.png) 5px 7px no-repeat;padding:20px 10px 20px 60px;}
+.cxc_Mobile .OK{ background:url(icons/succeed.png) 5px 7px no-repeat;padding:20px 10px 20px 60px;}
+.cxc_Mobile .Error{ background:url(icons/error.png) 5px 7px no-repeat;padding:20px 10px 20px 60px;}
+.cxc_Mobile .Question{ background:url(icons/question.png) 5px 7px no-repeat;padding:20px 10px 20px 60px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*background: rgba(0, 0, 0, .4);background: #000	9!important; filter: alpha(opacity=40);*/

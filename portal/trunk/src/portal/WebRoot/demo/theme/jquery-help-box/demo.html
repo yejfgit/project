@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery左侧悬浮层帮助菜单点击收缩悬浮层帮助菜单</title>
+<meta name="description" content="jquery左侧悬浮帮助菜单，点击帮助按钮收缩展示菜单内容，当点击菜单导航时，上下收缩展示菜单详细内容的悬浮层帮助菜单。" />
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+/* box_button */
+body{_background-image:url(about:blank);/*用浏览器空白页面作为背景*/_background-attachment:fixed; /* prevent screen flash in IE6 确保滚动条滚动时，元素不闪动*/ } 
+div.box_wrap{position:fixed;z-index:100;top:0;left:0;_position:absolute;_top:expression(documentElement.scrollTop + 0 + "px");_left:expression(documentElement.scrollLeft + 0 + "px");margin:80px 0 0 0;}
+div.box_button{height:50px;width:50px;text-align:center;vertical-align:middle;float:left;cursor:help;}
+div.box_main{background:#EEE;float:left;border:solid 1px #4D4D4D;border-bottom:none;}
+/* menu */
+ul#menu,ul#menu ul{width:300px;}
+ul#menu a{display:block;text-decoration:none;}
+ul#menu li a img{margin-right:5px;}
+ul#menu li{width:300px;}
+ul#menu li a{color:#333;background:#eeeeee;font-family:Arial, Helvetica, sans-serif;border-bottom:solid 1px #333;font-size:36px;padding:5px; }
+ul#menu ul li{padding:10px;font-size:14px;}
+ul#menu ul li a{display:inline-block;}
+</style>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+$(function(){
+
+	$(".box_main").hide();
+	$('#menu ul').hide();
+	$('#menu li a').click(function(){
+		$(this).next().slideToggle('normal');
+	});
+	
+	$('#box_link').toggle(function(){
+		$('.box_main').show(function(){
+			$('.box_main').animate({width:'300'},500);
+		});
+		$('#box_img').attr("src", "images/close.png");
+	},function(){
+		$('.box_main').animate({width:"0"},500,function(){
+			$('.box_main').hide();
+			$('#box_img').attr("src", "images/qm.png");
+		});	
+	});
+		
+});
+</script>
+
+</head>
+
+<body>
+
+<div style="height:1000px;"></div>
+
+<div class="box_wrap">
+
+	<div class="box_main">
+		<ul id="menu">
+			<li>
+				<a href="javascript:void(0);"><img src="images/faq.png" width="32" height="32" border="0" /><span>常问问题</span></a>
+				<ul>
+					<li>
+						<p><strong>Q</strong>. What is this?<br /><strong>A</strong>. A cool side bar for your website.</p>
+						<p><strong>Q</strong>. How does it work.<br /><strong>A</strong>. It uses CSS &amp; jQeuery.</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:void(0);"><img src="images/contact.png" width="32" height="32" border="0" />联系我们</a>
+				<ul>
+					<li>
+						<form id="form1" name="form1" method="post" action="">
+							<label>Name<br /><input type="text" name="textfield" id="textfield" /><br />Email<br /></label>
+							<label><input type="text" name="textfield2" id="textfield2" /><br />Message<br /><textarea name="textarea" id="textarea" cols="20" rows="3"></textarea><br /></label>
+							<label><input type="submit" name="button" id="button" value="Submit" /></label>
+						</form>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:void(0);"><img src="images/about.png" width="32" height="32" border="0" />关于我们</a>
+				<ul>
+					<li>
+						<p><strong>This is some about text.</strong></p>
+						<p> This is some about text. This is some about text. This is some about text. This is some about text. This is some about text.</p>
+						<p> This is some about text. This is some about text. This is some about text. This is some about text. This is some about text. This is some about text. </p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:void(0);"><img src="images/links.png" width="32" height="32" border="0" />友情链接</a>
+				<ul>
+					<li><a style="font-size:18px;" href="http://search.yahoo.com/">Yahoo!</a></li>
+					<li><a style="font-size:18px;" href="http://www.google.com/">Google</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div><!--box_main end-->
+	
+	<div class="box_button"><a style="display:block;" href="#" id="box_link"><img id="box_img" src="images/qm.png" width="50" height="50" border="0" /></a></div>
+	
+</div>
+
+</body>
+</html>
