@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="4e4148d0-2e4c-4934-b3e9-d1d9e6ec67fc">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="180"/>
+	<style name="style1"/>
+	<parameter name="MC0000" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select ID0000,MC0000,NVL(XM0002,0)as sqjc, NVL(XM0008,0) as bqjc from BM_SBTJ00_TEMP where ID0000=10432 and  MC0000 like '%'||$P{MC0000}||'%']]>
+	</queryString>
+	<field name="ID0000" class="java.math.BigDecimal"/>
+	<field name="MC0000" class="java.lang.String"/>
+	<field name="SQJC" class="java.math.BigDecimal"/>
+	<field name="BQJC" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="195" y="22" width="179" height="20" uuid="07afe752-2086-4898-a23b-80323cee5acf"/>
+				<textElement>
+					<font size="14" isBold="true" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[固定资产分科增减汇总表]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="28" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="25" y="24" width="50" height="20" uuid="0130ec15-c614-41cc-8c7f-9a66bba0a5d3"/>
+				<textElement>
+					<font pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[固定资产名称]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="106" y="24" width="50" height="19" uuid="2f94c5ec-8e67-4770-8c17-2821138e85d0"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[上期结余]]></text>
+			</staticText>
+			<line>
+				<reportElement x="170" y="3" width="1" height="58" uuid="d3134b3f-9fa8-44b7-9a25-ea248d04bc26"/>
+			</line>
+			<line>
+				<reportElement x="0" y="60" width="555" height="1" uuid="ebe89a3f-1673-44ae-958e-b0c54cf0dd07"/>
+			</line>
+			<staticText>
+				<reportElement x="181" y="24" width="60" height="20" uuid="8ddac4fd-7d7e-46ca-b8ea-f3c1040a8306"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[本期增加]]></text>
+			</staticText>
+			<line>
+				<reportElement x="250" y="3" width="1" height="58" uuid="bcb90333-7f84-4c61-b5f0-f8ef9816f7aa"/>
+			</line>
+			<line>
+				<reportElement x="330" y="3" width="1" height="58" uuid="d59e84b2-dd01-4288-9af7-0f20a13f6e94"/>
+			</line>
+			<staticText>
+				<reportElement x="260" y="23" width="60" height="20" uuid="31d10001-9a40-4e2e-8053-8662d842f760"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[报废减少]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="24" width="60" height="20" uuid="6f1b4655-0d1a-4255-838e-5b991b6adcf2"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[退货减少]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="3" width="555" height="1" uuid="4b45e593-ba74-49cf-88ef-5fc351dcafaa"/>
+			</line>
+			<line>
+				<reportElement x="85" y="3" width="1" height="58" uuid="d1f1639a-6843-41f2-b24d-d95ae67ca658"/>
+			</line>
+			<line>
+				<reportElement x="410" y="4" width="1" height="58" uuid="f58f5f7c-09d3-45bc-aaf0-caa080ce1bd5"/>
+			</line>
+			<line>
+				<reportElement x="481" y="3" width="1" height="58" uuid="2836b306-36da-41eb-b2e2-aea7d7b17524"/>
+			</line>
+			<staticText>
+				<reportElement x="413" y="24" width="60" height="20" uuid="b102cb84-45d4-4285-957f-631df4c34078"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[其他减少]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="485" y="24" width="60" height="20" uuid="d147e80c-7ac6-43af-a839-18d2d3d6f64e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[本期结余]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="35" width="555" height="1" uuid="ec1219a0-2cbf-49de-9e5e-2ceb2fd8ccef"/>
+			</line>
+			<textField pattern="###0.00;-###0.00">
+				<reportElement x="106" y="10" width="50" height="20" uuid="4ea505c5-af2c-4ded-8f39-4789f2b6ab08"/>
+				<textFieldExpression><![CDATA[$F{SQJC}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00">
+				<reportElement x="488" y="10" width="57" height="20" uuid="90aa38f4-9ba6-4346-a196-35e022d051e5"/>
+				<textFieldExpression><![CDATA[$F{BQJC}]]></textFieldExpression>
+			</textField>
+			<textField hyperlinkType="Reference" hyperlinkTarget="Blank" bookmarkLevel="1">
+				<reportElement x="12" y="10" width="55" height="20" uuid="c5d59a73-3e19-4485-8993-d7f14af688e6"/>
+				<textElement>
+					<font fontName="宋体" isItalic="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MC0000}]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["http://localhost:8080/ReportForm/reportDetail?MC0000="+$F{MC0000}.toString()]]></anchorNameExpression>
+				<hyperlinkReferenceExpression><![CDATA["http://localhost:8080/ReportForm/reportDetail?MC0000="+ URLEncoder.encode($F{MC0000}.toString(),"UTF-8")]]></hyperlinkReferenceExpression>
+				<hyperlinkTooltipExpression><![CDATA["http://localhost:8080/ReportForm/reportDetail?MC0000="+$F{MC0000}.toString()]]></hyperlinkTooltipExpression>
+				<hyperlinkParameter name="MC0000">
+					<hyperlinkParameterExpression><![CDATA[$F{MC0000}.toString()]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="25" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="52" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="513" y="17" width="32" height="20" uuid="a7b38ecb-26c2-4874-a544-c7f8def04f54"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="17" width="53" height="20" uuid="8e4ae34b-b512-4c68-b46a-1fcc01bb48b7"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="271" splitType="Stretch">
+			<pieChart>
+				<chart>
+					<reportElement positionType="FixRelativeToBottom" stretchType="RelativeToBandHeight" x="3" y="11" width="257" height="246" uuid="0e026abc-b50b-41de-b40b-45839d49c051"/>
+					<chartTitle>
+						<titleExpression><![CDATA["上期结余"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{MC0000}.toString()]]></keyExpression>
+					<valueExpression><![CDATA[$F{SQJC}.doubleValue()]]></valueExpression>
+				</pieDataset>
+				<piePlot isShowLabels="true" labelFormat="{0}，{1}，{2}">
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<barChart>
+				<chart>
+					<reportElement x="273" y="11" width="272" height="246" uuid="9ec627f6-d49b-4d16-a731-6998a4a30dc2"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["固定资产上期结余"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{MC0000}.toString()]]></categoryExpression>
+						<valueExpression><![CDATA[$F{SQJC}.doubleValue()]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>

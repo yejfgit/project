@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="printPage" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="f22c9afa-b48e-4b9f-a214-dc10a33700a8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="pageFrom" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="pageTo" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="birthday" class="java.lang.String">
+		<fieldDescription><![CDATA[birthday]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="gender" class="java.lang.String">
+		<fieldDescription><![CDATA[gender]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER}.intValue()<=($P{pageTo}==null?$V{PAGE_COUNT}.intValue():$P{pageTo}.intValue())&&$V{PAGE_NUMBER}.intValue()>=($P{pageFrom}==null?$V{PAGE_NUMBER}.intValue():new Integer("1"))]]></printWhenExpression>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER}.intValue()<=($P{pageTo}==null?$V{PAGE_COUNT}.intValue():$P{pageTo}.intValue())&&$V{PAGE_NUMBER}.intValue()>=($P{pageFrom}==null?$V{PAGE_NUMBER}.intValue():new Integer("1"))]]></printWhenExpression>
+			<staticText>
+				<reportElement x="0" y="31" width="555" height="20" uuid="a410de30-610c-45bc-942b-097b04f2ca80"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[学生信息]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER}.intValue()<=($P{pageTo}==null?$V{PAGE_COUNT}.intValue():$P{pageTo}.intValue())&&$V{PAGE_NUMBER}.intValue()>=($P{pageFrom}==null?$V{PAGE_NUMBER}.intValue():new Integer("1"))]]></printWhenExpression>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="48" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER}.intValue()<=($P{pageTo}==null?$V{PAGE_COUNT}.intValue():$P{pageTo}.intValue())&&$V{PAGE_NUMBER}.intValue()>=($P{pageFrom}==null?$V{PAGE_NUMBER}.intValue():new Integer("1"))]]></printWhenExpression>
+			<staticText>
+				<reportElement x="0" y="22" width="151" height="20" uuid="a5c82abe-20ed-4593-bbe2-67f42d2cfc26"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="151" y="22" width="118" height="20" uuid="2e5809c7-c845-4679-b3ad-304d91c01011"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="269" y="22" width="129" height="20" uuid="5d6807c6-328a-4784-abd6-13d407dbfad6"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="398" y="22" width="157" height="20" uuid="c330b864-3dcd-4dcf-9e42-425328a1a967"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[birthday]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER}.intValue()<=($P{pageTo}==null?$V{PAGE_COUNT}.intValue():$P{pageTo}.intValue())&&$V{PAGE_NUMBER}.intValue()>=($P{pageFrom}==null?$V{PAGE_NUMBER}.intValue():new Integer("1"))]]></printWhenExpression>
+			<textField>
+				<reportElement x="0" y="10" width="151" height="20" uuid="126181df-6c72-44eb-a2ca-2c4e6bf1e40c"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="10" width="118" height="20" uuid="e7e7c4c0-52a3-456c-b924-0581cf7893cd"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="269" y="10" width="129" height="20" uuid="3c130327-cf6f-47a6-9e72-903f680cb481"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gender}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="398" y="10" width="157" height="20" uuid="4eca4d51-ef26-474b-b60a-cf683d5f6adc"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{birthday}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="27" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER}.intValue()<=($P{pageTo}==null?$V{PAGE_COUNT}.intValue():$P{pageTo}.intValue())&&$V{PAGE_NUMBER}.intValue()>=($P{pageFrom}==null?$V{PAGE_NUMBER}.intValue():new Integer("1"))]]></printWhenExpression>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="46" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER}.intValue()<=($P{pageTo}==null?$V{PAGE_COUNT}.intValue():$P{pageTo}.intValue())&&$V{PAGE_NUMBER}.intValue()>=($P{pageFrom}==null?$V{PAGE_NUMBER}.intValue():new Integer("1"))]]></printWhenExpression>
+			<textField>
+				<reportElement x="0" y="10" width="555" height="20" uuid="fc328be6-7dae-407b-9843-bb63bd99e79e"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+"页"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="41" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER}.intValue()<=($P{pageTo}==null?$V{PAGE_COUNT}.intValue():$P{pageTo}.intValue())&&$V{PAGE_NUMBER}.intValue()>=($P{pageFrom}==null?$V{PAGE_NUMBER}.intValue():new Integer("1"))]]></printWhenExpression>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	
+ 		
+ 	<servlet>
+         <servlet-name>Servlet</servlet-name>
+         <servlet-class>com.test.ReportForm</servlet-class>
+     </servlet>
+     
+     <servlet-mapping>
+         <servlet-name>Servlet</servlet-name>
+         <url-pattern>/report</url-pattern>
+     </servlet-mapping>
+   
+     
+     <servlet>
+         <servlet-name>ServletDetail</servlet-name>
+         <servlet-class>com.test.ReportFormDetail</servlet-class>
+     </servlet>
+     
+     <servlet-mapping>
+         <servlet-name>ServletDetail</servlet-name>
+         <url-pattern>/reportDetail</url-pattern>
+     </servlet-mapping>
+     
+     <servlet>
+         <servlet-name>searchServlet</servlet-name>
+         <servlet-class>com.test.SearchReport</servlet-class>
+     </servlet>
+     
+     <servlet-mapping>
+         <servlet-name>searchServlet</servlet-name>
+         <url-pattern>/searchReport</url-pattern>
+     </servlet-mapping>
+     
+      <servlet>
+         <servlet-name>PrintServlet</servlet-name>
+            <servlet-class>com.print.PrintServlet</servlet-class>  
+     </servlet>
+       <servlet-mapping>
+         <servlet-name>PrintServlet</servlet-name>
+         <url-pattern>/printServlet</url-pattern>
+     </servlet-mapping>
+     
+      <servlet>
+         <servlet-name>ExcelServlet</servlet-name>
+            <servlet-class>excel.JREXLServlet</servlet-class>  
+     </servlet>
+       <servlet-mapping>
+         <servlet-name>ExcelServlet</servlet-name>
+         <url-pattern>/excelServlet</url-pattern>
+     </servlet-mapping>
+     
+       <servlet>
+         <servlet-name>TaoDaServlet</servlet-name>
+            <servlet-class>com.print.TaoDaServlet</servlet-class>  
+     </servlet>
+       <servlet-mapping>
+         <servlet-name>TaoDaServlet</servlet-name>
+         <url-pattern>/taoDaServlet</url-pattern>
+     </servlet-mapping>
+      <servlet>
+         <servlet-name>DemoServlet</servlet-name>
+            <servlet-class>com.print.DemoServlet</servlet-class>  
+     </servlet>
+       <servlet-mapping>
+         <servlet-name>DemoServlet</servlet-name>
+         <url-pattern>/demoServlet</url-pattern>
+     </servlet-mapping>
+     
+     <!--
+     
+
+	<servlet>
+         <servlet-name>ShowPic</servlet-name>  
+    <servlet-class>  
+   			com.test.ShowPic</servlet-class>  
+     </servlet>    
+     <servlet-mapping>
+         <servlet-name>ShowPic</servlet-name>  
+    <url-pattern>/ShowPic</url-pattern>  
+
+     </servlet-mapping>
+  --><welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

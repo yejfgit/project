@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" android:background="@android:color/background_light"
+                android:longClickable="true"
+                 android:orientation="vertical"  
+                >
+               
+   
+
+<!--     <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@drawable/blackice" android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true" android:layout_marginTop="47dp"/> -->
+  
+    
+    <TextView
+        android:id="@+id/left_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="来自ActiveMq的消息" />
+
+
+   <TextView
+        android:id="@+id/showmessage"
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+    	android:singleLine="false"   
+    	android:scrollbars="vertical"  
+        android:textSize="10pt" />
+      <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="400dp"
+            android:text="Start Push Service"/>
+
+</RelativeLayout>
+

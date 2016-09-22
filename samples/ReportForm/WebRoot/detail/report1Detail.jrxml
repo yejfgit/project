@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="4e4148d0-2e4c-4934-b3e9-d1d9e6ec67fc">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="37"/>
+	<property name="ireport.y" value="196"/>
+	<style name="style1"/>
+	<parameter name="MC0000" class="java.lang.String"/>
+	<parameter name="DAH000" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{DAH000}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select  *  from  VW_SB_GDZCMX  where  1 =1
+ and DAH000 like $P{DAH000}||'%' and  DJLX00  in ( 1,2,8,9,11)  and CKBH00=5346
+ order  by  DAH000]]>
+	</queryString>
+	<field name="RCKDH0" class="java.lang.String"/>
+	<field name="DJLX00" class="java.lang.String"/>
+	<field name="RCKID0" class="java.math.BigDecimal"/>
+	<field name="LXID00" class="java.math.BigDecimal"/>
+	<field name="LXMC00" class="java.lang.String"/>
+	<field name="DJLXMC" class="java.lang.String"/>
+	<field name="BDKS00" class="java.math.BigDecimal"/>
+	<field name="BDKSMC" class="java.lang.String"/>
+	<field name="DAH000" class="java.lang.String"/>
+	<field name="SBID00" class="java.math.BigDecimal"/>
+	<field name="SBMC00" class="java.lang.String"/>
+	<field name="GG0000" class="java.lang.String"/>
+	<field name="XH0000" class="java.lang.String"/>
+	<field name="JLDW00" class="java.lang.String"/>
+	<field name="SL0000" class="java.math.BigDecimal"/>
+	<field name="DJ0000" class="java.math.BigDecimal"/>
+	<field name="ZJE000" class="java.math.BigDecimal"/>
+	<field name="SHJSZJ" class="java.lang.String"/>
+	<field name="RZRQ00" class="java.lang.String"/>
+	<field name="RZSJ00" class="java.lang.String"/>
+	<field name="RZR000" class="java.math.BigDecimal"/>
+	<field name="CKBH00" class="java.math.BigDecimal"/>
+	<field name="SFYX00" class="java.lang.String"/>
+	<field name="BZ0000" class="java.lang.String"/>
+	<field name="SYKSMC" class="java.lang.String"/>
+	<field name="BGRXM0" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="195" y="22" width="179" height="20" uuid="07afe752-2086-4898-a23b-80323cee5acf"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[固定资产明细信息]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="28" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="12" y="25" width="31" height="20" uuid="0130ec15-c614-41cc-8c7f-9a66bba0a5d3"/>
+				<textElement>
+					<font size="10" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[票据号]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="25" width="53" height="19" uuid="2f94c5ec-8e67-4770-8c17-2821138e85d0"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[票据类型]]></text>
+			</staticText>
+			<line>
+				<reportElement x="106" y="4" width="1" height="58" uuid="d3134b3f-9fa8-44b7-9a25-ea248d04bc26"/>
+			</line>
+			<line>
+				<reportElement x="0" y="62" width="555" height="1" uuid="ebe89a3f-1673-44ae-958e-b0c54cf0dd07"/>
+			</line>
+			<staticText>
+				<reportElement x="107" y="25" width="49" height="20" uuid="8ddac4fd-7d7e-46ca-b8ea-f3c1040a8306"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[科室名称]]></text>
+			</staticText>
+			<line>
+				<reportElement x="156" y="3" width="1" height="58" uuid="bcb90333-7f84-4c61-b5f0-f8ef9816f7aa"/>
+			</line>
+			<line>
+				<reportElement x="195" y="3" width="1" height="58" uuid="d59e84b2-dd01-4288-9af7-0f20a13f6e94"/>
+			</line>
+			<staticText>
+				<reportElement x="157" y="25" width="38" height="20" uuid="31d10001-9a40-4e2e-8053-8662d842f760"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[卡片号]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="196" y="25" width="46" height="20" uuid="6f1b4655-0d1a-4255-838e-5b991b6adcf2"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[资产名称]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="3" width="555" height="1" uuid="4b45e593-ba74-49cf-88ef-5fc351dcafaa"/>
+			</line>
+			<line>
+				<reportElement x="50" y="3" width="1" height="58" uuid="d1f1639a-6843-41f2-b24d-d95ae67ca658"/>
+			</line>
+			<line>
+				<reportElement x="242" y="4" width="1" height="58" uuid="f58f5f7c-09d3-45bc-aaf0-caa080ce1bd5"/>
+			</line>
+			<line>
+				<reportElement x="279" y="4" width="1" height="58" uuid="2836b306-36da-41eb-b2e2-aea7d7b17524"/>
+			</line>
+			<staticText>
+				<reportElement x="243" y="24" width="36" height="20" uuid="b102cb84-45d4-4285-957f-631df4c34078"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[规格]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="25" width="25" height="20" uuid="d147e80c-7ac6-43af-a839-18d2d3d6f64e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[型号]]></text>
+			</staticText>
+			<line>
+				<reportElement x="305" y="4" width="1" height="58" uuid="bcc9c041-7438-472f-ade0-0a47995bfee1"/>
+			</line>
+			<line>
+				<reportElement x="342" y="4" width="1" height="58" uuid="b980dde9-6e98-4ff7-b2a3-e73786421f09"/>
+			</line>
+			<line>
+				<reportElement x="373" y="4" width="1" height="58" uuid="54df31a1-5e64-4f04-be9c-fb1717ad692d"/>
+			</line>
+			<line>
+				<reportElement x="413" y="4" width="1" height="58" uuid="7b0c2b50-28d6-4612-bc3a-a995ce7a1de9"/>
+			</line>
+			<line>
+				<reportElement x="455" y="2" width="1" height="58" uuid="372a8f68-a8b4-4b50-8fba-8df37a213fa7"/>
+			</line>
+			<line>
+				<reportElement x="488" y="4" width="1" height="58" uuid="c87d2b61-a855-447e-bdad-b2ac9aa5c3f6"/>
+			</line>
+			<line>
+				<reportElement x="515" y="4" width="1" height="58" uuid="005c9f23-e770-47fa-b4b3-3155a61e4f71"/>
+			</line>
+			<staticText>
+				<reportElement x="313" y="18" width="25" height="39" uuid="c4707b02-88c6-4c1d-ad1d-2bb456bfc82d"/>
+				<text><![CDATA[计量单位]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="348" y="24" width="25" height="20" uuid="30a0c8c8-bb44-4ad6-8bc6-f81ac778e134"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[数量]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="385" y="24" width="25" height="20" uuid="854afcc2-b820-48e3-b52d-84f8d1dbbee6"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[金额]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="25" width="25" height="20" uuid="8b0ea5ec-8e31-4f36-a565-a90708d5c072"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[日期]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="463" y="25" width="25" height="20" uuid="fc034105-3f4f-4595-9234-bc3c03c0633e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[时间]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="489" y="18" width="25" height="39" uuid="cbc6dfd2-cba7-4dfd-ace0-7c2f40be5bbe"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[使用部门]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="520" y="25" width="25" height="20" uuid="2c831ebf-0844-48a1-8ac9-764d601c9775"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[保管员]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="35" width="555" height="1" uuid="ec1219a0-2cbf-49de-9e5e-2ceb2fd8ccef"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="7" y="10" width="44" height="20" uuid="05e0eed3-cdf1-4b86-ad50-aeb207405ce9"/>
+				<textFieldExpression><![CDATA[$F{RCKDH0}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="51" y="10" width="55" height="20" uuid="93d1bdfe-5962-4be6-9b84-269583e8f8e4"/>
+				<textFieldExpression><![CDATA[$F{DJLX00}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="108" y="10" width="49" height="20" uuid="25c10dc6-b190-403f-9bc1-e7a98fc18aab"/>
+				<textFieldExpression><![CDATA[$F{BDKSMC}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="157" y="10" width="38" height="20" uuid="37f19cd4-1f4d-4858-9f6c-58fc5a86854e"/>
+				<textFieldExpression><![CDATA[$F{DAH000}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="196" y="10" width="47" height="20" uuid="90908239-4195-4024-a584-029b9d803067"/>
+				<textFieldExpression><![CDATA[$F{SBMC00}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="243" y="10" width="37" height="20" uuid="6b77e069-2bf4-498d-8c90-eeba92f13982"/>
+				<textFieldExpression><![CDATA[$F{GG0000}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="280" y="10" width="26" height="20" uuid="421afa2b-447c-4c5d-8316-caa5da3104bc"/>
+				<textFieldExpression><![CDATA[$F{XH0000}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="306" y="10" width="36" height="20" uuid="724184df-ee9d-4720-9b90-00eb3376c523"/>
+				<textFieldExpression><![CDATA[$F{JLDW00}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="343" y="10" width="31" height="20" uuid="69ce41b3-cca3-4178-9100-e66878096090"/>
+				<textFieldExpression><![CDATA[$F{SL0000}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="415" y="10" width="40" height="20" uuid="b8049146-4f8c-473b-bdf2-d5805d981739"/>
+				<textFieldExpression><![CDATA[$F{RZRQ00}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="456" y="10" width="32" height="20" uuid="896d50f6-73c7-410f-a9ac-9a361da96b32"/>
+				<textFieldExpression><![CDATA[$F{RZSJ00}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="493" y="10" width="22" height="20" uuid="56dd95b6-7679-4338-9739-ff47d46318e2"/>
+				<textFieldExpression><![CDATA[$F{SYKSMC}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="521" y="10" width="24" height="20" uuid="697a8a73-7242-4682-9a53-befa170da772"/>
+				<textFieldExpression><![CDATA[$F{BGRXM0}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="26" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="52" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="488" y="17" width="54" height="20" uuid="a7b38ecb-26c2-4874-a544-c7f8def04f54"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="442" y="17" width="37" height="20" uuid="8e4ae34b-b512-4c68-b46a-1fcc01bb48b7"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="243" splitType="Stretch"/>
+	</summary>
+</jasperReport>

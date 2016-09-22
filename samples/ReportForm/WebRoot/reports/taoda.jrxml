@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="taoda" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf7d3978-4a49-42dc-941c-3874f52b0625">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="capitalMoney" class="java.lang.String">
+		<fieldDescription><![CDATA[capitalMoney]]></fieldDescription>
+	</field>
+	<field name="cumName" class="java.lang.String">
+		<fieldDescription><![CDATA[cumName]]></fieldDescription>
+	</field>
+	<field name="cumNumb" class="java.lang.String">
+		<fieldDescription><![CDATA[cumNumb]]></fieldDescription>
+	</field>
+	<field name="day" class="java.lang.String">
+		<fieldDescription><![CDATA[day]]></fieldDescription>
+	</field>
+	<field name="mon" class="java.lang.String">
+		<fieldDescription><![CDATA[mon]]></fieldDescription>
+	</field>
+	<field name="money" class="java.lang.Double">
+		<fieldDescription><![CDATA[money]]></fieldDescription>
+	</field>
+	<field name="numberId" class="java.lang.String">
+		<fieldDescription><![CDATA[numberId]]></fieldDescription>
+	</field>
+	<field name="shopNum" class="java.lang.String">
+		<fieldDescription><![CDATA[shopNum]]></fieldDescription>
+	</field>
+	<field name="year" class="java.lang.String">
+		<fieldDescription><![CDATA[year]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="450" splitType="Stretch">
+			<image>
+				<reportElement x="6" y="5" width="545" height="375" uuid="bcae6b9c-90d1-43c7-b158-49c8f99bb6af"/>
+				<imageExpression><![CDATA["E:\\workspace\\ReportForm\\WebRoot\\images\\taoda.gif"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="75" y="77" width="100" height="20" uuid="1b112cae-5ace-479f-910e-726acbfe437a"/>
+				<textFieldExpression><![CDATA[$F{numberId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="75" width="13" height="20" uuid="24a1c37a-45f3-4cb8-9602-0aaedc1f2f22"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{year}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="473" y="75" width="12" height="20" uuid="73d7c54f-af79-4b7e-96ee-9562fc97b87c"/>
+				<textFieldExpression><![CDATA[$F{mon}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="499" y="75" width="15" height="20" uuid="f2a96140-f1c4-4223-99ae-acad1f493ead"/>
+				<textFieldExpression><![CDATA[$F{day}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="97" y="100" width="100" height="20" uuid="a0f6c265-1e2b-49ab-929f-4a3571f98bf2"/>
+				<textFieldExpression><![CDATA[$F{cumNumb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="289" y="100" width="128" height="20" uuid="f97bc89e-5015-49b4-b9e4-8f480c1a11c6"/>
+				<textFieldExpression><![CDATA[$F{cumName}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00">
+				<reportElement x="175" y="153" width="100" height="20" uuid="ad3b2335-5cc1-4a38-8394-07b915ff491c"/>
+				<textFieldExpression><![CDATA[$F{money}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="306" y="153" width="216" height="20" uuid="68160df8-02b0-4993-a751-e39501e39dc1"/>
+				<textFieldExpression><![CDATA[$F{capitalMoney}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="399" y="306" width="100" height="20" uuid="f1f59c33-600b-4c44-801f-c476d18d1038"/>
+				<textFieldExpression><![CDATA[$F{shopNum}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="5" splitType="Stretch"/>
+	</summary>
+</jasperReport>
