@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="libs"/>
+	<classpathentry kind="src" path="config"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="libs/jasperreports-6.1.1.jar" sourcepath="F:/jasperReports资料/jasperreports-6.1.1/src"/>
+	<classpathentry kind="lib" path="libs/jasperreports-fonts-6.1.1.jar"/>
+	<classpathentry kind="lib" path="libs/jackson-annotations-2.1.4.jar"/>
+	<classpathentry kind="lib" path="libs/jackson-core-2.1.4.jar"/>
+	<classpathentry kind="lib" path="libs/jackson-databind-2.1.4.jar"/>
+	<classpathentry kind="lib" path="/CommonLib/libs/geronimo-servlet_3.0_spec-1.0.jar"/>
+	<classpathentry kind="lib" path="libs/groovy-all-2.4.3.jar"/>
+	<classpathentry kind="lib" path="libs/itext-2.1.7.js3.jar"/>
+	<classpathentry kind="lib" path="/CommonLib/libs/spring-jdbc-4.1.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/CommonLib/libs/spring-core-4.1.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/CommonLib/libs/spring-beans-4.1.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/CommonLib/libs/spring-context-4.1.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/CommonLib/libs/spring-context-support-4.1.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/CommonLib/libs/log4j-1.2.15.jar" sourcepath="C:/Documents and Settings/Thinkpad User/.m2/repository/log4j/log4j/1.2.15/log4j-1.2.15-sources.jar"/>
+	<classpathentry kind="lib" path="/CommonLib/libs/spring-aop-4.1.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/CommonLib/libs/spring-aspects-4.1.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/CommonLib/libs/spring-orm-4.1.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/CommonLib/libs/spring-tx-4.1.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/FrameworkLib/lib/FW-Framework.jar" sourcepath="/FrameworkLib/lib/PerstncImpl.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
